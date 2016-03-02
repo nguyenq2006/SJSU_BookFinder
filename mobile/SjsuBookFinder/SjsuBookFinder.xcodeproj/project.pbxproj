@@ -1,0 +1,519 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		12820FAC1C8759E700D8CEDC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 12820FAB1C8759E700D8CEDC /* main.m */; };
+		12820FAF1C8759E700D8CEDC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 12820FAE1C8759E700D8CEDC /* AppDelegate.m */; };
+		12820FB21C8759E700D8CEDC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12820FB11C8759E700D8CEDC /* ViewController.m */; };
+		12820FB51C8759E700D8CEDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12820FB31C8759E700D8CEDC /* Main.storyboard */; };
+		12820FB71C8759E700D8CEDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12820FB61C8759E700D8CEDC /* Assets.xcassets */; };
+		12820FBA1C8759E700D8CEDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12820FB81C8759E700D8CEDC /* LaunchScreen.storyboard */; };
+		12820FC51C8759E700D8CEDC /* SjsuBookFinderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 12820FC41C8759E700D8CEDC /* SjsuBookFinderTests.m */; };
+		12820FD01C8759E700D8CEDC /* SjsuBookFinderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 12820FCF1C8759E700D8CEDC /* SjsuBookFinderUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		12820FC11C8759E700D8CEDC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 12820F9F1C8759E700D8CEDC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 12820FA61C8759E700D8CEDC;
+			remoteInfo = SjsuBookFinder;
+		};
+		12820FCC1C8759E700D8CEDC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 12820F9F1C8759E700D8CEDC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 12820FA61C8759E700D8CEDC;
+			remoteInfo = SjsuBookFinder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		12820FA71C8759E700D8CEDC /* SjsuBookFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SjsuBookFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		12820FAB1C8759E700D8CEDC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		12820FAD1C8759E700D8CEDC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		12820FAE1C8759E700D8CEDC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		12820FB01C8759E700D8CEDC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		12820FB11C8759E700D8CEDC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		12820FB41C8759E700D8CEDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		12820FB61C8759E700D8CEDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		12820FB91C8759E700D8CEDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		12820FBB1C8759E700D8CEDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12820FC01C8759E700D8CEDC /* SjsuBookFinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SjsuBookFinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		12820FC41C8759E700D8CEDC /* SjsuBookFinderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SjsuBookFinderTests.m; sourceTree = "<group>"; };
+		12820FC61C8759E700D8CEDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12820FCB1C8759E700D8CEDC /* SjsuBookFinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SjsuBookFinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		12820FCF1C8759E700D8CEDC /* SjsuBookFinderUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SjsuBookFinderUITests.m; sourceTree = "<group>"; };
+		12820FD11C8759E700D8CEDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		12820FA41C8759E700D8CEDC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12820FBD1C8759E700D8CEDC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12820FC81C8759E700D8CEDC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		12820F9E1C8759E600D8CEDC = {
+			isa = PBXGroup;
+			children = (
+				12820FA91C8759E700D8CEDC /* SjsuBookFinder */,
+				12820FC31C8759E700D8CEDC /* SjsuBookFinderTests */,
+				12820FCE1C8759E700D8CEDC /* SjsuBookFinderUITests */,
+				12820FA81C8759E700D8CEDC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		12820FA81C8759E700D8CEDC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				12820FA71C8759E700D8CEDC /* SjsuBookFinder.app */,
+				12820FC01C8759E700D8CEDC /* SjsuBookFinderTests.xctest */,
+				12820FCB1C8759E700D8CEDC /* SjsuBookFinderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		12820FA91C8759E700D8CEDC /* SjsuBookFinder */ = {
+			isa = PBXGroup;
+			children = (
+				12820FAD1C8759E700D8CEDC /* AppDelegate.h */,
+				12820FAE1C8759E700D8CEDC /* AppDelegate.m */,
+				12820FB01C8759E700D8CEDC /* ViewController.h */,
+				12820FB11C8759E700D8CEDC /* ViewController.m */,
+				12820FB31C8759E700D8CEDC /* Main.storyboard */,
+				12820FB61C8759E700D8CEDC /* Assets.xcassets */,
+				12820FB81C8759E700D8CEDC /* LaunchScreen.storyboard */,
+				12820FBB1C8759E700D8CEDC /* Info.plist */,
+				12820FAA1C8759E700D8CEDC /* Supporting Files */,
+			);
+			path = SjsuBookFinder;
+			sourceTree = "<group>";
+		};
+		12820FAA1C8759E700D8CEDC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				12820FAB1C8759E700D8CEDC /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		12820FC31C8759E700D8CEDC /* SjsuBookFinderTests */ = {
+			isa = PBXGroup;
+			children = (
+				12820FC41C8759E700D8CEDC /* SjsuBookFinderTests.m */,
+				12820FC61C8759E700D8CEDC /* Info.plist */,
+			);
+			path = SjsuBookFinderTests;
+			sourceTree = "<group>";
+		};
+		12820FCE1C8759E700D8CEDC /* SjsuBookFinderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				12820FCF1C8759E700D8CEDC /* SjsuBookFinderUITests.m */,
+				12820FD11C8759E700D8CEDC /* Info.plist */,
+			);
+			path = SjsuBookFinderUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		12820FA61C8759E700D8CEDC /* SjsuBookFinder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12820FD41C8759E700D8CEDC /* Build configuration list for PBXNativeTarget "SjsuBookFinder" */;
+			buildPhases = (
+				12820FA31C8759E700D8CEDC /* Sources */,
+				12820FA41C8759E700D8CEDC /* Frameworks */,
+				12820FA51C8759E700D8CEDC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SjsuBookFinder;
+			productName = SjsuBookFinder;
+			productReference = 12820FA71C8759E700D8CEDC /* SjsuBookFinder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		12820FBF1C8759E700D8CEDC /* SjsuBookFinderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12820FD71C8759E700D8CEDC /* Build configuration list for PBXNativeTarget "SjsuBookFinderTests" */;
+			buildPhases = (
+				12820FBC1C8759E700D8CEDC /* Sources */,
+				12820FBD1C8759E700D8CEDC /* Frameworks */,
+				12820FBE1C8759E700D8CEDC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				12820FC21C8759E700D8CEDC /* PBXTargetDependency */,
+			);
+			name = SjsuBookFinderTests;
+			productName = SjsuBookFinderTests;
+			productReference = 12820FC01C8759E700D8CEDC /* SjsuBookFinderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		12820FCA1C8759E700D8CEDC /* SjsuBookFinderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12820FDA1C8759E700D8CEDC /* Build configuration list for PBXNativeTarget "SjsuBookFinderUITests" */;
+			buildPhases = (
+				12820FC71C8759E700D8CEDC /* Sources */,
+				12820FC81C8759E700D8CEDC /* Frameworks */,
+				12820FC91C8759E700D8CEDC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				12820FCD1C8759E700D8CEDC /* PBXTargetDependency */,
+			);
+			name = SjsuBookFinderUITests;
+			productName = SjsuBookFinderUITests;
+			productReference = 12820FCB1C8759E700D8CEDC /* SjsuBookFinderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		12820F9F1C8759E700D8CEDC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Ravin Sardal";
+				TargetAttributes = {
+					12820FA61C8759E700D8CEDC = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					12820FBF1C8759E700D8CEDC = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 12820FA61C8759E700D8CEDC;
+					};
+					12820FCA1C8759E700D8CEDC = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 12820FA61C8759E700D8CEDC;
+					};
+				};
+			};
+			buildConfigurationList = 12820FA21C8759E700D8CEDC /* Build configuration list for PBXProject "SjsuBookFinder" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 12820F9E1C8759E600D8CEDC;
+			productRefGroup = 12820FA81C8759E700D8CEDC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				12820FA61C8759E700D8CEDC /* SjsuBookFinder */,
+				12820FBF1C8759E700D8CEDC /* SjsuBookFinderTests */,
+				12820FCA1C8759E700D8CEDC /* SjsuBookFinderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		12820FA51C8759E700D8CEDC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12820FBA1C8759E700D8CEDC /* LaunchScreen.storyboard in Resources */,
+				12820FB71C8759E700D8CEDC /* Assets.xcassets in Resources */,
+				12820FB51C8759E700D8CEDC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12820FBE1C8759E700D8CEDC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12820FC91C8759E700D8CEDC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		12820FA31C8759E700D8CEDC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12820FB21C8759E700D8CEDC /* ViewController.m in Sources */,
+				12820FAF1C8759E700D8CEDC /* AppDelegate.m in Sources */,
+				12820FAC1C8759E700D8CEDC /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12820FBC1C8759E700D8CEDC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12820FC51C8759E700D8CEDC /* SjsuBookFinderTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12820FC71C8759E700D8CEDC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12820FD01C8759E700D8CEDC /* SjsuBookFinderUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		12820FC21C8759E700D8CEDC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 12820FA61C8759E700D8CEDC /* SjsuBookFinder */;
+			targetProxy = 12820FC11C8759E700D8CEDC /* PBXContainerItemProxy */;
+		};
+		12820FCD1C8759E700D8CEDC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 12820FA61C8759E700D8CEDC /* SjsuBookFinder */;
+			targetProxy = 12820FCC1C8759E700D8CEDC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		12820FB31C8759E700D8CEDC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				12820FB41C8759E700D8CEDC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		12820FB81C8759E700D8CEDC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				12820FB91C8759E700D8CEDC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		12820FD21C8759E700D8CEDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		12820FD31C8759E700D8CEDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		12820FD51C8759E700D8CEDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SjsuBookFinder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ravin.SjsuBookFinder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		12820FD61C8759E700D8CEDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SjsuBookFinder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ravin.SjsuBookFinder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		12820FD81C8759E700D8CEDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SjsuBookFinderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ravin.SjsuBookFinderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SjsuBookFinder.app/SjsuBookFinder";
+			};
+			name = Debug;
+		};
+		12820FD91C8759E700D8CEDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SjsuBookFinderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ravin.SjsuBookFinderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SjsuBookFinder.app/SjsuBookFinder";
+			};
+			name = Release;
+		};
+		12820FDB1C8759E700D8CEDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SjsuBookFinderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ravin.SjsuBookFinderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SjsuBookFinder;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		12820FDC1C8759E700D8CEDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SjsuBookFinderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ravin.SjsuBookFinderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SjsuBookFinder;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		12820FA21C8759E700D8CEDC /* Build configuration list for PBXProject "SjsuBookFinder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12820FD21C8759E700D8CEDC /* Debug */,
+				12820FD31C8759E700D8CEDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		12820FD41C8759E700D8CEDC /* Build configuration list for PBXNativeTarget "SjsuBookFinder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12820FD51C8759E700D8CEDC /* Debug */,
+				12820FD61C8759E700D8CEDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		12820FD71C8759E700D8CEDC /* Build configuration list for PBXNativeTarget "SjsuBookFinderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12820FD81C8759E700D8CEDC /* Debug */,
+				12820FD91C8759E700D8CEDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		12820FDA1C8759E700D8CEDC /* Build configuration list for PBXNativeTarget "SjsuBookFinderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12820FDB1C8759E700D8CEDC /* Debug */,
+				12820FDC1C8759E700D8CEDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 12820F9F1C8759E700D8CEDC /* Project object */;
+}
