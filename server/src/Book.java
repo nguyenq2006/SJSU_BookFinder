@@ -5,6 +5,7 @@ public class Book
 	private String bookTitle;
 	private String isbn;
 	private double price;
+	private long id;
 	private boolean hardCover;
 	
 	/**
@@ -54,6 +55,15 @@ public class Book
 	 */
 	public double getPrice() {
 		return price;
+	}
+	
+	/**
+	 * get the student ID
+	 * @return student ID
+	 */
+	public long getID()
+	{
+		return id;
 	}
 
 	/**
