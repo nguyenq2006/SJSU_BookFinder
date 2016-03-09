@@ -7,18 +7,62 @@ public class Book
 	private double price;
 	private boolean hardCover;
 	
-	public Book(String isbn, String title, String author, double price, boolean hardCover)
-	{
+	/**
+	 * construct a new object book
+	 * @param isbn - isbn of the book
+	 * @param title - title of the book
+	 * @param author - author of the book
+	 * @param price - selling price
+	 * @param studentID - SJSU student id
+	 * @param hardCover - true if the book is hardcover, or otherwise
+	 */
+	public Book(String isbn, String title, String author, double price, long studentID, boolean hardCover){
 		this.author = author;
 		this.isbn = isbn;
 		this.bookTitle = title;
 		this.price = price;
 		this.hardCover = hardCover;
 	}
-	
-	public Book(String isbn)
-	{
-		this(isbn, "", "", 0, false);
+
+	/**
+	 * get the author of the book
+	 * @return author of the book
+	 */
+	public String getAuthor() {
+		return author;
 	}
+
+	/**
+	 * get the title of the book
+	 * @return the book title
+	 */
+	public String getBookTitle() {
+		return bookTitle;
+	}
+
+	/**
+	 * get the isbn
+	 * @return isbn of the book
+	 */
+	public String getIsbn() {
+		return isbn;
+	}
+
+	/**
+	 * get the selling price
+	 * @return price of the book
+	 */
+	public double getPrice() {
+		return price;
+	}
+
+	/**
+	 * check if the book is hardcover or not
+	 * @return true if the book is hardcover, or otherwise
+	 */
+	public boolean isHardCover() {
+		return hardCover;
+	}
+	
 	
 }
