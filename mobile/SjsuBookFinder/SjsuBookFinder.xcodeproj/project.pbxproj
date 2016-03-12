@@ -101,14 +101,9 @@
 		12820FA91C8759E700D8CEDC /* SjsuBookFinder */ = {
 			isa = PBXGroup;
 			children = (
-				12820FAD1C8759E700D8CEDC /* AppDelegate.h */,
-				12820FAE1C8759E700D8CEDC /* AppDelegate.m */,
-				12820FB01C8759E700D8CEDC /* ViewController.h */,
-				12820FB11C8759E700D8CEDC /* ViewController.m */,
-				12820FB31C8759E700D8CEDC /* Main.storyboard */,
-				12820FB61C8759E700D8CEDC /* Assets.xcassets */,
-				12820FB81C8759E700D8CEDC /* LaunchScreen.storyboard */,
-				12820FBB1C8759E700D8CEDC /* Info.plist */,
+				87CC2F6E1C94D318001C1B23 /* Controllers */,
+				87CC2F6D1C94D311001C1B23 /* Views */,
+				87CC2F6C1C94D30A001C1B23 /* Models */,
 				12820FAA1C8759E700D8CEDC /* Supporting Files */,
 			);
 			path = SjsuBookFinder;
@@ -117,6 +112,10 @@
 		12820FAA1C8759E700D8CEDC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				12820FB61C8759E700D8CEDC /* Assets.xcassets */,
+				12820FBB1C8759E700D8CEDC /* Info.plist */,
+				12820FAD1C8759E700D8CEDC /* AppDelegate.h */,
+				12820FAE1C8759E700D8CEDC /* AppDelegate.m */,
 				12820FAB1C8759E700D8CEDC /* main.m */,
 			);
 			name = "Supporting Files";
@@ -138,6 +137,39 @@
 				12820FD11C8759E700D8CEDC /* Info.plist */,
 			);
 			path = SjsuBookFinderUITests;
+			sourceTree = "<group>";
+		};
+		87CC2F6C1C94D30A001C1B23 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		87CC2F6D1C94D311001C1B23 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				87CC2F6F1C94D34C001C1B23 /* Storyboards */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		87CC2F6E1C94D318001C1B23 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				12820FB01C8759E700D8CEDC /* ViewController.h */,
+				12820FB11C8759E700D8CEDC /* ViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		87CC2F6F1C94D34C001C1B23 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				12820FB31C8759E700D8CEDC /* Main.storyboard */,
+				12820FB81C8759E700D8CEDC /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -496,6 +528,7 @@
 				12820FD61C8759E700D8CEDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		12820FD71C8759E700D8CEDC /* Build configuration list for PBXNativeTarget "SjsuBookFinderTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +537,7 @@
 				12820FD91C8759E700D8CEDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		12820FDA1C8759E700D8CEDC /* Build configuration list for PBXNativeTarget "SjsuBookFinderUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +546,7 @@
 				12820FDC1C8759E700D8CEDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
