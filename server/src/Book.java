@@ -1,8 +1,4 @@
-/**
- * TIPPER SUCKs DICK.
- * 
- *
- */
+
 public class Book 
 {
 	private String author;
