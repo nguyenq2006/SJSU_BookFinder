@@ -1,5 +1,5 @@
 /**
- * TIPPER IS COOL.
+ * TIPPER SUCKs DICK.
  * 
  *
  */
