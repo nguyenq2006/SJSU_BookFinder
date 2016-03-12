@@ -21,6 +21,9 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+    
+}
+- (IBAction)buttonPressed:(UIButton *)sender {
     NSURLSession *session = [NSURLSession sharedSession];
     [[session dataTaskWithURL:[NSURL URLWithString:@"http://localhost:9999/test?name=john&bookid=13784794535"]
             completionHandler:^(NSData *data,
