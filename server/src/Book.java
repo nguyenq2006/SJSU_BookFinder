@@ -1,4 +1,8 @@
-
+/**
+ * TIPPER IS COOL.
+ * 
+ *
+ */
 public class Book 
 {
 	private String author;
