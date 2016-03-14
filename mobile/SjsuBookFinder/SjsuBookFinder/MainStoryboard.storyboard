@@ -69,6 +69,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Lu-z3-95Q">
                                 <rect key="frame" x="281" y="240" width="38" height="30"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="U9Z-2B-2Tg" eventType="touchUpInside" id="0r8-a6-JXS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVk-A7-NT2">
                                 <rect key="frame" x="273" y="301" width="55" height="30"/>
@@ -92,6 +95,10 @@
                             <constraint firstItem="OQg-Uu-2xr" firstAttribute="trailing" secondItem="9BJ-7h-rGY" secondAttribute="trailingMargin" id="eep-xS-mYn"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="OQg-Uu-2xr" id="eCP-U4-kZp"/>
+                        <outlet property="sjsuIdTextField" destination="Vmv-b8-TL4" id="6FV-AW-kxn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lMK-W7-H0f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

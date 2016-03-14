@@ -8,8 +8,11 @@
 
 #import "LoginViewController.h"
 #import "NewAccountViewController.h"
+#import "Person.h"
 
 @interface LoginViewController ()
+@property (strong, nonatomic) IBOutlet UITextField *sjsuIdTextField;
+@property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
 
 @end
 
@@ -23,6 +26,15 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)loginButtonPressed:(UIButton *)sender {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+   Person *p = [Person unstringify:[defaults objectForKey:self.sjsuIdTextField.text]];
+    if ([p.password isEqualToString:self.passwordTextField.text]) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+        NewAccountViewController *vc = (NewAccountViewController *)[storyboard instantiateViewControllerWithIdentifier:@"TabBarViewController"];
+        [self presentViewController:vc animated:YES completion:nil];
+    }
 }
 
 - (IBAction)signUpButtonPressed:(UIButton *)sender {

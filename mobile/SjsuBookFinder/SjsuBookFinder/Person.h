@@ -18,6 +18,6 @@
 -(instancetype)initWithFirstName:(NSString *)firstName withLastName:(NSString *)lastName withSjsuId:(NSString *)sjsuId withPassword:(NSString *)password;
 
 -(NSString *)stringify;
--(Person *)unstringify:(NSString *)personString;
++(Person *)unstringify:(NSString *)personString;
 
 @end
