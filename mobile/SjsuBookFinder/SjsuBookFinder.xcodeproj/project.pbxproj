@@ -18,7 +18,6 @@
 		1293EB1D1C971C1800E8C9C9 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 1293EB1C1C971C1800E8C9C9 /* Person.m */; };
 		1293EB201C971E7000E8C9C9 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1293EB1F1C971E7000E8C9C9 /* TabBarViewController.m */; };
 		87E47E691C9506D20014431E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87E47E681C9506D20014431E /* MainStoryboard.storyboard */; };
-		87E47E721C951AD00014431E /* SellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E47E711C951AD00014431E /* SellViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,8 +61,6 @@
 		1293EB1E1C971E7000E8C9C9 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
 		1293EB1F1C971E7000E8C9C9 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		87E47E681C9506D20014431E /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
-		87E47E701C951AD00014431E /* SellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SellViewController.h; path = ../SellViewController.h; sourceTree = "<group>"; };
-		87E47E711C951AD00014431E /* SellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SellViewController.m; path = ../SellViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,8 +175,6 @@
 				1293EB161C97196300E8C9C9 /* LoginViewController.m */,
 				1293EB181C97197D00E8C9C9 /* NewAccountViewController.h */,
 				1293EB191C97197D00E8C9C9 /* NewAccountViewController.m */,
-				87E47E701C951AD00014431E /* SellViewController.h */,
-				87E47E711C951AD00014431E /* SellViewController.m */,
 				1293EB1E1C971E7000E8C9C9 /* TabBarViewController.h */,
 				1293EB1F1C971E7000E8C9C9 /* TabBarViewController.m */,
 			);
@@ -328,7 +323,6 @@
 				1293EB1D1C971C1800E8C9C9 /* Person.m in Sources */,
 				12820FAF1C8759E700D8CEDC /* AppDelegate.m in Sources */,
 				1293EB201C971E7000E8C9C9 /* TabBarViewController.m in Sources */,
-				87E47E721C951AD00014431E /* SellViewController.m in Sources */,
 				12820FAC1C8759E700D8CEDC /* main.m in Sources */,
 				1293EB171C97196300E8C9C9 /* LoginViewController.m in Sources */,
 			);
