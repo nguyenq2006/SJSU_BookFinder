@@ -13,6 +13,10 @@
 		12820FB71C8759E700D8CEDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12820FB61C8759E700D8CEDC /* Assets.xcassets */; };
 		12820FC51C8759E700D8CEDC /* SjsuBookFinderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 12820FC41C8759E700D8CEDC /* SjsuBookFinderTests.m */; };
 		12820FD01C8759E700D8CEDC /* SjsuBookFinderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 12820FCF1C8759E700D8CEDC /* SjsuBookFinderUITests.m */; };
+		1293EB171C97196300E8C9C9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1293EB161C97196300E8C9C9 /* LoginViewController.m */; };
+		1293EB1A1C97197D00E8C9C9 /* NewAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1293EB191C97197D00E8C9C9 /* NewAccountViewController.m */; };
+		1293EB1D1C971C1800E8C9C9 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 1293EB1C1C971C1800E8C9C9 /* Person.m */; };
+		1293EB201C971E7000E8C9C9 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1293EB1F1C971E7000E8C9C9 /* TabBarViewController.m */; };
 		87E47E691C9506D20014431E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87E47E681C9506D20014431E /* MainStoryboard.storyboard */; };
 		87E47E721C951AD00014431E /* SellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E47E711C951AD00014431E /* SellViewController.m */; };
 /* End PBXBuildFile section */
@@ -49,6 +53,14 @@
 		12820FCB1C8759E700D8CEDC /* SjsuBookFinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SjsuBookFinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		12820FCF1C8759E700D8CEDC /* SjsuBookFinderUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SjsuBookFinderUITests.m; sourceTree = "<group>"; };
 		12820FD11C8759E700D8CEDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1293EB151C97196300E8C9C9 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		1293EB161C97196300E8C9C9 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		1293EB181C97197D00E8C9C9 /* NewAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAccountViewController.h; sourceTree = "<group>"; };
+		1293EB191C97197D00E8C9C9 /* NewAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAccountViewController.m; sourceTree = "<group>"; };
+		1293EB1B1C971C1800E8C9C9 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		1293EB1C1C971C1800E8C9C9 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		1293EB1E1C971E7000E8C9C9 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
+		1293EB1F1C971E7000E8C9C9 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		87E47E681C9506D20014431E /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		87E47E701C951AD00014431E /* SellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SellViewController.h; path = ../SellViewController.h; sourceTree = "<group>"; };
 		87E47E711C951AD00014431E /* SellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SellViewController.m; path = ../SellViewController.m; sourceTree = "<group>"; };
@@ -143,6 +155,8 @@
 		87CC2F6C1C94D30A001C1B23 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1293EB1B1C971C1800E8C9C9 /* Person.h */,
+				1293EB1C1C971C1800E8C9C9 /* Person.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -160,6 +174,14 @@
 			children = (
 				12820FB01C8759E700D8CEDC /* ViewController.h */,
 				12820FB11C8759E700D8CEDC /* ViewController.m */,
+				1293EB151C97196300E8C9C9 /* LoginViewController.h */,
+				1293EB161C97196300E8C9C9 /* LoginViewController.m */,
+				1293EB181C97197D00E8C9C9 /* NewAccountViewController.h */,
+				1293EB191C97197D00E8C9C9 /* NewAccountViewController.m */,
+				87E47E701C951AD00014431E /* SellViewController.h */,
+				87E47E711C951AD00014431E /* SellViewController.m */,
+				1293EB1E1C971E7000E8C9C9 /* TabBarViewController.h */,
+				1293EB1F1C971E7000E8C9C9 /* TabBarViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -167,8 +189,6 @@
 		87CC2F6F1C94D34C001C1B23 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				87E47E701C951AD00014431E /* SellViewController.h */,
-				87E47E711C951AD00014431E /* SellViewController.m */,
 				87E47E681C9506D20014431E /* MainStoryboard.storyboard */,
 			);
 			name = Storyboards;
@@ -304,9 +324,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				12820FB21C8759E700D8CEDC /* ViewController.m in Sources */,
+				1293EB1A1C97197D00E8C9C9 /* NewAccountViewController.m in Sources */,
+				1293EB1D1C971C1800E8C9C9 /* Person.m in Sources */,
 				12820FAF1C8759E700D8CEDC /* AppDelegate.m in Sources */,
+				1293EB201C971E7000E8C9C9 /* TabBarViewController.m in Sources */,
 				87E47E721C951AD00014431E /* SellViewController.m in Sources */,
 				12820FAC1C8759E700D8CEDC /* main.m in Sources */,
+				1293EB171C97196300E8C9C9 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
