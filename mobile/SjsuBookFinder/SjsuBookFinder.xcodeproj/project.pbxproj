@@ -10,11 +10,11 @@
 		12820FAC1C8759E700D8CEDC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 12820FAB1C8759E700D8CEDC /* main.m */; };
 		12820FAF1C8759E700D8CEDC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 12820FAE1C8759E700D8CEDC /* AppDelegate.m */; };
 		12820FB21C8759E700D8CEDC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12820FB11C8759E700D8CEDC /* ViewController.m */; };
-		12820FB51C8759E700D8CEDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12820FB31C8759E700D8CEDC /* Main.storyboard */; };
 		12820FB71C8759E700D8CEDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12820FB61C8759E700D8CEDC /* Assets.xcassets */; };
-		12820FBA1C8759E700D8CEDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12820FB81C8759E700D8CEDC /* LaunchScreen.storyboard */; };
 		12820FC51C8759E700D8CEDC /* SjsuBookFinderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 12820FC41C8759E700D8CEDC /* SjsuBookFinderTests.m */; };
 		12820FD01C8759E700D8CEDC /* SjsuBookFinderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 12820FCF1C8759E700D8CEDC /* SjsuBookFinderUITests.m */; };
+		87E47E691C9506D20014431E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87E47E681C9506D20014431E /* MainStoryboard.storyboard */; };
+		87E47E721C951AD00014431E /* SellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E47E711C951AD00014431E /* SellViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,9 +41,7 @@
 		12820FAE1C8759E700D8CEDC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		12820FB01C8759E700D8CEDC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		12820FB11C8759E700D8CEDC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		12820FB41C8759E700D8CEDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		12820FB61C8759E700D8CEDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		12820FB91C8759E700D8CEDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12820FBB1C8759E700D8CEDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12820FC01C8759E700D8CEDC /* SjsuBookFinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SjsuBookFinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		12820FC41C8759E700D8CEDC /* SjsuBookFinderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SjsuBookFinderTests.m; sourceTree = "<group>"; };
@@ -51,6 +49,9 @@
 		12820FCB1C8759E700D8CEDC /* SjsuBookFinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SjsuBookFinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		12820FCF1C8759E700D8CEDC /* SjsuBookFinderUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SjsuBookFinderUITests.m; sourceTree = "<group>"; };
 		12820FD11C8759E700D8CEDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87E47E681C9506D20014431E /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		87E47E701C951AD00014431E /* SellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SellViewController.h; path = ../SellViewController.h; sourceTree = "<group>"; };
+		87E47E711C951AD00014431E /* SellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SellViewController.m; path = ../SellViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,8 +167,9 @@
 		87CC2F6F1C94D34C001C1B23 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				12820FB31C8759E700D8CEDC /* Main.storyboard */,
-				12820FB81C8759E700D8CEDC /* LaunchScreen.storyboard */,
+				87E47E701C951AD00014431E /* SellViewController.h */,
+				87E47E711C951AD00014431E /* SellViewController.m */,
+				87E47E681C9506D20014431E /* MainStoryboard.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -275,9 +277,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12820FBA1C8759E700D8CEDC /* LaunchScreen.storyboard in Resources */,
+				87E47E691C9506D20014431E /* MainStoryboard.storyboard in Resources */,
 				12820FB71C8759E700D8CEDC /* Assets.xcassets in Resources */,
-				12820FB51C8759E700D8CEDC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +305,7 @@
 			files = (
 				12820FB21C8759E700D8CEDC /* ViewController.m in Sources */,
 				12820FAF1C8759E700D8CEDC /* AppDelegate.m in Sources */,
+				87E47E721C951AD00014431E /* SellViewController.m in Sources */,
 				12820FAC1C8759E700D8CEDC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,25 +340,6 @@
 			targetProxy = 12820FCC1C8759E700D8CEDC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		12820FB31C8759E700D8CEDC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				12820FB41C8759E700D8CEDC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		12820FB81C8759E700D8CEDC /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				12820FB91C8759E700D8CEDC /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		12820FD21C8759E700D8CEDC /* Debug */ = {
@@ -447,6 +430,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ravin.SjsuBookFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -458,6 +442,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ravin.SjsuBookFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
