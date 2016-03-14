@@ -55,6 +55,15 @@ public class Person {
 	public void setlName(String lName) {
 		this.lName = lName;
 	}
+	
+	/**
+	 * Set Student ID of the user
+	 * @param ID - the id of user
+	 */
+	 public void setId(int ID)
+	 {
+		 this.id = id;
+	 }
 
 	/**
 	 * Get Student ID from the user
