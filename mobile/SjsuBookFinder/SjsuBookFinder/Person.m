@@ -23,11 +23,16 @@
 }
 
 -(NSString *)stringify{
-    NSString *result = @"";
+    NSString *result = [NSString stringWithFormat:@"%@,%@,%@,%@",self.firstName, self.lastName,self.sjsuID,self.password];
     return result;
 }
 -(Person *)unstringify:(NSString *)personString{
     Person *p = [[Person alloc]init];
+    NSArray *strArray = [personString componentsSeparatedByString:@","];
+    p.firstName = strArray[0];
+    p.lastName = strArray[1];
+    p.sjsuID = strArray[2];
+    p.password = strArray[3];
     return p;
 }
 
