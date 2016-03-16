@@ -22,6 +22,10 @@ public class HTTPServer {
 	public static void startServer() throws IOException {
 		HttpServer server = HttpServer.create(new InetSocketAddress(9999), 0);
 		HttpContext context = server.createContext("/test", new MyHttpHandler());
+		server.createContext("/newuser", new NewUserHttpHandler());
+		server.createContext("/findbook", new FindBookHttpHandler());
+		server.createContext("/addbook", new AddBookHttpHandler());
+		server.createContext("/sellbook", new SellBookHttpHandler());
 		context.getFilters().add(new ParameterFilter());
 		server.start();
 	}
@@ -38,6 +42,78 @@ public class HTTPServer {
 		        	System.out.println(key + ":" + params.get(key));
 		        }
 	            String response = "This is the response";
+	            exchange.sendResponseHeaders(200, response.length());
+	            OutputStream os = exchange.getResponseBody();
+	            os.write(response.getBytes());
+	            os.close();
+		    }
+	}
+
+	static class NewUserHttpHandler implements HttpHandler{
+		@Override
+		    public void handle(HttpExchange exchange) throws IOException {
+		        @SuppressWarnings("unchecked")
+				Map<String, Object> params =
+		           (Map<String, Object>)exchange.getAttribute("parameters");
+		        
+		        for(Object key: params.keySet()){
+		        	System.out.println(key + ":" + params.get(key));
+		        }
+	            String response = "New user created!";
+	            exchange.sendResponseHeaders(200, response.length());
+	            OutputStream os = exchange.getResponseBody();
+	            os.write(response.getBytes());
+	            os.close();
+		    }
+	}
+
+	static class FindBookHttpHandler implements HttpHandler{
+		@Override
+		    public void handle(HttpExchange exchange) throws IOException {
+		        @SuppressWarnings("unchecked")
+				Map<String, Object> params =
+		           (Map<String, Object>)exchange.getAttribute("parameters");
+		        
+		        for(Object key: params.keySet()){
+		        	System.out.println(key + ":" + params.get(key));
+		        }
+	            String response = "Here is your book: {Sample book}";
+	            exchange.sendResponseHeaders(200, response.length());
+	            OutputStream os = exchange.getResponseBody();
+	            os.write(response.getBytes());
+	            os.close();
+		    }
+	}
+
+	static class AddBookHttpHandler implements HttpHandler{
+		@Override
+		    public void handle(HttpExchange exchange) throws IOException {
+		        @SuppressWarnings("unchecked")
+				Map<String, Object> params =
+		           (Map<String, Object>)exchange.getAttribute("parameters");
+		        
+		        for(Object key: params.keySet()){
+		        	System.out.println(key + ":" + params.get(key));
+		        }
+	            String response = "Your book has been added";
+	            exchange.sendResponseHeaders(200, response.length());
+	            OutputStream os = exchange.getResponseBody();
+	            os.write(response.getBytes());
+	            os.close();
+		    }
+	}
+
+	static class SellBookHttpHandler implements HttpHandler{
+		@Override
+		    public void handle(HttpExchange exchange) throws IOException {
+		        @SuppressWarnings("unchecked")
+				Map<String, Object> params =
+		           (Map<String, Object>)exchange.getAttribute("parameters");
+		        
+		        for(Object key: params.keySet()){
+		        	System.out.println(key + ":" + params.get(key));
+		        }
+	            String response = "Your book has been sold to: {John Smith}";
 	            exchange.sendResponseHeaders(200, response.length());
 	            OutputStream os = exchange.getResponseBody();
 	            os.write(response.getBytes());
