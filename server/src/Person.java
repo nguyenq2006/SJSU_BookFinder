@@ -75,7 +75,7 @@ public class Person {
 
 	/**
 	 * Get list of ISBN from user
-	 * @return - isbn - the list of ISBN from suer
+	 * @return - the list of ISBN from suer
 	 */
 	public ArrayList<String> getIsbn() {
 		return isbn;
