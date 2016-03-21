@@ -19,101 +19,60 @@ import com.sun.net.httpserver.HttpServer;
 
 public class HTTPServer {
 
+	private static String response = "";
+
 	public static void startServer() throws IOException {
 		HttpServer server = HttpServer.create(new InetSocketAddress(9999), 0);
-		HttpContext context = server.createContext("/test", new MyHttpHandler());
-		server.createContext("/newuser", new NewUserHttpHandler());
-		server.createContext("/findbook", new FindBookHttpHandler());
-		server.createContext("/addbook", new AddBookHttpHandler());
-		server.createContext("/sellbook", new SellBookHttpHandler());
+		
+		RequestHandler requestHandler = new RequestHandler();
+
+		HttpContext context = server.createContext("/a", requestHandler);
 		context.getFilters().add(new ParameterFilter());
 		server.start();
 	}
 
-	static class MyHttpHandler implements HttpHandler {
+	static class RequestHandler implements HttpHandler {
 		 @Override
 		    public void handle(HttpExchange exchange) throws IOException {
 		        @SuppressWarnings("unchecked")
-		        //http://localhost:9999/test?name=john&bookid=13784794535
+		        //localhost:9999/a?requesttype=addbook&firstname=john&lastname=smith&id=009558549
 				Map<String, Object> params =
 		           (Map<String, Object>)exchange.getAttribute("parameters");
-		        
-		        for(Object key: params.keySet()){
-		        	System.out.println(key + ":" + params.get(key));
+		        String requestType = "";
+		        if (params.containsKey("requesttype")) {
+		        	requestType = (String) params.get("requesttype");
+		        	params.remove("requesttype");
 		        }
-	            String response = "This is the response";
-	            exchange.sendResponseHeaders(200, response.length());
-	            OutputStream os = exchange.getResponseBody();
-	            os.write(response.getBytes());
-	            os.close();
-		    }
-	}
 
-	static class NewUserHttpHandler implements HttpHandler{
-		@Override
-		    public void handle(HttpExchange exchange) throws IOException {
-		        @SuppressWarnings("unchecked")
-				Map<String, Object> params =
-		           (Map<String, Object>)exchange.getAttribute("parameters");
-		        
-		        for(Object key: params.keySet()){
-		        	System.out.println(key + ":" + params.get(key));
-		        }
-	            String response = "New user created!";
-	            exchange.sendResponseHeaders(200, response.length());
-	            OutputStream os = exchange.getResponseBody();
-	            os.write(response.getBytes());
-	            os.close();
-		    }
-	}
+		        switch(requestType){
+		        	case "newuser":
+		        		System.out.println("Request Type is new user");
+		        		response = "New user created!";
+		        		break;
 
-	static class FindBookHttpHandler implements HttpHandler{
-		@Override
-		    public void handle(HttpExchange exchange) throws IOException {
-		        @SuppressWarnings("unchecked")
-				Map<String, Object> params =
-		           (Map<String, Object>)exchange.getAttribute("parameters");
-		        
-		        for(Object key: params.keySet()){
-		        	System.out.println(key + ":" + params.get(key));
-		        }
-	            String response = "Here is your book: {Sample book}";
-	            exchange.sendResponseHeaders(200, response.length());
-	            OutputStream os = exchange.getResponseBody();
-	            os.write(response.getBytes());
-	            os.close();
-		    }
-	}
+		        	case "addbook":
+		        		System.out.println("Request Type is add book");
+		        		response = "Your books have been added to the database!";
+		        		break;
 
-	static class AddBookHttpHandler implements HttpHandler{
-		@Override
-		    public void handle(HttpExchange exchange) throws IOException {
-		        @SuppressWarnings("unchecked")
-				Map<String, Object> params =
-		           (Map<String, Object>)exchange.getAttribute("parameters");
-		        
-		        for(Object key: params.keySet()){
-		        	System.out.println(key + ":" + params.get(key));
-		        }
-	            String response = "Your book has been added";
-	            exchange.sendResponseHeaders(200, response.length());
-	            OutputStream os = exchange.getResponseBody();
-	            os.write(response.getBytes());
-	            os.close();
-		    }
-	}
+		        	case "sellbook":
+		        		System.out.println("Request Type is sell book");
+		        		response = "Your book has been sold";
+		        		break;
 
-	static class SellBookHttpHandler implements HttpHandler{
-		@Override
-		    public void handle(HttpExchange exchange) throws IOException {
-		        @SuppressWarnings("unchecked")
-				Map<String, Object> params =
-		           (Map<String, Object>)exchange.getAttribute("parameters");
-		        
-		        for(Object key: params.keySet()){
-		        	System.out.println(key + ":" + params.get(key));
+		        	case "findbook":
+		        		System.out.println("Request Type is find book");
+		        		response = "Here is your book: ";
+		        		break;
+
+		        	default:
+		        		System.out.println("Request Type is undefined");
 		        }
-	            String response = "Your book has been sold to: {John Smith}";
+
+		        for(Object key: params.keySet()){
+		        	//System.out.println(key + ":" + params.get(key));
+		        }
+
 	            exchange.sendResponseHeaders(200, response.length());
 	            OutputStream os = exchange.getResponseBody();
 	            os.write(response.getBytes());
