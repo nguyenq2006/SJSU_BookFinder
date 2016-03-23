@@ -35,9 +35,10 @@ public class HTTPServer {
 		 @Override
 		    public void handle(HttpExchange exchange) throws IOException {
 		        @SuppressWarnings("unchecked")
-		        //localhost:9999/a?requesttype=addbook&firstname=john&lastname=smith&id=009558549
+		        //localhost:9999/a?requesttype=newuser&firstname=john&lastname=smith&id=009558549
 				Map<String, Object> params =
 		           (Map<String, Object>)exchange.getAttribute("parameters");
+
 		        String requestType = "";
 		        if (params.containsKey("requesttype")) {
 		        	requestType = (String) params.get("requesttype");
@@ -47,7 +48,9 @@ public class HTTPServer {
 		        switch(requestType){
 		        	case "newuser":
 		        		System.out.println("Request Type is new user");
-		        		response = "New user created!";
+
+		        		NewUserController newUser = new NewUserController(params);
+		        		response = newUser.getResponse();
 		        		break;
 
 		        	case "addbook":
