@@ -2,7 +2,7 @@ import java.util.*;
 import java.lang.Class;
 
 
-public class NewUserController{
+public class NewUserController extends HttpRequestController{
 	Person model;
 	private String response = "";
 
