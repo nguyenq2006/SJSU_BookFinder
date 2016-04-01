@@ -55,16 +55,22 @@ public class HTTPServer {
 
 		        	case "addbook":
 		        		System.out.println("Request Type is add book");
+
+		        		AddBookController addBook = new AddBookController(params);
 		        		response = "Your books have been added to the database!";
 		        		break;
 
 		        	case "sellbook":
 		        		System.out.println("Request Type is sell book");
+
+		        		SellBookController sellBook = new SellBookController(params);
 		        		response = "Your book has been sold";
 		        		break;
 
 		        	case "findbook":
 		        		System.out.println("Request Type is find book");
+
+		        		FindBookController findBook = new FindBookController(params);
 		        		response = "Here is your book: ";
 		        		break;
 
