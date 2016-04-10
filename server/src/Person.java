@@ -1,4 +1,5 @@
 import java.util.*;
+
 /**
  * 
  * Creating a Person class for Students at SJSU
@@ -60,7 +61,7 @@ public class Person {
 	 * Set Student ID of the user
 	 * @param ID - the id of user
 	 */
-	 public void setId(int ID)
+	 public void setId(int id)
 	 {
 		 this.id = id;
 	 }
@@ -79,6 +80,19 @@ public class Person {
 	 */
 	public ArrayList<String> getIsbn() {
 		return isbn;
+	}
+	
+	/**
+	 * Updating User's ISBN List when they add a new Book
+	 * @param newBook - the new book the user adds 
+	 */
+	public void addBook(Book newBook)
+	{
+		String newISBN = newBook.getIsbn();
+		if(!isbn.contains(newISBN))
+		{
+			isbn.add(newISBN);
+		}
 	}
 	
 	
