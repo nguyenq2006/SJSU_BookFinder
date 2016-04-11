@@ -12,9 +12,9 @@ public class AddBookController {
 		String isbn = (String) params.get("isbn");
 		String title = (String) params.get("title");
 		String author = (String) params.get("author");
-		double price = (double) params.get("price");
-		long studentID = (long) params.get("id");
-		boolean isHardCover = (boolean) params.get("hardcover");
+		double price = Double.parseDouble((String)params.get("price"));
+		long studentID = Long.parseLong((String)params.get("id"));
+		boolean isHardCover =  Boolean.parseBoolean((String)params.get("hardcover"));
 
 		model = new Book(isbn, title, author, price, studentID, isHardCover);
 
