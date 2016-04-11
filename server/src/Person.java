@@ -81,9 +81,7 @@ public class Person {
 		return isbn;
 	}
 	
-	
-	
-	
-	
-
+	public void addBook(Book b){
+		isbn.add(b.getIsbn());
+	}
 }
