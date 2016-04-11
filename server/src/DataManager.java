@@ -21,6 +21,7 @@ public class DataManager {
 	 */
 	public static DataManager sharedInstance(){
 		return dm;
+		
 	}
 	
 	/**
@@ -39,9 +40,9 @@ public class DataManager {
 	 * @param newBook - new Book object
 	 * @param userID - the user ID
 	 */
-	public void addBook(Book newBook, int userID){
+	public void addBook(Book newBook){
 		//add new book to the user
-		Person user = users.get(userID);
+		Person user = users.get(newBook.getID());
 		user.addBook(newBook);
 		
 		//add  new book to the database
