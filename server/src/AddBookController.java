@@ -21,16 +21,16 @@ public class AddBookController {
 		//test comment
 
 		//Save book information to database
-		//this.saveToDataBase(modelToString(this.model));
+		this.saveToDataBase(this.model);
 	}
 
 	/**
 	 * Saving Book information to DatabaseManager
 	 * @param modelString - the model to save to database
 	 */
-	private void saveToDataBase(String modelString){
-		//  DatabaseManager dbm = DatabaseManager.sharedInstance();
-		//	dbm.saveNewUser(modelString);
+	private void saveToDataBase(Book model){
+		DataManager dbm = DataManager.sharedInstance();
+		dbm.addBook(model);
 	}
 
 
