@@ -86,13 +86,9 @@ public class Person {
 	 * Updating User's ISBN List when they add a new Book
 	 * @param newBook - the new book the user adds 
 	 */
-	public void addBook(Book newBook)
+	public void addBook(Book b)
 	{
-		String newISBN = newBook.getIsbn();
-		if(!isbn.contains(newISBN))
-		{
-			isbn.add(newISBN);
-		}
+		this.isbn.add(b.getIsbn());
 	}
 	
 	
