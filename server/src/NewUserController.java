@@ -17,16 +17,17 @@ public class NewUserController extends HttpRequestController{
 		int id =  Integer.parseInt((String) params.get("id"));
 		ArrayList<String> isbn = (ArrayList<String>) params.get("ISBN");
 		model = new Person(firstName, lastName, id, isbn);
-		this.saveToDataBase(modelToString(this.model));
+		// this.saveToDataBase(modelToString(this.model));
+		this.saveToDataBase(this.model);
 	}
 
 	/**
 	 * Saving information to DatabaseManager
 	 * @param modelString - the model to save to database
 	 */
-	private void saveToDataBase(String modelString){
-		//  DatabaseManager dbm = DatabaseManager.sharedInstance();
-		//	dbm.saveNewUser(modelString);
+	private void saveToDataBase(Person model){
+		DataManager dbm = DataManager.sharedInstance();
+		dbm.addUser(model);
 		// if sucess(){}
 		response = "New user: " + model.getfName() +" with id: " + model.getId() + " created!";
 	}

@@ -71,7 +71,7 @@ public class HTTPServer {
 		        		System.out.println("Request Type is find book");
 
 		        		FindBookController findBook = new FindBookController(params);
-		        		response = "Here is your book: ";
+		        		response = findBook.getResponse();
 		        		break;
 
 		        	default:
