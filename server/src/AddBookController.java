@@ -18,6 +18,8 @@ public class AddBookController {
 
 		model = new Book(isbn, title, author, price, studentID, isHardCover);
 
+		//test comment
+
 		//Save book information to database
 		//this.saveToDataBase(modelToString(this.model));
 	}
