@@ -41,7 +41,7 @@ public class BookTree {
 	
 	private static AVLNode insert(Book b, AVLNode tree){
 		String newTitle = b.getBookTitle();
-		DataManager dm = DataManager.getIntance();
+		DataManager dm = DataManager.sharedInstance();
 		Book currentBook = dm.getBook(tree.bookISBN);
 		String currentTitle = currentBook.getBookTitle();
 		int comparator = newTitle.compareTo(currentTitle);

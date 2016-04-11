@@ -19,7 +19,7 @@ public class DataManager {
 	 * get instance of the DataManager
 	 * @return the object of DataManager
 	 */
-	public static DataManager getIntance(){
+	public static DataManager sharedInstance(){
 		return dm;
 	}
 	
