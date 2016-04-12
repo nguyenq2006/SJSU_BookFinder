@@ -1,10 +1,10 @@
 import java.util.*;
-
+//singleton class to manage the database
 public class DataManager {
 	private static DataManager dm = new DataManager();
 	private TreeMap<String, Book> isbnTree;
 	private BookTree titleTree;
-	private TreeMap<Integer, Person> users;
+	private TreeMap<Long, Person> users;
 	
 	/**
 	 * private constructor for DataManager
@@ -12,7 +12,7 @@ public class DataManager {
 	private DataManager(){
 		this.isbnTree = new TreeMap<String, Book>();
 		this.titleTree = new BookTree();
-		this.users = new TreeMap<Integer, Person>();
+		this.users = new TreeMap<Long, Person>();
 	}
 	
 	/**
@@ -29,7 +29,7 @@ public class DataManager {
 	 * @param newUser - a Person object(new user)
 	 */
 	public void addUser(Person newUser){
-		int userID = newUser.getId();
+		long userID = newUser.getId();
 		if(!users.containsKey(userID)){
 			users.put(userID, newUser);
 		}
