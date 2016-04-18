@@ -15,7 +15,7 @@ public class NewUserController extends HttpRequestController{
 		String firstName = (String) params.get("firstname");
 		String lastName = (String) params.get("lastname");
 		int id =  Integer.parseInt((String) params.get("id"));
-		ArrayList<String> isbn = (ArrayList<String>) params.get("ISBN");
+		ArrayList<String> isbn = new ArrayList<String>();
 		model = new Person(firstName, lastName, id, isbn);
 		// this.saveToDataBase(modelToString(this.model));
 		this.saveToDataBase(this.model);
