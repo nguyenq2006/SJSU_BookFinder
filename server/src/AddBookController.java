@@ -43,16 +43,16 @@ public class AddBookController {
 	public String modelToString(Book m)
 	{
 				String resultString = 
-				"ISBN: " + m.getIsbn() + "\n"
-						+ "*&#$&!@#"   + " " + "\n" +
-						"Book Title: " + m.getBookTitle() + " " + "\n"
-						+ "*&#$&!@#" + " " + "\n" +
-						"Author: " + m.getAuthor() + " " + "\n" 
-						+ "*&#$&!@#" + " " + "\n" +
-						"Price: " + m.getPrice() + " " + "\n"
-						+ "*&#$&!@#" + " " + "\n" +
-						"Student ID: " + m.getID() + " " + "\n"
-						+ "*&#$&!@#" + " " + "\n" +
+				"ISBN: " + m.getIsbn() 
+						+ "*&#$&!@#"   + " " +
+						"Book Title: " + m.getBookTitle() + " " 
+						+ "*&#$&!@#" + " " +
+						"Author: " + m.getAuthor() + " "
+						+ "*&#$&!@#" + " " +
+						"Price: " + m.getPrice() + " "
+						+ "*&#$&!@#" + " " +
+						"Student ID: " + m.getID() + " " 
+						+ "*&#$&!@#" + " " + 
 						"HardCover?: " + m.isHardCover() + " " + "\n";
 
 		return resultString;
