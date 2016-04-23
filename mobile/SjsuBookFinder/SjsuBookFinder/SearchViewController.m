@@ -29,6 +29,7 @@
     for (NSUInteger i=0; i<segmentedControlItems.count; i++) {
         [_segmentedControl insertSegmentWithTitle:segmentedControlItems[i] atIndex:i animated:NO];
     }
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,7 +39,27 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
     NSString *searchString = searchBar.text;
-    [_segmentedControl selectedSegmentIndex];
+    [self makeHTTPRequestForType:segmentedControlItems[[_segmentedControl selectedSegmentIndex]]
+                    forParameter:searchString];
+}
+
+-(void)makeHTTPRequestForType:(NSString *)type forParameter:(NSString *)param{
+    NSURLComponents *components = [NSURLComponents componentsWithString:@"http://localhost:9999/a"];
+    NSURLQueryItem *reqType = [NSURLQueryItem queryItemWithName:@"requesttype" value:@"findbook"];
+    
+    NSURLQueryItem *isbn = [NSURLQueryItem queryItemWithName:@"isbn" value:@""];
+    NSURLQueryItem *title = [NSURLQueryItem queryItemWithName:@"title" value:@""];
+    NSURLQueryItem *author = [NSURLQueryItem queryItemWithName:@"author" value:@""];
+    
+    if ([type isEqualToString:@"Title"]) {
+        title = [NSURLQueryItem queryItemWithName:@"title" value:param];
+    }else if ([type isEqualToString:@"ISBN"]){
+        isbn = [NSURLQueryItem queryItemWithName:@"isbn" value:param];
+    }
+    
+    components.queryItems = @[reqType,isbn,title,author];
+    NSURL *url = components.URL;
+    NSLog(@"%@",url.absoluteString);
 }
 
 
