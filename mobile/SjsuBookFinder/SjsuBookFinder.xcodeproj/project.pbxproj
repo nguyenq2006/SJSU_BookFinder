@@ -271,6 +271,7 @@
 				TargetAttributes = {
 					12820FA61C8759E700D8CEDC = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = KSNH7VRKBE;
 					};
 					12820FBF1C8759E700D8CEDC = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -462,6 +463,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SjsuBookFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ravin.SjsuBookFinder;
@@ -474,6 +476,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SjsuBookFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ravin.SjsuBookFinder;
