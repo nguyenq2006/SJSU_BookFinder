@@ -63,7 +63,7 @@ public class NewUserController extends HttpRequestController{
 				"Student ID: " + m.getId()
 				+ "*&#$&!@#"   + " " +
 				"First Name: " + m.getfName() + " "
-				+ "*&#$&!@#" + " " + "\n" +
+				+ "*&#$&!@#" + " " +
 				"Last Name: " + m.getlName() + " "
 				+ "*&#$&!@#" + " " +
 				"ISBN:" + m.getIsbn() + " " + "\n";
