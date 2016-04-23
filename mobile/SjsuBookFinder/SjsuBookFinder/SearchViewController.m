@@ -59,7 +59,16 @@
     
     components.queryItems = @[reqType,isbn,title,author];
     NSURL *url = components.URL;
-    NSLog(@"%@",url.absoluteString);
+    
+    __block NSString *dataStr;
+    NSURLSession *session = [NSURLSession sharedSession];
+    [[session dataTaskWithURL:[NSURL URLWithString:url.absoluteString]
+            completionHandler:^(NSData *data,
+                                NSURLResponse *response,
+                                NSError *error) {
+                dataStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            }] resume];
+    NSLog(@"%@",dataStr);
 }
 
 
