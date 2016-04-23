@@ -9,6 +9,7 @@
 #import "SearchViewController.h"
 
 @interface SearchViewController ()
+@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end
 
