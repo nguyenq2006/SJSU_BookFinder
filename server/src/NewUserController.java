@@ -57,8 +57,8 @@ public class NewUserController extends HttpRequestController{
 	 * @return resultString - from Person object to String object
 	 */
 	
-	//change to private afterwards
-	public String modelToString(Person m){
+	
+	public static String modelToString(Person m){
 		String resultString = 
 				"Student ID: " + m.getId()
 				+ "*&#$&!@#"   + " " +
@@ -76,8 +76,8 @@ public class NewUserController extends HttpRequestController{
 	 * @return p - final conversion of String object -> Person object
 	 */
 	
-	//Change to private afterwards
-	public Person stringToModel (String userInfo)
+	
+	public static Person stringToModel (String userInfo)
 	{
 		//Convert String to Person Object
 		Scanner in = new Scanner(userInfo);
@@ -131,6 +131,7 @@ public class NewUserController extends HttpRequestController{
 		Person p = new Person(firstName, lastName, studentID, theISBN);
 		return p;
 	}
+
 
 	public String getResponse(){
 		return this.response;
