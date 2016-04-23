@@ -60,12 +60,12 @@ public class NewUserController extends HttpRequestController{
 	//change to private afterwards
 	public String modelToString(Person m){
 		String resultString = 
-				"Student ID: " + m.getId() + "\n"
-				+ "*&#$&!@#"   + " " + "\n" +
-				"First Name: " + m.getfName() + " " + "\n"
+				"Student ID: " + m.getId()
+				+ "*&#$&!@#"   + " " +
+				"First Name: " + m.getfName() + " "
 				+ "*&#$&!@#" + " " + "\n" +
-				"Last Name: " + m.getlName() + " " + "\n" 
-				+ "*&#$&!@#" + " " + "\n" +
+				"Last Name: " + m.getlName() + " "
+				+ "*&#$&!@#" + " " +
 				"ISBN:" + m.getIsbn() + " " + "\n";
 		return resultString;
 	}
