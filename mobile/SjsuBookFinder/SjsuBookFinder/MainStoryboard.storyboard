@@ -22,17 +22,37 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2B1-oQ-LUy">
+                                <rect key="frame" x="0.0" y="137" width="600" height="414"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="T3r-OV-GYS">
+                                <rect key="frame" x="0.0" y="108" width="600" height="29"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="iBl-Fp-kGn" firstAttribute="top" secondItem="MSZ-IO-amW" secondAttribute="bottom" id="PYG-5Q-Q97"/>
-                            <constraint firstItem="iBl-Fp-kGn" firstAttribute="leading" secondItem="u34-0n-OUD" secondAttribute="leading" id="qK7-Y7-rxG"/>
-                            <constraint firstAttribute="trailing" secondItem="iBl-Fp-kGn" secondAttribute="trailing" id="rbd-J1-9qI"/>
+                            <constraint firstItem="2B1-oQ-LUy" firstAttribute="bottom" secondItem="tUz-Oy-8xd" secondAttribute="top" id="Au2-An-Ceo"/>
+                            <constraint firstAttribute="trailing" secondItem="iBl-Fp-kGn" secondAttribute="trailing" id="BcO-7f-iU1"/>
+                            <constraint firstItem="iBl-Fp-kGn" firstAttribute="leading" secondItem="u34-0n-OUD" secondAttribute="leading" id="EQ0-jc-lk3"/>
+                            <constraint firstItem="T3r-OV-GYS" firstAttribute="top" secondItem="iBl-Fp-kGn" secondAttribute="bottom" id="JwJ-UC-TkU"/>
+                            <constraint firstItem="iBl-Fp-kGn" firstAttribute="top" secondItem="MSZ-IO-amW" secondAttribute="bottom" id="O93-zU-4VZ"/>
+                            <constraint firstItem="iBl-Fp-kGn" firstAttribute="trailing" secondItem="T3r-OV-GYS" secondAttribute="trailing" id="SfD-hG-27J"/>
+                            <constraint firstItem="2B1-oQ-LUy" firstAttribute="top" secondItem="T3r-OV-GYS" secondAttribute="bottom" constant="1" id="X0j-mQ-ldA"/>
+                            <constraint firstItem="T3r-OV-GYS" firstAttribute="leading" secondItem="2B1-oQ-LUy" secondAttribute="leading" id="Xa2-6O-HI7"/>
+                            <constraint firstItem="T3r-OV-GYS" firstAttribute="trailing" secondItem="2B1-oQ-LUy" secondAttribute="trailing" id="uov-g0-5FQ"/>
+                            <constraint firstItem="iBl-Fp-kGn" firstAttribute="leading" secondItem="T3r-OV-GYS" secondAttribute="leading" id="zPf-uF-qsY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="huS-ue-DSS"/>
                     <connections>
                         <outlet property="searchBar" destination="iBl-Fp-kGn" id="gDU-95-Bl7"/>
+                        <outlet property="segmentedControl" destination="T3r-OV-GYS" id="xAG-Ok-dmZ"/>
+                        <outlet property="tableView" destination="2B1-oQ-LUy" id="uAg-1z-68S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qbn-9h-1uY" userLabel="First Responder" sceneMemberID="firstResponder"/>
