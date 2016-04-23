@@ -34,13 +34,13 @@ public class AddBookController {
 	}
 
 
-	/**
+/**
 	 * Converting Book object to String object
 	 * @param model - book info from Book class
 	 * @return resultString - from Book object to String object
 	 */
-	//Change to private afterwards
-	public String modelToString(Book m)
+	
+	public static String modelToString(Book m)
 	{
 				String resultString = 
 				"ISBN: " + m.getIsbn() 
@@ -63,8 +63,8 @@ public class AddBookController {
 	 * @param bookInfo - the book information in String 
 	 * @return bookObject - final conversion of String object -> Book object
 	**/
-	//Change to private afterwards
-	public Book stringToModel(String bookInfo)
+	
+	public static Book stringToModel(String bookInfo)
 	{
 		Scanner in = new Scanner(bookInfo);
 		
