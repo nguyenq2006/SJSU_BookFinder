@@ -108,7 +108,16 @@
     return cell;
 }
 
+#pragma mark - UITableViewDelegate
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSString *selectedItem = [searchResults objectAtIndex:indexPath.row];
+    
+    UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"Purchase Book?" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+       //make HTTP Request that removes book.
+    }];
+    
+}
 
 /*
 #pragma mark - Navigation
