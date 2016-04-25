@@ -89,6 +89,7 @@
     for (NSUInteger i=0; i<responseArray.count; i++) {
         [searchResults addObject:responseArray[i]];
     }
+    [_tableView reloadData];
 }
 
 #pragma mark - UITableViewDataSource
