@@ -1,13 +1,13 @@
 //
-//  SellViewController.h
+//  PostViewController.h
 //  SjsuBookFinder
 //
-//  Created by Ravin Sardal on 4/23/16.
+//  Created by Ravin Sardal on 4/25/16.
 //  Copyright © 2016 Ravin Sardal. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface SellViewController : UIViewController
+@interface PostViewController : UIViewController
 
 @end

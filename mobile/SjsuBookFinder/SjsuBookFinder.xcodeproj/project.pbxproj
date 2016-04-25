@@ -17,9 +17,9 @@
 		1293EB1A1C97197D00E8C9C9 /* NewAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1293EB191C97197D00E8C9C9 /* NewAccountViewController.m */; };
 		1293EB1D1C971C1800E8C9C9 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 1293EB1C1C971C1800E8C9C9 /* Person.m */; };
 		1293EB201C971E7000E8C9C9 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1293EB1F1C971E7000E8C9C9 /* TabBarViewController.m */; };
-		12B194381CCC2D3D00C76025 /* SellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12B194371CCC2D3D00C76025 /* SellViewController.m */; };
 		12B1943B1CCC2D5800C76025 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12B1943A1CCC2D5800C76025 /* SearchViewController.m */; };
 		12B1943E1CCC2D8300C76025 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12B1943D1CCC2D8300C76025 /* ProfileViewController.m */; };
+		12D9BAA21CCEC307009AB968 /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D9BAA11CCEC307009AB968 /* PostViewController.m */; };
 		87E47E691C9506D20014431E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87E47E681C9506D20014431E /* MainStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -63,12 +63,12 @@
 		1293EB1C1C971C1800E8C9C9 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		1293EB1E1C971E7000E8C9C9 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
 		1293EB1F1C971E7000E8C9C9 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
-		12B194361CCC2D3D00C76025 /* SellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SellViewController.h; sourceTree = "<group>"; };
-		12B194371CCC2D3D00C76025 /* SellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SellViewController.m; sourceTree = "<group>"; };
 		12B194391CCC2D5800C76025 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		12B1943A1CCC2D5800C76025 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		12B1943C1CCC2D8300C76025 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		12B1943D1CCC2D8300C76025 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		12D9BAA01CCEC307009AB968 /* PostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostViewController.h; sourceTree = "<group>"; };
+		12D9BAA11CCEC307009AB968 /* PostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostViewController.m; sourceTree = "<group>"; };
 		87E47E681C9506D20014431E /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -186,12 +186,12 @@
 				1293EB191C97197D00E8C9C9 /* NewAccountViewController.m */,
 				1293EB1E1C971E7000E8C9C9 /* TabBarViewController.h */,
 				1293EB1F1C971E7000E8C9C9 /* TabBarViewController.m */,
-				12B194361CCC2D3D00C76025 /* SellViewController.h */,
-				12B194371CCC2D3D00C76025 /* SellViewController.m */,
 				12B194391CCC2D5800C76025 /* SearchViewController.h */,
 				12B1943A1CCC2D5800C76025 /* SearchViewController.m */,
 				12B1943C1CCC2D8300C76025 /* ProfileViewController.h */,
 				12B1943D1CCC2D8300C76025 /* ProfileViewController.m */,
+				12D9BAA01CCEC307009AB968 /* PostViewController.h */,
+				12D9BAA11CCEC307009AB968 /* PostViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -342,7 +342,7 @@
 				12B1943B1CCC2D5800C76025 /* SearchViewController.m in Sources */,
 				1293EB201C971E7000E8C9C9 /* TabBarViewController.m in Sources */,
 				12820FAC1C8759E700D8CEDC /* main.m in Sources */,
-				12B194381CCC2D3D00C76025 /* SellViewController.m in Sources */,
+				12D9BAA21CCEC307009AB968 /* PostViewController.m in Sources */,
 				1293EB171C97196300E8C9C9 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

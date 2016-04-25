@@ -1,22 +1,23 @@
 //
-//  SellViewController.m
+//  PostViewController.m
 //  SjsuBookFinder
 //
-//  Created by Ravin Sardal on 4/23/16.
+//  Created by Ravin Sardal on 4/25/16.
 //  Copyright © 2016 Ravin Sardal. All rights reserved.
 //
 
-#import "SellViewController.h"
+#import "PostViewController.h"
 
-@interface SellViewController ()
+@interface PostViewController ()
 
 @end
 
-@implementation SellViewController
+@implementation PostViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"Sell";
+    // Do any additional setup after loading the view.
+    self.navigationItem.title = @"Post";
 }
 
 - (void)didReceiveMemoryWarning {
