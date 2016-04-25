@@ -70,7 +70,7 @@ public class DataManager{
 	}
 	
 	/**
-	 * Returns the Map of isbnTree
+	 * Returns the IsbnTree TreeMAp
 	 * @return isbnTree
 	 */
 	public TreeMap<String, Book> getIsbnTreeMap() {
