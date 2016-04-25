@@ -31,6 +31,37 @@
 
 - (IBAction)createAccountButtonPressed:(UIButton *)sender {
     Person *p = [self createPersonFromUserInput];
+    
+    NSURLComponents *components = [NSURLComponents componentsWithString:@"http://localhost:9999/a"];
+    NSURLQueryItem *reqType = [NSURLQueryItem queryItemWithName:@"requesttype" value:@"newuser"];
+    
+    NSURLQueryItem *firstname = [NSURLQueryItem queryItemWithName:@"firstname" value:p.firstName];
+    NSURLQueryItem *lastname = [NSURLQueryItem queryItemWithName:@"lastname" value:p.lastName];
+    NSURLQueryItem *userId = [NSURLQueryItem queryItemWithName:@"id" value:p.sjsuID];
+    
+    components.queryItems = @[reqType,firstname,lastname,userId];
+    NSURL *url = components.URL;
+    
+//    __block NSString *dataStr = @"";
+//    NSURLSession *session = [NSURLSession sharedSession];
+//    [[session dataTaskWithURL:[NSURL URLWithString:url.absoluteString]
+//            completionHandler:^(NSData *data,
+//                                NSURLResponse *response,
+//                                NSError *error) {
+//                dataStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+//                
+//            }] resume];
+//    NSLog(@"%@",dataStr);
+
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSURLResponse *response;
+    NSError *error;
+
+    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    
+    NSString *responseStr = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:[p stringify] forKey:p.sjsuID];
     
