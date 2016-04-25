@@ -60,15 +60,22 @@
     components.queryItems = @[reqType,isbn,title,author];
     NSURL *url = components.URL;
     
-    __block NSString *dataStr;
-    NSURLSession *session = [NSURLSession sharedSession];
-    [[session dataTaskWithURL:[NSURL URLWithString:url.absoluteString]
-            completionHandler:^(NSData *data,
-                                NSURLResponse *response,
-                                NSError *error) {
-                dataStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-            }] resume];
-    NSLog(@"%@",dataStr);
+//    __block NSString *dataStr;
+//    NSURLSession *session = [NSURLSession sharedSession];
+//    [[session dataTaskWithURL:[NSURL URLWithString:url.absoluteString]
+//            completionHandler:^(NSData *data,
+//                                NSURLResponse *response,
+//                                NSError *error) {
+//                dataStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+//            }] resume];
+//    NSLog(@"%@",dataStr);
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSURLResponse *response;
+    NSError *error;
+    
+    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    
+    NSString *responseStr = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
 }
 
 
