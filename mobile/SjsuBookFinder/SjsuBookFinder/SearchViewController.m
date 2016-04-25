@@ -8,7 +8,7 @@
 
 #import "SearchViewController.h"
 
-@interface SearchViewController () <UISearchBarDelegate>
+@interface SearchViewController () <UISearchBarDelegate,UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
@@ -17,6 +17,7 @@
 
 @implementation SearchViewController{
     NSArray<NSString *>* segmentedControlItems;
+    NSMutableArray<NSString *> *searchResults;
 }
 
 - (void)viewDidLoad {
@@ -30,6 +31,10 @@
         [_segmentedControl insertSegmentWithTitle:segmentedControlItems[i] atIndex:i animated:NO];
     }
     
+    //table view setup
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    searchResults = [[NSMutableArray alloc]init];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,7 +48,7 @@
                     forParameter:searchString];
 }
 
--(void)makeHTTPRequestForType:(NSString *)type forParameter:(NSString *)param{
+- (void)makeHTTPRequestForType:(NSString *)type forParameter:(NSString *)param{
     NSURLComponents *components = [NSURLComponents componentsWithString:@"http://localhost:9999/a"];
     NSURLQueryItem *reqType = [NSURLQueryItem queryItemWithName:@"requesttype" value:@"findbook"];
     
@@ -76,7 +81,32 @@
     NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     
     NSString *responseStr = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+    [self parseServerResponse:responseStr];
 }
+
+- (void)parseServerResponse:(NSString *)responseStr{
+    NSArray<NSString *> *responseArray = [responseStr componentsSeparatedByString:@"\n"];
+    for (NSUInteger i=0; i<responseArray.count; i++) {
+        [searchResults addObject:responseArray[i]];
+    }
+}
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [searchResults count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"result"];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"result"];
+    }
+    cell.textLabel.text = [searchResults objectAtIndex:indexPath.row];
+    
+    return cell;
+}
+
 
 
 /*
