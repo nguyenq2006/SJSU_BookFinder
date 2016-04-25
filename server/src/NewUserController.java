@@ -93,9 +93,9 @@ public class NewUserController extends HttpRequestController{
 		String isbn = "";
 		ArrayList<String> theISBN = new ArrayList<String>();
 
-		while(in.hasNextLine())
+		while(in.hasNext())
 		{
-			String line = in.nextLine().trim();
+			String line = in.next().trim();
 			int colon = line.lastIndexOf(':');
 
 			if(line.contains("First Name: "))
