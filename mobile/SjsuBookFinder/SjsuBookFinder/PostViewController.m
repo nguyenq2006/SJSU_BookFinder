@@ -9,6 +9,12 @@
 #import "PostViewController.h"
 
 @interface PostViewController ()
+@property (strong, nonatomic) IBOutlet UITextField *isbnTextField;
+
+@property (strong, nonatomic) IBOutlet UITextField *titleTextField;
+@property (strong, nonatomic) IBOutlet UITextField *authorTextField;
+@property (strong, nonatomic) IBOutlet UITextField *priceTextField;
+@property (strong, nonatomic) IBOutlet UISwitch *hardCoverSwitch;
 
 @end
 
@@ -23,6 +29,9 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)postButtonPressed:(UIButton *)sender {
+    
 }
 
 /*
