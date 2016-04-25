@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="U9Z-2B-2Tg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="U9Z-2B-2Tg">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="3io-z7-fgT">
             <objects>
-                <viewController id="r8X-J9-e7g" sceneMemberID="viewController">
+                <viewController id="r8X-J9-e7g" customClass="SearchViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MSZ-IO-amW"/>
                         <viewControllerLayoutGuide type="bottom" id="tUz-Oy-8xd"/>
@@ -18,24 +18,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9CX-mL-ekx">
-                                <rect key="frame" x="273" y="108" width="54" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="54" id="TQn-cx-LEy"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="iBl-Fp-kGn">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2B1-oQ-LUy">
+                                <rect key="frame" x="0.0" y="137" width="600" height="414"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="T3r-OV-GYS">
+                                <rect key="frame" x="0.0" y="108" width="600" height="29"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="9CX-mL-ekx" firstAttribute="centerX" secondItem="u34-0n-OUD" secondAttribute="centerX" id="HFG-9o-K1B"/>
-                            <constraint firstItem="tUz-Oy-8xd" firstAttribute="top" secondItem="9CX-mL-ekx" secondAttribute="bottom" constant="422" id="cwS-U6-fh0"/>
-                            <constraint firstItem="9CX-mL-ekx" firstAttribute="top" secondItem="MSZ-IO-amW" secondAttribute="bottom" constant="44" id="lTw-gA-eew"/>
+                            <constraint firstItem="2B1-oQ-LUy" firstAttribute="bottom" secondItem="tUz-Oy-8xd" secondAttribute="top" id="Au2-An-Ceo"/>
+                            <constraint firstAttribute="trailing" secondItem="iBl-Fp-kGn" secondAttribute="trailing" id="BcO-7f-iU1"/>
+                            <constraint firstItem="iBl-Fp-kGn" firstAttribute="leading" secondItem="u34-0n-OUD" secondAttribute="leading" id="EQ0-jc-lk3"/>
+                            <constraint firstItem="T3r-OV-GYS" firstAttribute="top" secondItem="iBl-Fp-kGn" secondAttribute="bottom" id="JwJ-UC-TkU"/>
+                            <constraint firstItem="iBl-Fp-kGn" firstAttribute="top" secondItem="MSZ-IO-amW" secondAttribute="bottom" id="O93-zU-4VZ"/>
+                            <constraint firstItem="iBl-Fp-kGn" firstAttribute="trailing" secondItem="T3r-OV-GYS" secondAttribute="trailing" id="SfD-hG-27J"/>
+                            <constraint firstItem="2B1-oQ-LUy" firstAttribute="top" secondItem="T3r-OV-GYS" secondAttribute="bottom" constant="1" id="X0j-mQ-ldA"/>
+                            <constraint firstItem="T3r-OV-GYS" firstAttribute="leading" secondItem="2B1-oQ-LUy" secondAttribute="leading" id="Xa2-6O-HI7"/>
+                            <constraint firstItem="T3r-OV-GYS" firstAttribute="trailing" secondItem="2B1-oQ-LUy" secondAttribute="trailing" id="uov-g0-5FQ"/>
+                            <constraint firstItem="iBl-Fp-kGn" firstAttribute="leading" secondItem="T3r-OV-GYS" secondAttribute="leading" id="zPf-uF-qsY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="huS-ue-DSS"/>
+                    <connections>
+                        <outlet property="searchBar" destination="iBl-Fp-kGn" id="gDU-95-Bl7"/>
+                        <outlet property="segmentedControl" destination="T3r-OV-GYS" id="xAG-Ok-dmZ"/>
+                        <outlet property="tableView" destination="2B1-oQ-LUy" id="uAg-1z-68S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qbn-9h-1uY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -189,10 +207,10 @@
             </objects>
             <point key="canvasLocation" x="-3932" y="-330"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="Meh-Ou-FAn">
             <objects>
-                <viewController id="xqM-8P-bmY" sceneMemberID="viewController">
+                <viewController id="xqM-8P-bmY" customClass="ProfileViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OeN-Ps-F6K"/>
                         <viewControllerLayoutGuide type="bottom" id="QNS-sY-jE6"/>
@@ -200,20 +218,7 @@
                     <view key="view" contentMode="scaleToFill" id="2Y6-H2-pwV">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQX-Sf-3vz">
-                                <rect key="frame" x="276" y="126" width="49" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="WQX-Sf-3vz" firstAttribute="top" secondItem="OeN-Ps-F6K" secondAttribute="bottom" constant="62" id="QG4-T4-59C"/>
-                            <constraint firstItem="WQX-Sf-3vz" firstAttribute="centerX" secondItem="2Y6-H2-pwV" secondAttribute="centerX" id="UrZ-Mh-ufd"/>
-                            <constraint firstItem="QNS-sY-jE6" firstAttribute="top" secondItem="WQX-Sf-3vz" secondAttribute="bottom" constant="404" id="y2H-ST-UnV"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gvp-1s-uHE"/>
                 </viewController>
@@ -240,10 +245,10 @@
             </objects>
             <point key="canvasLocation" x="-2042" y="-1854"/>
         </scene>
-        <!--View Controller-->
+        <!--Sell View Controller-->
         <scene sceneID="94c-me-Jre">
             <objects>
-                <viewController id="xiY-be-fyz" sceneMemberID="viewController">
+                <viewController id="xiY-be-fyz" customClass="SellViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0jn-Qg-xwp"/>
                         <viewControllerLayoutGuide type="bottom" id="J9W-4E-LWY"/>
@@ -251,20 +256,7 @@
                     <view key="view" contentMode="scaleToFill" id="qUb-Tc-AJY">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sell" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F82-gg-2sn">
-                                <rect key="frame" x="286" y="150" width="28" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="F82-gg-2sn" firstAttribute="top" secondItem="0jn-Qg-xwp" secondAttribute="bottom" constant="86" id="DPe-MC-yIC"/>
-                            <constraint firstItem="F82-gg-2sn" firstAttribute="centerX" secondItem="qUb-Tc-AJY" secondAttribute="centerX" id="GbY-XU-mIB"/>
-                            <constraint firstItem="J9W-4E-LWY" firstAttribute="top" secondItem="F82-gg-2sn" secondAttribute="bottom" constant="380" id="b2r-HQ-ZfK"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="C5V-X5-Jco"/>
                 </viewController>
