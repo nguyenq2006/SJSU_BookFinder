@@ -32,6 +32,30 @@
 }
 - (IBAction)postButtonPressed:(UIButton *)sender {
     
+    //http://localhost:9999/a?requesttype=addbook&isbn=91919191911&title=DataStructAndAlgo&author=Horstmann&price=20&id=009558549&hardcover=true
+    
+    NSURLComponents *components = [NSURLComponents componentsWithString:@"http://localhost:9999/a"];
+    NSURLQueryItem *reqType = [NSURLQueryItem queryItemWithName:@"requesttype" value:@"addbook"];
+    
+    NSURLQueryItem *isbn = [NSURLQueryItem queryItemWithName:@"isbn" value:_isbnTextField.text];
+    NSURLQueryItem *title = [NSURLQueryItem queryItemWithName:@"title" value:_titleTextField.text];
+    NSURLQueryItem *author = [NSURLQueryItem queryItemWithName:@"author" value:_authorTextField.text];
+    NSURLQueryItem *price = [NSURLQueryItem queryItemWithName:@"price" value:_priceTextField.text];
+    NSURLQueryItem *userId = [NSURLQueryItem queryItemWithName:@"id" value:@"009558549"];
+    NSURLQueryItem *hardcover = [NSURLQueryItem queryItemWithName:@"hardcover" value:@"true"];
+    
+    
+    components.queryItems = @[reqType,isbn,title,author,price,userId,hardcover];
+    
+    NSURL *url = components.URL;
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSURLResponse *response;
+    NSError *error;
+    
+    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    
+    NSString *responseStr = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+    NSLog(@"%@",responseStr);
 }
 
 /*
