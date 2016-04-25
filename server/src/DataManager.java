@@ -68,6 +68,14 @@ public class DataManager{
 	public Book getBook(String isbn){
 		return isbnTree.get(isbn);
 	}
+	
+	/**
+	 * Returns the Map of isbnTree
+	 * @return isbnTree
+	 */
+	public TreeMap<String, Book> getIsbnTreeMap() {
+		return isbnTree;
+	}
 
 	/**
 	 * save all the data to a text file
