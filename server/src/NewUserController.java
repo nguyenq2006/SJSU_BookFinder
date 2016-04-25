@@ -1,4 +1,5 @@
 import java.util.*;
+import java.io.FileNotFoundException;
 import java.lang.Class;
 
 
@@ -9,9 +10,10 @@ public class NewUserController extends HttpRequestController{
 	/**
 	 * Taking a new user information and save it to database
 	 * @param params - fName, lName, id, and isbn info
+	 * @throws FileNotFoundException 
 	 */
 	@SuppressWarnings("unchecked")
-	public NewUserController(Map<String, Object> params){
+	public NewUserController(Map<String, Object> params) throws FileNotFoundException{
 		String firstName = (String) params.get("firstname");
 		String lastName = (String) params.get("lastname");
 		int id =  Integer.parseInt((String) params.get("id"));
@@ -24,8 +26,9 @@ public class NewUserController extends HttpRequestController{
 	/**
 	 * Saving information to DatabaseManager
 	 * @param modelString - the model to save to database
+	 * @throws FileNotFoundException 
 	 */
-	private void saveToDataBase(Person model){
+	private void saveToDataBase(Person model) throws FileNotFoundException{
 		DataManager dbm = DataManager.sharedInstance();
 		dbm.addUser(model);
 		// if sucess(){}

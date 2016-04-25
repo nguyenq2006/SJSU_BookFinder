@@ -1,3 +1,4 @@
+import java.io.FileNotFoundException;
 import java.util.*;
 public class AddBookController {
 
@@ -5,9 +6,10 @@ public class AddBookController {
 
 	/**
 	 * Constructing an add book controller to add book info to database
+	 * @throws FileNotFoundException 
 	 * @params - Information of isbn, title, author, price, studentId, hardcover from Book object
 	 */
-	public AddBookController(Map<String, Object> params) 
+	public AddBookController(Map<String, Object> params) throws FileNotFoundException 
 	{
 		String isbn = (String) params.get("isbn");
 		String title = (String) params.get("title");
@@ -27,8 +29,9 @@ public class AddBookController {
 	/**
 	 * Saving Book information to DatabaseManager
 	 * @param modelString - the model to save to database
+	 * @throws FileNotFoundException 
 	 */
-	private void saveToDataBase(Book model){
+	private void saveToDataBase(Book model) throws FileNotFoundException{
 		DataManager dbm = DataManager.sharedInstance();
 		dbm.addBook(model);
 	}
