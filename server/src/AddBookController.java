@@ -80,9 +80,9 @@ public class AddBookController {
 		boolean isHardCover = false;
 		String hardCoverResult = "";
 
-		while(in.hasNextLine())
+		while(in.hasNext())
 		{
-			String line = in.nextLine().trim();
+			String line = in.next().trim();
 			int colon = line.lastIndexOf(':');
 			
 			if(line.contains("ISBN: ")) 
@@ -121,5 +121,5 @@ public class AddBookController {
 		
 		Book book = new Book(ISBN, bookTitle, author, bookPrice, studentID, isHardCover);
 		return book;
-	} 
+	}
 }
