@@ -147,9 +147,13 @@ public class AddBookController {
 			int colon6 = bookLine.indexOf(':');
 			if(bookLine.contains(": ")) {
 				//Get boolean value
-				String booleanValue = bookLine.substring(colon6+1, bookLine.length());
-				isHardCover = Boolean.parseBoolean(booleanValue);
-			}	
+				String booleanValue = bookLine.substring(colon6+1, bookLine.length()).trim();
+				if(booleanValue.equals("true")) {
+					isHardCover = true;
+				} else {
+					isHardCover = false;
+				}
+			}		
 		}
 		
 
