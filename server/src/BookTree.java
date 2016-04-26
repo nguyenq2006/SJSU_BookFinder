@@ -1,7 +1,6 @@
-
 /*BookTree sort the ISBN by the book title
- * it follow the same algorithm as AVLTree
- */
+* it follow the same algorithm as AVLTree
+*/
 public class BookTree {
 	//node class for the tree
 	private class AVLNode{
@@ -40,6 +39,64 @@ public class BookTree {
 	public void insert(Book b){
 		root = 	insert(b, root);
 	}
+	
+	public void delete(Book b) {
+		root = delete(root, b);
+	}
+
+	private AVLNode delete(AVLNode root, Book b) {
+		// TODO Auto-generated method stub
+		AVLNode current = root;
+		if(current == null) {
+			return current;
+		}
+		
+		String newTitle = b.getBookTitle();
+		DataManager dm = DataManager.sharedInstance();
+		Book currentBook = dm.getBook(root.bookISBN);
+		String currentTitle = currentBook.getBookTitle();
+		int comparator = newTitle.compareTo(currentTitle);
+		
+		/*if(current.data > data) {
+			current.left = delete(current.left, data); 
+			else if (current.data < data) {
+			current.right = delete(current.right, data);
+		} else {
+			if(current.left == null && current.right == null) {
+				current = null;
+			} else if (current.right == null) {
+				current = current.left;
+			} else if (current.left == null) {
+				current = current.right;
+			} else {
+				Node temp = findMin(current.right);
+				current.data = temp.data;
+				current.right = delete(current.right, temp.data);
+			}
+		}*/
+		if(comparator > 0) {
+			current.left = delete(current.left, b);
+		} else if (comparator < 0) {
+			current.right = delete(current.right, b);
+		} else {
+			if(current.left == null && current.right == null) {
+				current = null;
+			} else if (current.right == null) {
+				current = current.left;
+			} else if (current.left == null) {
+				current = current.right;
+			} else { //deleting a node with 2 children
+				AVLNode temp = findMin(current.right);
+				current.bookISBN = temp.bookISBN; //UNSURE
+				current.right = delete(current.right, b); //UNSURE
+			}
+		}
+		
+		return balance(current);
+			
+		
+		
+	}
 
 	private AVLNode insert(Book b, AVLNode tree){
 		if(tree ==null){
@@ -60,6 +117,32 @@ public class BookTree {
 		}
 		return balance(tree);
 	}
+	
+	/**
+    * Find the smallest item in the tree.
+    * @return smallest item or null if empty.
+    */
+	public AVLNode findMin()
+	{
+		return findMin(root);
+	}
+    
+   /**
+    * Internal method to find the smallest item in a subtree.
+    * @param t the node that roots the tree.
+    * @return node containing the smallest item.
+    */
+	private AVLNode findMin(AVLNode node) 
+	{
+       AVLNode current = node;
+
+       /* loop down to find the leftmost leaf */
+       while (current.left != null) {
+           current = current.left;
+       }
+       return (current);
+   }
+	
 	private AVLNode balance(AVLNode t )
 	{
 		if( t == null )
