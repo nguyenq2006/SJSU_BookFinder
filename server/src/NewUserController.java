@@ -132,11 +132,11 @@ public class NewUserController extends HttpRequestController{
 			}
 			
 			int pt1 = userLine.indexOf('[');
+			int pt2 = userLine.indexOf(']');
 			if(userLine.contains("[")) {
 				//Get ArrayList
-				String theISBN = userLine.substring(2, userLine.length()-1).trim();
+				String theISBN = userLine.substring(pt1+1, pt2).trim();
 				isbn.add(theISBN);
-				
 			}
 			
 			
