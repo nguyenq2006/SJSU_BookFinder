@@ -63,7 +63,7 @@ public class NewUserController extends HttpRequestController{
 	
 	public static String modelToString(Person m){
 		String resultString = 
-				"Student ID: " + m.getId()
+				"Student ID: " + m.getId() + " "
 				+ "*&#$&!@#"   + " " +
 				"First Name: " + m.getfName() + " "
 				+ "*&#$&!@#" + " " +
@@ -78,60 +78,75 @@ public class NewUserController extends HttpRequestController{
 	 * @param userInfo - the user information in String
 	 * @return p - final conversion of String object -> Person object
 	 */
-	
-	
-	public static Person stringToModel (String userInfo)
+	public static Person stringToModel(String userInfo)
 	{
-		//Convert String to Person Object
 		Scanner in = new Scanner(userInfo);
-		String info = "";
+		
 
-		String firstName = "";
-		String lastName = "";
-		String id = "";
-		int studentID = 0;
-		String isbn = "";
-		ArrayList<String> theISBN = new ArrayList<String>();
-
-		while(in.hasNext())
+		String studentID = "";
+		int id = 0;
+		String fName = "";
+		String lName = "";
+		ArrayList<String> isbn = new ArrayList<String>();
+		
+		while(in.hasNextLine())
 		{
-			String line = in.next().trim();
-			int colon = line.lastIndexOf(':');
-
-			if(line.contains("First Name: "))
-			{
-				firstName = line.substring(colon+1, line.length()).trim();
+			String userLine = in.nextLine().trim();
+			
+			int colon = userLine.indexOf(':');
+			int star = userLine.indexOf('*');
+			if(userLine.contains("Student ID: ")) {
+				//student ID
+				studentID = userLine.substring(colon+1, star).trim();
+				id = Integer.parseInt(studentID);
+				userLine = userLine.replace(studentID, "");
+				userLine = userLine.replace("Student ID:", "");
+				userLine = userLine.replace("*&#$&!@# Fi", "").trim();
 			}
-
-			else if (line.contains("Last Name: "))
-			{
-				lastName = line.substring(colon+1, line.length()).trim();
-
+			
+			
+			
+			int colon1 = userLine.indexOf(':');
+			int star1 = userLine.indexOf('*');
+			if(userLine.contains("rst Name:")) {
+				//first name
+				fName = userLine.substring(colon1+1, star1).trim();
+				
+				userLine = userLine.replace("rst Name: ", "");
+				userLine = userLine.replace(fName, "");
+				userLine = userLine.replace("*&#$&!@# L", "").trim();
+				
 			}
-
-			else {
-				info = line.substring(colon+1, line.length()).trim();
-				for(int i = 0 ; i < info.length(); i++)
-				{
-					if(Character.isDigit(info.charAt(i)) && !info.startsWith("["))
-					{
-						id = info;
-						studentID = Integer.parseInt(id);
-						break;
-					} 
-
-					else if (info.startsWith("[") && info.endsWith("]"))
-					{
-						isbn = info.substring(1, info.length()-1);
-						theISBN.add(isbn);
-						break;
-					} 
-
-				}
+			
+			
+			int colon2 = userLine.indexOf(':');
+			int star2 = userLine.indexOf('*');
+			if(userLine.contains("ast Name:")) {
+				//last name
+				lName = userLine.substring(colon2+1, star2).trim();
+				
+				userLine = userLine.replace("ast Name: ", "");
+				userLine = userLine.replace(lName, "");
+				userLine = userLine.replace("*&#$&!@# ISBN:", "");
+				
 			}
+			
+			int pt1 = userLine.indexOf('[');
+			if(userLine.contains("[")) {
+				//Get ArrayList
+				String theISBN = userLine.substring(2, userLine.length()-1).trim();
+				isbn.add(theISBN);
+				
+			}
+			
+			
+			 
 		}
 		
-		Person p = new Person(firstName, lastName, studentID, theISBN);
+
+
+		Person p = new Person(fName, lName, id, isbn);
+		
 		return p;
 	}
 
