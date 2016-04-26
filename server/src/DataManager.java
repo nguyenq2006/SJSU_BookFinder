@@ -105,7 +105,7 @@ public class DataManager{
 			}
 		}
 
-		in = new Scanner(new File("src/books_data"));
+		in = new Scanner(new File("src/books_data.txt"));
 		while(in.hasNextLine()){
 			String line = in.nextLine();
 			if(!line. equals("")){
