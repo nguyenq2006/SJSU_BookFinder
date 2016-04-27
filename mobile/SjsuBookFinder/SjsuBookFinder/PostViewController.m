@@ -15,6 +15,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *authorTextField;
 @property (strong, nonatomic) IBOutlet UITextField *priceTextField;
 @property (strong, nonatomic) IBOutlet UISwitch *hardCoverSwitch;
+@property (strong, nonatomic) IBOutlet UIButton *postButton;
 
 @end
 
@@ -26,6 +27,9 @@
     self.navigationItem.title = @"Post";
     
     self.priceTextField.delegate = self;
+    
+    self.postButton.layer.cornerRadius = 10;
+    self.postButton.clipsToBounds = YES;
 }
 
 - (void)didReceiveMemoryWarning {
