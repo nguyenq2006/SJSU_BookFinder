@@ -34,6 +34,7 @@
     if ([p.password isEqualToString:self.passwordTextField.text]) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
         NewAccountViewController *vc = (NewAccountViewController *)[storyboard instantiateViewControllerWithIdentifier:@"TabBarViewController"];
+        [defaults setObject:p.sjsuID forKey:@"sessionUserId"];
         [self presentViewController:vc animated:YES completion:nil];
     }
 }

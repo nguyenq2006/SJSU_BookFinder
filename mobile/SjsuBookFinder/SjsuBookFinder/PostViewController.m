@@ -17,6 +17,8 @@
 @property (strong, nonatomic) IBOutlet UISwitch *hardCoverSwitch;
 @property (strong, nonatomic) IBOutlet UIButton *postButton;
 
+@property (strong, nonatomic) NSUserDefaults *defaults;
+
 @end
 
 @implementation PostViewController
@@ -30,6 +32,8 @@
     
     self.postButton.layer.cornerRadius = 10;
     self.postButton.clipsToBounds = YES;
+    
+    _defaults = [NSUserDefaults standardUserDefaults];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,7 +51,7 @@
     NSURLQueryItem *title = [NSURLQueryItem queryItemWithName:@"title" value:_titleTextField.text];
     NSURLQueryItem *author = [NSURLQueryItem queryItemWithName:@"author" value:_authorTextField.text];
     NSURLQueryItem *price = [NSURLQueryItem queryItemWithName:@"price" value:_priceTextField.text];
-    NSURLQueryItem *userId = [NSURLQueryItem queryItemWithName:@"id" value:@"009558549"];
+    NSURLQueryItem *userId = [NSURLQueryItem queryItemWithName:@"id" value:[_defaults objectForKey:@"sessionUserId"]];
     NSURLQueryItem *hardcover = [NSURLQueryItem queryItemWithName:@"hardcover" value:@"true"];
     
     
