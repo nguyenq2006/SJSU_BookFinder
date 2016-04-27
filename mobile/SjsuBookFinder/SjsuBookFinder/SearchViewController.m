@@ -42,11 +42,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - UISearchBarDelegate
+
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
     NSString *searchString = searchBar.text;
     [self makeHTTPRequestForType:segmentedControlItems[[_segmentedControl selectedSegmentIndex]]
                     forParameter:searchString];
+    [searchBar resignFirstResponder];
 }
+
+#pragma mark - Helper Methods
 
 - (void)makeHTTPRequestForType:(NSString *)type forParameter:(NSString *)param{
     NSURLComponents *components = [NSURLComponents componentsWithString:@"http://localhost:9999/a"];

@@ -10,7 +10,7 @@
 #import "NewAccountViewController.h"
 #import "Person.h"
 
-@interface LoginViewController ()
+@interface LoginViewController ()<UITextFieldDelegate>
 @property (strong, nonatomic) IBOutlet UITextField *sjsuIdTextField;
 @property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
 
@@ -21,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.passwordTextField.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,7 +30,7 @@
 }
 - (IBAction)loginButtonPressed:(UIButton *)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-   Person *p = [Person unstringify:[defaults objectForKey:self.sjsuIdTextField.text]];
+    Person *p = [Person unstringify:[defaults objectForKey:self.sjsuIdTextField.text]];
     if ([p.password isEqualToString:self.passwordTextField.text]) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
         NewAccountViewController *vc = (NewAccountViewController *)[storyboard instantiateViewControllerWithIdentifier:@"TabBarViewController"];
@@ -42,6 +43,13 @@
     NewAccountViewController *vc = (NewAccountViewController *)[storyboard instantiateViewControllerWithIdentifier:@"NewAccountViewController"];
     [self presentViewController:vc animated:YES completion:nil];
 }
+
+#pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [self loginButtonPressed:nil];
+    return YES;
+}
+
 
 /*
 #pragma mark - Navigation

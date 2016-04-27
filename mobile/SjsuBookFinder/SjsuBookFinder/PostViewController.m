@@ -8,7 +8,7 @@
 
 #import "PostViewController.h"
 
-@interface PostViewController ()
+@interface PostViewController ()<UITextFieldDelegate>
 @property (strong, nonatomic) IBOutlet UITextField *isbnTextField;
 
 @property (strong, nonatomic) IBOutlet UITextField *titleTextField;
@@ -24,6 +24,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"Post";
+    
+    self.priceTextField.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,6 +58,13 @@
     
     NSString *responseStr = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
     NSLog(@"%@",responseStr);
+}
+
+#pragma mark - UITextFieldDelegate
+
+-(BOOL) textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 /*
