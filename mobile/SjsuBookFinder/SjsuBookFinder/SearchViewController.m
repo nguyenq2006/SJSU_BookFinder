@@ -46,9 +46,18 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
     NSString *searchString = searchBar.text;
-    [self makeHTTPRequestForType:segmentedControlItems[[_segmentedControl selectedSegmentIndex]]
-                    forParameter:searchString];
-    [searchBar resignFirstResponder];
+    if ([_segmentedControl selectedSegmentIndex] == UISegmentedControlNoSegment) {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Please select search query type!" message:@"Choose Title or ISBN" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        [alertController addAction:defaultAction];
+        [self presentViewController:alertController animated:YES completion:nil];
+    }else{
+        [self makeHTTPRequestForType:segmentedControlItems[[_segmentedControl selectedSegmentIndex]]
+                        forParameter:searchString];
+        [searchBar resignFirstResponder];
+    }
 }
 
 #pragma mark - Helper Methods
