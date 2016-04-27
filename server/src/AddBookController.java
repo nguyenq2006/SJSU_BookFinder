@@ -82,7 +82,6 @@ public class AddBookController {
 		while(in.hasNextLine())
 		{
 			String bookLine = in.nextLine().trim();
-			System.out.println(bookLine);
 			int colon = bookLine.indexOf(':');
 			int star = bookLine.indexOf('*');
 			if(bookLine.contains("ISBN: ")) {

@@ -65,8 +65,12 @@ public class DataManager{
 	 * @param isbn - book's ISBN number
 	 * @return book object
 	 */
-	public Book getBook(String isbn){
+	public Book getBookISBN(String isbn){
 		return isbnTree.get(isbn);
+	}
+	
+	public Book getBook(String book){
+		
 	}
 	
 	/**
@@ -105,7 +109,7 @@ public class DataManager{
 			}
 		}
 
-		in = new Scanner(new File("src/books_data.txt"));
+		in = new Scanner(new File("src/books_data"));
 		while(in.hasNextLine()){
 			String line = in.nextLine();
 			if(!line. equals("")){
