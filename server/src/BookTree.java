@@ -193,4 +193,24 @@ public class BookTree {
 		n.right = rotateWithLeftChild(n.right);
 		return rotateWithRightChild(n);
 	}
+	
+	public String getBook(String bookTitle){
+		return get(bookTitle, root);
+	}
+	
+	private String get(String bookTitle, AVLNode n){
+		DataManager dm = DataManager.sharedInstance();
+		Book b = dm.getBookISBN(n.bookISBN);
+		String currentTitle = b.getBookTitle();
+		String isbn = "";
+		int comp = bookTitle.compareTo(currentTitle);
+		if(comp == 0)
+			isbn = n.bookISBN;
+		else if(comp < 0)
+			isbn = get(bookTitle, n.left);
+		else if(comp > 0)
+			isbn = get(bookTitle, n.right);
+		return isbn;
+		
+	}
 }

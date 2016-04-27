@@ -1,3 +1,1 @@
 ISBN: 91919191911 *&#$&!@# Book Title: DataStructAndAlgo *&#$&!@# Author: Horstmann *&#$&!@# Price: 20.0 *&#$&!@# Student ID: 9558549 *&#$&!@# HardCover?: true 
-ISBN: 12345678999 *&#$&!@# Book Title:  *&#$&!@# Author:  *&#$&!@# Price: 0.0 *&#$&!@# Student ID: 0 *&#$&!@# HardCover?: false 
-
