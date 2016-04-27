@@ -118,10 +118,19 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *selectedItem = [searchResults objectAtIndex:indexPath.row];
     
-    UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"Purchase Book?" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Purchase book?" message:@"Confirm that you would like to purchase this book." preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *alertActionPurchase = [UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
        //make HTTP Request that removes book.
     }];
     
+    UIAlertAction *alertActionCancel = [UIAlertAction actionWithTitle:@"No" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    
+    [alertController addAction:alertActionPurchase];
+    [alertController addAction:alertActionCancel];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 /*
