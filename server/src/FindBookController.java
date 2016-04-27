@@ -14,32 +14,19 @@ public class FindBookController {
 		DataManager dm = DataManager.sharedInstance();
 		String isbn = "" + params.get("isbn");
 		String title = "" + params.get("title");
+		Book b = null;
 		
 		if(!isbn.equals("")){
-			dm.getBookISBN(isbn);
+			b = dm.getBookISBN(isbn);
 		}
 		else if(!title.equals("")){
-			dm.getBook(title);
+			b = dm.getBook(title);
 		}
 
-		response = "Student ID: " + user.getId()  
-				+ "*&#$&!@#"   + " " +
-				"First Name: " + user.getfName() + " "
-				+ "*&#$&!@#" + " " +
-				"Last Name: " + user.getlName() + " "
-				+ "*&#$&!@#" + " " +
-				"ISBN:" + user.getIsbn() + " " + "\n" +
-				"ISBN: " + model.getIsbn() 
-				+ "*&#$&!@#"   + " " +
-				"Book Title: " + model.getBookTitle() + " " 
-				+ "*&#$&!@#" + " " +
-				"Author: " + model.getAuthor() + " "
-				+ "*&#$&!@#" + " " +
-				"Price: " + model.getPrice() + " "
-				+ "*&#$&!@#" + " " +
-				"Student ID: " + model.getID() + " " 
-				+ "*&#$&!@#" + " " + 
-				"HardCover?: " + model.isHardCover() + " " + "\n";
+		response = "Student ID: " + b.getID()
+				+ "*&#$&!@# " +
+				"ISBN:" + b.getIsbn() + "*&#$&!@# " + 
+				"Book Title: " + b.getBookTitle();
 
 
 		//Save book information to database

@@ -86,13 +86,13 @@ public class DataManager{
 	 * @throws FileNotFoundException
 	 */
 	public void save() throws FileNotFoundException{
-		PrintStream out = new PrintStream("src/users_data.txt");
+		PrintStream out = new PrintStream("users_data.txt");
 		for(long id : users.keySet()){
 			Person p = users.get(id);
 			out.print(NewUserController.modelToString(p));;
 		}
 
-		out = new PrintStream("src/books_data.txt");
+		out = new PrintStream("books_data.txt");
 		for(String isbn : isbnTree.keySet()){
 			Book b = isbnTree.get(isbn);
 			out.print(AddBookController.modelToString(b));
@@ -100,7 +100,7 @@ public class DataManager{
 	}
 
 	public void load() throws FileNotFoundException{
-		Scanner in = new Scanner(new File("src/users_data.txt"));
+		Scanner in = new Scanner(new File("users_data.txt"));
 		while(in.hasNextLine()){
 			String line = in.nextLine();
 			if(!line. equals("")){
@@ -108,10 +108,10 @@ public class DataManager{
 				addUser(p);
 			}
 		}
-
-		in = new Scanner(new File("src/books_data.txt"));
-		while(in.hasNextLine()){
-			String line = in.nextLine();
+		in.close();
+		Scanner in2 = new Scanner(new File("books_data.txt"));
+		while(in2.hasNextLine()){
+			String line = in2.nextLine();
 			if(!line. equals("")){
 				Book b = AddBookController.stringToModel(line);
 				addBook(b);
