@@ -26,7 +26,7 @@
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"Post";
     
-    self.priceTextField.delegate = self;
+    self.authorTextField.delegate = self;
     
     self.postButton.layer.cornerRadius = 10;
     self.postButton.clipsToBounds = YES;
