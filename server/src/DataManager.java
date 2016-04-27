@@ -70,7 +70,7 @@ public class DataManager{
 	}
 	
 	public Book getBook(String book){
-		
+		return null;
 	}
 	
 	/**
@@ -86,13 +86,13 @@ public class DataManager{
 	 * @throws FileNotFoundException
 	 */
 	public void save() throws FileNotFoundException{
-		PrintStream out = new PrintStream("users_data.txt");
+		PrintStream out = new PrintStream("src/users_data.txt");
 		for(long id : users.keySet()){
 			Person p = users.get(id);
 			out.print(NewUserController.modelToString(p));;
 		}
 
-		out = new PrintStream("books_data.txt");
+		out = new PrintStream("src/books_data.txt");
 		for(String isbn : isbnTree.keySet()){
 			Book b = isbnTree.get(isbn);
 			out.print(AddBookController.modelToString(b));
@@ -109,7 +109,7 @@ public class DataManager{
 			}
 		}
 
-		in = new Scanner(new File("src/books_data"));
+		in = new Scanner(new File("src/books_data.txt"));
 		while(in.hasNextLine()){
 			String line = in.nextLine();
 			if(!line. equals("")){

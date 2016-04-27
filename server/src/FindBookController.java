@@ -12,19 +12,15 @@ public class FindBookController {
 	public FindBookController(Map<String, Object> params) {
 
 		DataManager dm = DataManager.sharedInstance();
-		TreeMap<String, Book> isbnTreeMap = (TreeMap<String, Book>) dm.getIsbnTreeMap();
+		String isbn = "" + params.get("isbn");
+		String title = "" + params.get("title");
 		
-		//Loop through the keySet, if it matches the DataManager isbnTree.keySet, retrieve it.
-		for(String isbn: params.keySet()) {
-			if (params.keySet().equals(isbnTreeMap.keySet())) {
-				model = dm.getBook(isbn);
-				allBook.add(model);
-			} else {
-				System.out.println("This ISBN does not match the Book you are looking for");
-				break;
-			}
+		if(!isbn.equals("")){
+			dm.getBookISBN(isbn);
 		}
-
+		else if(!title.equals("")){
+			dm.getBook(title);
+		}
 
 		response = "Student ID: " + user.getId()  
 				+ "*&#$&!@#"   + " " +
