@@ -69,19 +69,18 @@ public class AddBookController {
 	public static Book stringToModel(String bookInfo)
 	{
 		Scanner in = new Scanner(bookInfo);
-		
-
+	
 		String ISBN = "";
 		String bookTitle = "";
 		String author = "";
 		double bookPrice = 0;
 		long studentID = 0;
 		boolean isHardCover = false;
-		String hardCoverResult = "";
 		
 		while(in.hasNextLine())
 		{
 			String bookLine = in.nextLine().trim();
+			System.out.println(bookLine);
 			int colon = bookLine.indexOf(':');
 			int star = bookLine.indexOf('*');
 			if(bookLine.contains("ISBN: ")) {
@@ -146,14 +145,10 @@ public class AddBookController {
 			int colon6 = bookLine.indexOf(':');
 			if(bookLine.contains(": ")) {
 				//Get boolean value
-				String booleanValue = bookLine.substring(colon6+1, bookLine.length()).trim();
-				if(booleanValue.equals("true")) {
-					isHardCover = true;
-				} else {
-					isHardCover = false;
-				}
-			}		
-		}
+				String booleanValue = bookLine.substring(colon6+1, bookLine.length());
+				isHardCover = Boolean.parseBoolean(booleanValue);
+			}	
+		} in.close();
 		
 
 
