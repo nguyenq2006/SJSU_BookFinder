@@ -74,7 +74,7 @@ public class FindBookController {
 		return resultString;
 	}
 
-	/**
+/**
 	 * Converting String object to Book object
 	 * @param bookInfo - the book information in String 
 	 * @return bookObject - final conversion of String object -> Book object
@@ -83,15 +83,13 @@ public class FindBookController {
 	public static Book stringToModel(String bookInfo)
 	{
 		Scanner in = new Scanner(bookInfo);
-		
-
+	
 		String ISBN = "";
 		String bookTitle = "";
 		String author = "";
 		double bookPrice = 0;
 		long studentID = 0;
 		boolean isHardCover = false;
-		String hardCoverResult = "";
 		
 		while(in.hasNextLine())
 		{
@@ -161,23 +159,16 @@ public class FindBookController {
 			int colon6 = bookLine.indexOf(':');
 			if(bookLine.contains(": ")) {
 				//Get boolean value
-				String booleanValue = bookLine.substring(colon6+1, bookLine.length()).trim();
-				if(booleanValue.equals("true")) {
-					isHardCover = true;
-				} else {
-					isHardCover = false;
-				}
-
+				String booleanValue = bookLine.substring(colon6+1, bookLine.length());
+				isHardCover = Boolean.parseBoolean(booleanValue);
 			}	
-		}
+		} in.close();
 		
 
 
 		Book book = new Book(ISBN, bookTitle, author, bookPrice, studentID, isHardCover);
 		return book;
 	}
-
-
 	
 	public String getResponse(){
 		return this.response;
