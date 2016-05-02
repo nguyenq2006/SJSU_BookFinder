@@ -26,9 +26,21 @@
 
 -(void)parseResponse{
     NSArray<NSString *> *responseArray = [_response componentsSeparatedByString:@"*&#$&!@#"];
-    _sjsuId = [responseArray[0] stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    _isbn = [responseArray[1] stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    _bookTitle = [responseArray[2] stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    if ([responseArray[0] stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]] != nil) {
+        _sjsuId = [responseArray[0] stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    }
+    
+    if ([responseArray[1] stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]]) {
+        _isbn = [responseArray[1] stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    }
+    
+    if ([responseArray[2] stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]] != nil) {
+        _bookTitle = [responseArray[2] stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    }
+    
+    if ([responseArray[3] stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]] != nil) {
+        _price = [responseArray[3] stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    }
 }
 
 @end

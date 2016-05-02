@@ -26,10 +26,11 @@
 }
 
 -(void)testParse{
-    NSString *response = @"0933834 *&#$&!@# 3847837483 *&#$&!@# DataStructsAndAlgo";
+    NSString *response = @"0933834 *&#$&!@# 3847837483 *&#$&!@# DataStructsAndAlgo *&#$&!@# 20.00";
     FindBookParser *parser = [[FindBookParser alloc]initWithServerResponse:response];
     XCTAssertTrue([@"0933834" isEqualToString:parser.sjsuId]);
     XCTAssertTrue([@"3847837483" isEqualToString:parser.isbn]);
     XCTAssertTrue([@"DataStructsAndAlgo" isEqualToString:parser.bookTitle]);
+    XCTAssertTrue([@"20.00" isEqualToString:parser.price]);
 }
 @end
