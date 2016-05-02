@@ -75,7 +75,8 @@ public class DataManager{
 	 * @return the book
 	 */
 	public Book getBook(String book){
-		return null;
+		String isbn = titleTree.getBook(book);
+		return isbnTree.get(isbn);
 	}
 	
 	/**
@@ -101,19 +102,20 @@ public class DataManager{
 			Person p = users.get(id);
 			out.print(NewUserController.modelToString(p));;
 		}
-
-		out = new PrintStream("books_data.txt");
+		out.close();
+		PrintStream out2 = new PrintStream("books_data.txt");
 		for(String isbn : isbnTree.keySet()){
 			Book b = isbnTree.get(isbn);
-			out.print(AddBookController.modelToString(b));
+			out2.print(AddBookController.modelToString(b));
 		}
+		out2.close();
 	}
 
 	/**
 	 * load the data from a text file
 	 * @throws FileNotFoundException if the file not found
 	 */
-	public void load() throws FileNotFoundException{
+	public void loadUserData() throws FileNotFoundException{
 		Scanner in = new Scanner(new File("users_data.txt"));
 		while(in.hasNextLine()){
 			String line = in.nextLine();
@@ -123,6 +125,9 @@ public class DataManager{
 			}
 		}
 		in.close();
+	}
+	
+	public void loadBookData() throws FileNotFoundException{
 		Scanner in2 = new Scanner(new File("books_data.txt"));
 		while(in2.hasNextLine()){
 			String line = in2.nextLine();
@@ -131,5 +136,6 @@ public class DataManager{
 				addBook(b);
 			}
 		}
+		in2.close();
 	}
 }

@@ -16,10 +16,10 @@ public class FindBookController {
 		String title = "" + params.get("title");
 		Book b = null;
 		
-		if(!isbn.equals("")){
+		if(!isbn.equals("null")){
 			b = dm.getBookISBN(isbn);
 		}
-		else if(!title.equals("")){
+		else if(!title.equals("null")){
 			b = dm.getBook(title);
 		}
 
