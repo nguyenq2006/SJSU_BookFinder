@@ -12,6 +12,7 @@
 @property (strong, nonatomic) NSString *sjsuId;
 @property (strong, nonatomic) NSString *isbn;
 @property (strong, nonatomic) NSString *bookTitle;
+@property (strong, nonatomic) NSString *price;
 
 -(instancetype)initWithServerResponse:(NSString *)response;
 
