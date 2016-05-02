@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		121D23EC1CD7AC5D00CF8C3D /* FindBookParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 121D23EB1CD7AC5D00CF8C3D /* FindBookParser.m */; };
 		12820FAC1C8759E700D8CEDC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 12820FAB1C8759E700D8CEDC /* main.m */; };
 		12820FAF1C8759E700D8CEDC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 12820FAE1C8759E700D8CEDC /* AppDelegate.m */; };
 		12820FB21C8759E700D8CEDC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12820FB11C8759E700D8CEDC /* ViewController.m */; };
@@ -41,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		121D23EA1CD7AC5D00CF8C3D /* FindBookParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindBookParser.h; sourceTree = "<group>"; };
+		121D23EB1CD7AC5D00CF8C3D /* FindBookParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindBookParser.m; sourceTree = "<group>"; };
 		12820FA71C8759E700D8CEDC /* SjsuBookFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SjsuBookFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12820FAB1C8759E700D8CEDC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		12820FAD1C8759E700D8CEDC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -97,6 +100,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		121D23E91CD7AC4400CF8C3D /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				121D23EA1CD7AC5D00CF8C3D /* FindBookParser.h */,
+				121D23EB1CD7AC5D00CF8C3D /* FindBookParser.m */,
+			);
+			name = Parser;
+			sourceTree = "<group>";
+		};
 		12820F9E1C8759E600D8CEDC = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +132,7 @@
 		12820FA91C8759E700D8CEDC /* SjsuBookFinder */ = {
 			isa = PBXGroup;
 			children = (
+				121D23E91CD7AC4400CF8C3D /* Parser */,
 				87CC2F6E1C94D318001C1B23 /* Controllers */,
 				87CC2F6D1C94D311001C1B23 /* Views */,
 				87CC2F6C1C94D30A001C1B23 /* Models */,
@@ -338,6 +351,7 @@
 				1293EB1A1C97197D00E8C9C9 /* NewAccountViewController.m in Sources */,
 				1293EB1D1C971C1800E8C9C9 /* Person.m in Sources */,
 				12820FAF1C8759E700D8CEDC /* AppDelegate.m in Sources */,
+				121D23EC1CD7AC5D00CF8C3D /* FindBookParser.m in Sources */,
 				12B1943E1CCC2D8300C76025 /* ProfileViewController.m in Sources */,
 				12B1943B1CCC2D5800C76025 /* SearchViewController.m in Sources */,
 				1293EB201C971E7000E8C9C9 /* TabBarViewController.m in Sources */,
