@@ -19,25 +19,69 @@ import com.sun.net.httpserver.HttpServer;
 
 public class HTTPServer {
 
+	private static String response = "";
+
 	public static void startServer() throws IOException {
 		HttpServer server = HttpServer.create(new InetSocketAddress(9999), 0);
-		HttpContext context = server.createContext("/test", new MyHttpHandler());
+		
+		RequestHandler requestHandler = new RequestHandler();
+
+		HttpContext context = server.createContext("/a", requestHandler);
 		context.getFilters().add(new ParameterFilter());
 		server.start();
 	}
 
-	static class MyHttpHandler implements HttpHandler {
+	static class RequestHandler implements HttpHandler {
 		 @Override
 		    public void handle(HttpExchange exchange) throws IOException {
 		        @SuppressWarnings("unchecked")
-		        //http://localhost:9999/test?name=john&bookid=13784794535
+		        //localhost:9999/a?requesttype=newuser&firstname=john&lastname=smith&id=009558549
 				Map<String, Object> params =
 		           (Map<String, Object>)exchange.getAttribute("parameters");
-		        
-		        for(Object key: params.keySet()){
-		        	System.out.println(key + ":" + params.get(key));
+
+		        String requestType = "";
+		        if (params.containsKey("requesttype")) {
+		        	requestType = (String) params.get("requesttype");
+		        	params.remove("requesttype");
 		        }
-	            String response = "This is the response";
+
+		        switch(requestType){
+		        	case "newuser":
+		        		System.out.println("Request Type is new user");
+
+		        		NewUserController newUser = new NewUserController(params);
+		        		response = newUser.getResponse();
+		        		break;
+
+		        	case "addbook":
+		        		System.out.println("Request Type is add book");
+
+		        		AddBookController addBook = new AddBookController(params);
+		        		response = "Your books have been added to the database!";
+		        		break;
+
+		        	case "sellbook":
+		        		System.out.println("Request Type is sell book");
+
+		        		SellBookController sellBook = new SellBookController(params);
+		        		response = "Your book has been sold";
+		        		break;
+
+		        	case "findbook":
+		        		System.out.println("Request Type is find book");
+
+		        		FindBookController findBook = new FindBookController(params);
+		        		response = findBook.getResponse();
+		        		break;
+
+		        	default:
+		        		System.out.println("Request Type is undefined");
+		        }
+
+		        for(Object key: params.keySet()){
+		        	//System.out.println(key + ":" + params.get(key));
+		        }
+
 	            exchange.sendResponseHeaders(200, response.length());
 	            OutputStream os = exchange.getResponseBody();
 	            os.write(response.getBytes());

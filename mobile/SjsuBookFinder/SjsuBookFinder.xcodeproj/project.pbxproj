@@ -7,14 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		121D23EC1CD7AC5D00CF8C3D /* FindBookParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 121D23EB1CD7AC5D00CF8C3D /* FindBookParser.m */; };
+		121D23EE1CD7B64400CF8C3D /* FindBookParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 121D23ED1CD7B64400CF8C3D /* FindBookParserTests.m */; };
 		12820FAC1C8759E700D8CEDC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 12820FAB1C8759E700D8CEDC /* main.m */; };
 		12820FAF1C8759E700D8CEDC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 12820FAE1C8759E700D8CEDC /* AppDelegate.m */; };
 		12820FB21C8759E700D8CEDC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12820FB11C8759E700D8CEDC /* ViewController.m */; };
-		12820FB51C8759E700D8CEDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12820FB31C8759E700D8CEDC /* Main.storyboard */; };
 		12820FB71C8759E700D8CEDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12820FB61C8759E700D8CEDC /* Assets.xcassets */; };
-		12820FBA1C8759E700D8CEDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12820FB81C8759E700D8CEDC /* LaunchScreen.storyboard */; };
 		12820FC51C8759E700D8CEDC /* SjsuBookFinderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 12820FC41C8759E700D8CEDC /* SjsuBookFinderTests.m */; };
 		12820FD01C8759E700D8CEDC /* SjsuBookFinderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 12820FCF1C8759E700D8CEDC /* SjsuBookFinderUITests.m */; };
+		1293EB171C97196300E8C9C9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1293EB161C97196300E8C9C9 /* LoginViewController.m */; };
+		1293EB1A1C97197D00E8C9C9 /* NewAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1293EB191C97197D00E8C9C9 /* NewAccountViewController.m */; };
+		1293EB1D1C971C1800E8C9C9 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 1293EB1C1C971C1800E8C9C9 /* Person.m */; };
+		1293EB201C971E7000E8C9C9 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1293EB1F1C971E7000E8C9C9 /* TabBarViewController.m */; };
+		12B1943B1CCC2D5800C76025 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12B1943A1CCC2D5800C76025 /* SearchViewController.m */; };
+		12B1943E1CCC2D8300C76025 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12B1943D1CCC2D8300C76025 /* ProfileViewController.m */; };
+		12D9BAA21CCEC307009AB968 /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D9BAA11CCEC307009AB968 /* PostViewController.m */; };
+		87E47E691C9506D20014431E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87E47E681C9506D20014431E /* MainStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,15 +43,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		121D23EA1CD7AC5D00CF8C3D /* FindBookParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindBookParser.h; sourceTree = "<group>"; };
+		121D23EB1CD7AC5D00CF8C3D /* FindBookParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindBookParser.m; sourceTree = "<group>"; };
+		121D23ED1CD7B64400CF8C3D /* FindBookParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindBookParserTests.m; sourceTree = "<group>"; };
 		12820FA71C8759E700D8CEDC /* SjsuBookFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SjsuBookFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12820FAB1C8759E700D8CEDC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		12820FAD1C8759E700D8CEDC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		12820FAE1C8759E700D8CEDC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		12820FB01C8759E700D8CEDC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		12820FB11C8759E700D8CEDC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		12820FB41C8759E700D8CEDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		12820FB61C8759E700D8CEDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		12820FB91C8759E700D8CEDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12820FBB1C8759E700D8CEDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12820FC01C8759E700D8CEDC /* SjsuBookFinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SjsuBookFinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		12820FC41C8759E700D8CEDC /* SjsuBookFinderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SjsuBookFinderTests.m; sourceTree = "<group>"; };
@@ -51,6 +60,21 @@
 		12820FCB1C8759E700D8CEDC /* SjsuBookFinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SjsuBookFinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		12820FCF1C8759E700D8CEDC /* SjsuBookFinderUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SjsuBookFinderUITests.m; sourceTree = "<group>"; };
 		12820FD11C8759E700D8CEDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1293EB151C97196300E8C9C9 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		1293EB161C97196300E8C9C9 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		1293EB181C97197D00E8C9C9 /* NewAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAccountViewController.h; sourceTree = "<group>"; };
+		1293EB191C97197D00E8C9C9 /* NewAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAccountViewController.m; sourceTree = "<group>"; };
+		1293EB1B1C971C1800E8C9C9 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		1293EB1C1C971C1800E8C9C9 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		1293EB1E1C971E7000E8C9C9 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
+		1293EB1F1C971E7000E8C9C9 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
+		12B194391CCC2D5800C76025 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		12B1943A1CCC2D5800C76025 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		12B1943C1CCC2D8300C76025 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		12B1943D1CCC2D8300C76025 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		12D9BAA01CCEC307009AB968 /* PostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostViewController.h; sourceTree = "<group>"; };
+		12D9BAA11CCEC307009AB968 /* PostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostViewController.m; sourceTree = "<group>"; };
+		87E47E681C9506D20014431E /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +102,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		121D23E91CD7AC4400CF8C3D /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				121D23EA1CD7AC5D00CF8C3D /* FindBookParser.h */,
+				121D23EB1CD7AC5D00CF8C3D /* FindBookParser.m */,
+			);
+			name = Parser;
+			sourceTree = "<group>";
+		};
 		12820F9E1C8759E600D8CEDC = {
 			isa = PBXGroup;
 			children = (
@@ -101,14 +134,10 @@
 		12820FA91C8759E700D8CEDC /* SjsuBookFinder */ = {
 			isa = PBXGroup;
 			children = (
-				12820FAD1C8759E700D8CEDC /* AppDelegate.h */,
-				12820FAE1C8759E700D8CEDC /* AppDelegate.m */,
-				12820FB01C8759E700D8CEDC /* ViewController.h */,
-				12820FB11C8759E700D8CEDC /* ViewController.m */,
-				12820FB31C8759E700D8CEDC /* Main.storyboard */,
-				12820FB61C8759E700D8CEDC /* Assets.xcassets */,
-				12820FB81C8759E700D8CEDC /* LaunchScreen.storyboard */,
-				12820FBB1C8759E700D8CEDC /* Info.plist */,
+				121D23E91CD7AC4400CF8C3D /* Parser */,
+				87CC2F6E1C94D318001C1B23 /* Controllers */,
+				87CC2F6D1C94D311001C1B23 /* Views */,
+				87CC2F6C1C94D30A001C1B23 /* Models */,
 				12820FAA1C8759E700D8CEDC /* Supporting Files */,
 			);
 			path = SjsuBookFinder;
@@ -117,6 +146,10 @@
 		12820FAA1C8759E700D8CEDC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				12820FB61C8759E700D8CEDC /* Assets.xcassets */,
+				12820FBB1C8759E700D8CEDC /* Info.plist */,
+				12820FAD1C8759E700D8CEDC /* AppDelegate.h */,
+				12820FAE1C8759E700D8CEDC /* AppDelegate.m */,
 				12820FAB1C8759E700D8CEDC /* main.m */,
 			);
 			name = "Supporting Files";
@@ -127,6 +160,7 @@
 			children = (
 				12820FC41C8759E700D8CEDC /* SjsuBookFinderTests.m */,
 				12820FC61C8759E700D8CEDC /* Info.plist */,
+				121D23ED1CD7B64400CF8C3D /* FindBookParserTests.m */,
 			);
 			path = SjsuBookFinderTests;
 			sourceTree = "<group>";
@@ -138,6 +172,52 @@
 				12820FD11C8759E700D8CEDC /* Info.plist */,
 			);
 			path = SjsuBookFinderUITests;
+			sourceTree = "<group>";
+		};
+		87CC2F6C1C94D30A001C1B23 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1293EB1B1C971C1800E8C9C9 /* Person.h */,
+				1293EB1C1C971C1800E8C9C9 /* Person.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		87CC2F6D1C94D311001C1B23 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				87CC2F6F1C94D34C001C1B23 /* Storyboards */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		87CC2F6E1C94D318001C1B23 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				12820FB01C8759E700D8CEDC /* ViewController.h */,
+				12820FB11C8759E700D8CEDC /* ViewController.m */,
+				1293EB151C97196300E8C9C9 /* LoginViewController.h */,
+				1293EB161C97196300E8C9C9 /* LoginViewController.m */,
+				1293EB181C97197D00E8C9C9 /* NewAccountViewController.h */,
+				1293EB191C97197D00E8C9C9 /* NewAccountViewController.m */,
+				1293EB1E1C971E7000E8C9C9 /* TabBarViewController.h */,
+				1293EB1F1C971E7000E8C9C9 /* TabBarViewController.m */,
+				12B194391CCC2D5800C76025 /* SearchViewController.h */,
+				12B1943A1CCC2D5800C76025 /* SearchViewController.m */,
+				12B1943C1CCC2D8300C76025 /* ProfileViewController.h */,
+				12B1943D1CCC2D8300C76025 /* ProfileViewController.m */,
+				12D9BAA01CCEC307009AB968 /* PostViewController.h */,
+				12D9BAA11CCEC307009AB968 /* PostViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		87CC2F6F1C94D34C001C1B23 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				87E47E681C9506D20014431E /* MainStoryboard.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +287,7 @@
 				TargetAttributes = {
 					12820FA61C8759E700D8CEDC = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = KSNH7VRKBE;
 					};
 					12820FBF1C8759E700D8CEDC = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -243,9 +324,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12820FBA1C8759E700D8CEDC /* LaunchScreen.storyboard in Resources */,
+				87E47E691C9506D20014431E /* MainStoryboard.storyboard in Resources */,
 				12820FB71C8759E700D8CEDC /* Assets.xcassets in Resources */,
-				12820FB51C8759E700D8CEDC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,8 +351,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				12820FB21C8759E700D8CEDC /* ViewController.m in Sources */,
+				1293EB1A1C97197D00E8C9C9 /* NewAccountViewController.m in Sources */,
+				1293EB1D1C971C1800E8C9C9 /* Person.m in Sources */,
 				12820FAF1C8759E700D8CEDC /* AppDelegate.m in Sources */,
+				121D23EC1CD7AC5D00CF8C3D /* FindBookParser.m in Sources */,
+				12B1943E1CCC2D8300C76025 /* ProfileViewController.m in Sources */,
+				12B1943B1CCC2D5800C76025 /* SearchViewController.m in Sources */,
+				1293EB201C971E7000E8C9C9 /* TabBarViewController.m in Sources */,
 				12820FAC1C8759E700D8CEDC /* main.m in Sources */,
+				12D9BAA21CCEC307009AB968 /* PostViewController.m in Sources */,
+				1293EB171C97196300E8C9C9 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				121D23EE1CD7B64400CF8C3D /* FindBookParserTests.m in Sources */,
 				12820FC51C8759E700D8CEDC /* SjsuBookFinderTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,25 +395,6 @@
 			targetProxy = 12820FCC1C8759E700D8CEDC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		12820FB31C8759E700D8CEDC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				12820FB41C8759E700D8CEDC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		12820FB81C8759E700D8CEDC /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				12820FB91C8759E700D8CEDC /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		12820FD21C8759E700D8CEDC /* Debug */ = {
@@ -411,10 +481,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SjsuBookFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ravin.SjsuBookFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -422,10 +494,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SjsuBookFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ravin.SjsuBookFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -496,6 +570,7 @@
 				12820FD61C8759E700D8CEDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		12820FD71C8759E700D8CEDC /* Build configuration list for PBXNativeTarget "SjsuBookFinderTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +579,7 @@
 				12820FD91C8759E700D8CEDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		12820FDA1C8759E700D8CEDC /* Build configuration list for PBXNativeTarget "SjsuBookFinderUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +588,7 @@
 				12820FDC1C8759E700D8CEDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
