@@ -26,7 +26,8 @@ public class FindBookController {
 		response = b.getID()
 				+ "*&#$&!@# " + 
 				b.getIsbn() + "*&#$&!@# " + 
-				b.getBookTitle();
+				b.getBookTitle() + "*&#$&!@# " +
+				b.getPrice();
 
 
 		//Save book information to database
