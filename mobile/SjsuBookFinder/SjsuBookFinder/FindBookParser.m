@@ -8,6 +8,21 @@
 
 #import "FindBookParser.h"
 
+@interface FindBookParser()
+@property (strong, nonatomic) NSString *response;
+@end
+
 @implementation FindBookParser
+
+-(id)init{
+    return self;
+}
+
+-(instancetype)initWithServerResponse:(NSString *)response{
+    _response = response;
+    return self;
+}
+
+
 
 @end
