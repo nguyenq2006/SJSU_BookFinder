@@ -124,7 +124,13 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"result"];
     }
-    cell.textLabel.text = [searchResults objectAtIndex:indexPath.row];
+    FindBookParser *locParser = [[FindBookParser alloc]initWithServerResponse:[searchResults objectAtIndex:indexPath.row]];
+    cell.textLabel.text = locParser.bookTitle;
+    
+    //Make UILabel for price
+    UILabel *priceLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
+    priceLabel.text = locParser.price;
+    cell.accessoryView = priceLabel;
     
     return cell;
 }
