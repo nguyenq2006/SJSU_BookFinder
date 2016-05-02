@@ -1,0 +1,1 @@
+ISBN: 1234567890 *&#$&!@# Book Title: ABC *&#$&!@# Author: Alpha *&#$&!@# Price: 12.0 *&#$&!@# Student ID: 1 *&#$&!@# HardCover?: true 

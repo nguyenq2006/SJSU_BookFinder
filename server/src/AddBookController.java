@@ -33,7 +33,7 @@ public class AddBookController {
 	 */
 	private void saveToDataBase(Book model) throws FileNotFoundException{
 		DataManager dbm = DataManager.sharedInstance();
-		dbm.addBook(model);
+		dbm.addBook(model, false);
 	}
 
 
@@ -80,7 +80,7 @@ public class AddBookController {
 		while(in.hasNextLine())
 		{
 			String bookLine = in.nextLine().trim();
-			System.out.println(bookLine);
+//			System.out.println(bookLine);
 			int colon = bookLine.indexOf(':');
 			int star = bookLine.indexOf('*');
 			if(bookLine.contains("ISBN: ")) {

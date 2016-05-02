@@ -31,23 +31,24 @@ public class DataManager{
 	/**
 	 * add new user to the database
 	 * @param newUser a Person object(new user)
+	 * @param first true if it's a initial load
 	 * @throws FileNotFoundException 
 	 */
-	public void addUser(Person newUser) throws FileNotFoundException{
+	public void addUser(Person newUser, boolean first) throws FileNotFoundException{
 		long userID = newUser.getId();
 		if(!users.containsKey(userID)){
 			users.put(userID, newUser);
 		}
-		save();
+		if(!first) save();
 	}
 
 	/**
 	 * add new book to the database
 	 * @param newBook new Book object
-	 * @param userID the user ID
+	 * @param first true if it's a initial load
 	 * @throws FileNotFoundException 
 	 */
-	public void addBook(Book newBook) throws FileNotFoundException{
+	public void addBook(Book newBook, boolean first) throws FileNotFoundException{
 		//add new book to the user
 		Person user = users.get(newBook.getID());
 		user.addBook(newBook);
@@ -57,7 +58,7 @@ public class DataManager{
 			isbnTree.put(newBook.getIsbn(), newBook);
 			titleTree.insert(newBook);
 		}
-		save();
+		if(!first) save();
 	}
 
 	/**
@@ -115,25 +116,22 @@ public class DataManager{
 	 * load the data from a text file
 	 * @throws FileNotFoundException if the file not found
 	 */
-	public void loadUserData() throws FileNotFoundException{
+	public void load() throws FileNotFoundException{
 		Scanner in = new Scanner(new File("users_data.txt"));
 		while(in.hasNextLine()){
 			String line = in.nextLine();
 			if(!line. equals("")){
 				Person p = NewUserController.stringToModel(line);
-				addUser(p);
+				addUser(p, true);
 			}
 		}
 		in.close();
-	}
-	
-	public void loadBookData() throws FileNotFoundException{
 		Scanner in2 = new Scanner(new File("books_data.txt"));
 		while(in2.hasNextLine()){
 			String line = in2.nextLine();
 			if(!line. equals("")){
 				Book b = AddBookController.stringToModel(line);
-				addBook(b);
+				addBook(b, true);
 			}
 		}
 		in2.close();

@@ -30,7 +30,7 @@ public class NewUserController extends HttpRequestController{
 	 */
 	private void saveToDataBase(Person model) throws FileNotFoundException{
 		DataManager dbm = DataManager.sharedInstance();
-		dbm.addUser(model);
+		dbm.addUser(model, false);
 		// if sucess(){}
 		response = "New user: " + model.getfName() +" with id: " + model.getId() + " created!";
 	}
