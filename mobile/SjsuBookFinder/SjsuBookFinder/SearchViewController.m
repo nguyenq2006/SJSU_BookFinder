@@ -102,7 +102,13 @@
     NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     
     NSString *responseStr = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
-    [self parseServerResponse:responseStr];
+    if (responseStr == nil) {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"No search results found" message:@"Please run your search again." preferredStyle:UIAlertControllerStyleAlert];
+        [self presentViewController:alertController animated:YES completion:nil];
+    }else{
+        [self parseServerResponse:responseStr];
+    }
+    
 }
 
 - (void)parseServerResponse:(NSString *)responseStr{
