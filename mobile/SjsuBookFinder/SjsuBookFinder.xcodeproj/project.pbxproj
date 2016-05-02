@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		121D23EC1CD7AC5D00CF8C3D /* FindBookParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 121D23EB1CD7AC5D00CF8C3D /* FindBookParser.m */; };
+		121D23EE1CD7B64400CF8C3D /* FindBookParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 121D23ED1CD7B64400CF8C3D /* FindBookParserTests.m */; };
 		12820FAC1C8759E700D8CEDC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 12820FAB1C8759E700D8CEDC /* main.m */; };
 		12820FAF1C8759E700D8CEDC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 12820FAE1C8759E700D8CEDC /* AppDelegate.m */; };
 		12820FB21C8759E700D8CEDC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12820FB11C8759E700D8CEDC /* ViewController.m */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		121D23EA1CD7AC5D00CF8C3D /* FindBookParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindBookParser.h; sourceTree = "<group>"; };
 		121D23EB1CD7AC5D00CF8C3D /* FindBookParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindBookParser.m; sourceTree = "<group>"; };
+		121D23ED1CD7B64400CF8C3D /* FindBookParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindBookParserTests.m; sourceTree = "<group>"; };
 		12820FA71C8759E700D8CEDC /* SjsuBookFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SjsuBookFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12820FAB1C8759E700D8CEDC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		12820FAD1C8759E700D8CEDC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			children = (
 				12820FC41C8759E700D8CEDC /* SjsuBookFinderTests.m */,
 				12820FC61C8759E700D8CEDC /* Info.plist */,
+				121D23ED1CD7B64400CF8C3D /* FindBookParserTests.m */,
 			);
 			path = SjsuBookFinderTests;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				121D23EE1CD7B64400CF8C3D /* FindBookParserTests.m in Sources */,
 				12820FC51C8759E700D8CEDC /* SjsuBookFinderTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
