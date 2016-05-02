@@ -9,5 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface FindBookParser : NSObject
+@property (strong, nonatomic) NSString *sjsuId;
+@property (strong, nonatomic) NSString *isbn;
+@property (strong, nonatomic) NSString *bookTitle;
+
+-(instancetype)initWithServerResponse:(NSString *)response;
 
 @end
