@@ -47,6 +47,11 @@
 #pragma mark - UISearchBarDelegate
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    //clear the search results array before doing another search
+    if (searchResults != nil) {
+        [searchResults removeAllObjects];
+    }
+    
     NSString *searchString = searchBar.text;
     if ([_segmentedControl selectedSegmentIndex] == UISegmentedControlNoSegment) {
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Please select search query type!" message:@"Choose Title or ISBN" preferredStyle:UIAlertControllerStyleAlert];
