@@ -20,9 +20,15 @@
 
 -(instancetype)initWithServerResponse:(NSString *)response{
     _response = response;
+    [self parseResponse];
     return self;
 }
 
-
+-(void)parseResponse{
+    NSArray<NSString *> *responseArray = [_response componentsSeparatedByString:@"*&#$&!@#"];
+    _sjsuId = responseArray[0];
+    _isbn = responseArray[1];
+    _bookTitle = responseArray[2];
+}
 
 @end
