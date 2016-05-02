@@ -102,8 +102,14 @@
     NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     
     NSString *responseStr = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
-    if (responseStr == nil) {
+    if (responseData == nil) {
+        [searchResults removeAllObjects];
+        [_tableView reloadData];
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"No search results found" message:@"Please run your search again." preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        [alertController addAction:alertAction];
         [self presentViewController:alertController animated:YES completion:nil];
     }else{
         [self parseServerResponse:responseStr];
