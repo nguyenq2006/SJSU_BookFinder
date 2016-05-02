@@ -30,7 +30,7 @@ public class DataManager{
 
 	/**
 	 * add new user to the database
-	 * @param newUser - a Person object(new user)
+	 * @param newUser a Person object(new user)
 	 * @throws FileNotFoundException 
 	 */
 	public void addUser(Person newUser) throws FileNotFoundException{
@@ -43,8 +43,8 @@ public class DataManager{
 
 	/**
 	 * add new book to the database
-	 * @param newBook - new Book object
-	 * @param userID - the user ID
+	 * @param newBook new Book object
+	 * @param userID the user ID
 	 * @throws FileNotFoundException 
 	 */
 	public void addBook(Book newBook) throws FileNotFoundException{
@@ -62,13 +62,18 @@ public class DataManager{
 
 	/**
 	 * get book by ISBN number
-	 * @param isbn - book's ISBN number
+	 * @param isbn  book's ISBN number
 	 * @return book object
 	 */
 	public Book getBookISBN(String isbn){
 		return isbnTree.get(isbn);
 	}
 	
+	/**
+	 * get book by book title	
+	 * @param book title of the book	
+	 * @return the book
+	 */
 	public Book getBook(String book){
 		return null;
 	}
@@ -79,6 +84,11 @@ public class DataManager{
 	 */
 	public TreeMap<String, Book> getIsbnTreeMap() {
 		return isbnTree;
+	}
+	
+	public void remove(String isbn){
+		isbnTree.remove(isbn);
+		titleTree.delete(isbnTree.get(isbn));
 	}
 
 	/**
@@ -99,6 +109,10 @@ public class DataManager{
 		}
 	}
 
+	/**
+	 * load the data from a text file
+	 * @throws FileNotFoundException if the file not found
+	 */
 	public void load() throws FileNotFoundException{
 		Scanner in = new Scanner(new File("users_data.txt"));
 		while(in.hasNextLine()){
