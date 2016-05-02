@@ -26,9 +26,9 @@
 
 -(void)parseResponse{
     NSArray<NSString *> *responseArray = [_response componentsSeparatedByString:@"*&#$&!@#"];
-    _sjsuId = responseArray[0];
-    _isbn = responseArray[1];
-    _bookTitle = responseArray[2];
+    _sjsuId = [responseArray[0] stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    _isbn = [responseArray[1] stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    _bookTitle = [responseArray[2] stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
 @end

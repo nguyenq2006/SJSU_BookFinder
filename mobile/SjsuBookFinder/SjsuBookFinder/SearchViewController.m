@@ -7,6 +7,7 @@
 //
 
 #import "SearchViewController.h"
+#import "FindBookParser.h"
 
 @interface SearchViewController () <UISearchBarDelegate,UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -18,6 +19,7 @@
 @implementation SearchViewController{
     NSArray<NSString *>* segmentedControlItems;
     NSMutableArray<NSString *> *searchResults;
+    FindBookParser *fbParser;
 }
 
 - (void)viewDidLoad {
@@ -126,11 +128,32 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *selectedItem = [searchResults objectAtIndex:indexPath.row];
+    fbParser = [[FindBookParser alloc]initWithServerResponse:selectedItem];
     
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Purchase book?" message:@"Confirm that you would like to purchase this book." preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction *alertActionPurchase = [UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
        //make HTTP Request that removes book.
+        NSURLComponents *components = [NSURLComponents componentsWithString:@"http://localhost:9999/a"];
+        NSURLQueryItem *reqType = [NSURLQueryItem queryItemWithName:@"requesttype" value:@"sellbook"];
+        
+        NSURLQueryItem *isbn = [NSURLQueryItem queryItemWithName:@"isbn" value:fbParser.isbn];
+        NSURLQueryItem *title = [NSURLQueryItem queryItemWithName:@"title" value:fbParser.bookTitle];
+        NSURLQueryItem *userId = [NSURLQueryItem queryItemWithName:@"id" value:fbParser.sjsuId];
+        
+        
+        components.queryItems = @[reqType,isbn,title,userId];
+        
+        NSURL *url = components.URL;
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        NSURLResponse *response;
+        NSError *error;
+        
+        NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+        
+        NSString *responseStr = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+        NSLog(@"%@",responseStr);
+
     }];
     
     UIAlertAction *alertActionCancel = [UIAlertAction actionWithTitle:@"No" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
