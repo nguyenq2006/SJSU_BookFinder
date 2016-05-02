@@ -23,10 +23,10 @@ public class FindBookController {
 			b = dm.getBook(title);
 		}
 
-		response = "Student ID: " + b.getID()
-				+ "*&#$&!@# " +
-				"ISBN:" + b.getIsbn() + "*&#$&!@# " + 
-				"Book Title: " + b.getBookTitle();
+		response = b.getID()
+				+ "*&#$&!@# " + 
+				b.getIsbn() + "*&#$&!@# " + 
+				b.getBookTitle();
 
 
 		//Save book information to database
