@@ -9,7 +9,7 @@ public class SellBookController extends HttpRequestController {
 	 * After Book is sold, remove from BookTree and remove ISBN from user
 	 * @param params
 	 */
-	public SellBookController(TreeMap<String, Object> params) 
+	public SellBookController(Map<String, Object> params) 
 	{
 		DataManager dm = DataManager.sharedInstance();
 		TreeMap<String, Book> isbnTree = dm.getIsbnTreeMap();
