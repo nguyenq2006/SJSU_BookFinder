@@ -1,10 +1,10 @@
 import java.util.*;
 
 public class FindBookController {
-	Book model;
+	private Book b;
 	private ArrayList<Book> allBook = new ArrayList<Book>();
-	Person user;
-	String response = "";
+	private Person user;
+	private String response = "";
 
 	/**
 	 * Retrieving User Information and Book Information from DataManager class
@@ -14,10 +14,11 @@ public class FindBookController {
 		DataManager dm = DataManager.sharedInstance();
 		String isbn = "" + params.get("isbn");
 		String title = "" + params.get("title");
-		Book b = null;
+		
 		
 		if(!isbn.equals("null")){
 			b = dm.getBookISBN(isbn);
+			allBook.add(b);
 		}
 		else if(!title.equals("null")){
 			b = dm.getBook(title);

@@ -2,7 +2,7 @@ import java.io.FileNotFoundException;
 import java.util.*;
 public class AddBookController {
 
-	Book model; //the model of the Book Object
+	private Book model; //the model of the Book Object
 
 	/**
 	 * Constructing an add book controller to add book info to database

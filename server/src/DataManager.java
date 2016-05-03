@@ -4,6 +4,8 @@ import java.io.PrintStream;
 import java.util.*;
 
 
+
+
 //singleton class to manage the database
 public class DataManager{
 	private static DataManager dm = new DataManager();
@@ -97,6 +99,14 @@ public class DataManager{
 	 */
 	public TreeMap<String, Book> getIsbnTreeMap() {
 		return isbnTree;
+	}
+	
+	/**
+	 * Returns the Map of users
+	 * @return users
+	 */
+	public TreeMap<Long, Person> getUsersMap() {
+		return users;
 	}
 	
 	public void remove(String isbn){

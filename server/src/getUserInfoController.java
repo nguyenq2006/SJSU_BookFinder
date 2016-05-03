@@ -1,54 +1,50 @@
-import java.util.*;
-import java.io.FileNotFoundException;
-import java.lang.Class;
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.TreeMap;
 
-
-public class NewUserController extends HttpRequestController{
-	private Person model;
+public class getUserInfoController {
+	private Person user;
 	private String response = "";
-
 	/**
-	 * Taking a new user information and save it to database
-	 * @param params - fName, lName, id, and isbn info
-	 * @throws FileNotFoundException 
+	 * String - Student ID
+	 * Object - Person Object
+	 * @param params - the TreeMap 
 	 */
-	@SuppressWarnings("unchecked")
-	public NewUserController(Map<String, Object> params) throws FileNotFoundException{
-		String firstName = (String) params.get("firstname");
-		String lastName = (String) params.get("lastname");
-		int id =  Integer.parseInt((String) params.get("id"));
-		ArrayList<String> isbn = new ArrayList<String>();
-		model = new Person(firstName, lastName, id, isbn);
-		// this.saveToDataBase(modelToString(this.model));
-		this.saveToDataBase(this.model);
+	public getUserInfoController(Map<Long, Object> params)
+	{
+		DataManager dm = DataManager.sharedInstance();
+		TreeMap<Long, Person> getUsersDM = dm.getUsersMap();
+
+		for(Map.Entry<Long, Object> entry : params.entrySet()) {
+			long id1 = entry.getKey();
+			for(Map.Entry<Long, Person> entry2 : getUsersDM.entrySet()) {
+				long id2 = entry2.getKey();
+				if(id1 == id2) {
+					user = dm.getUsers(id1);
+				} else {
+					System.out.println("User doesn't exist");
+				} 
+			}
+		
+		}
+		
+		//this.saveToDataBase(modelToString(this.user));
 	}
+	
 
 	/**
 	 * Saving information to DatabaseManager
 	 * @param modelString - the model to save to database
-	 * @throws FileNotFoundException 
 	 */
-	private void saveToDataBase(Person model) throws FileNotFoundException{
-		DataManager dbm = DataManager.sharedInstance();
-		dbm.addUser(model, false);
-		// if sucess(){}
-		response = "New user: " + model.getfName() +" with id: " + model.getId() + " created!";
+	private void saveToDataBase(String modelString){
+		// DataManager dm = DataManager.sharedInstance();
+
 	}
 
-
-
-	/**
-	 *  Retrieving Student ID from database
-	 * @param id - the student id 
-	 * @return the user's id
-	 */
-	/*public static Person getPersonWithId(int id)
-	{
-		DatabaseManager dbm = DatabaseManager.sharedInstance();
-		String personString = dbm.getUserWithId(id);
-		Person x = stringToModel(personString);
-		return x;
-	}  */
+	public Person getUser(){
+		return user;
+	}
 
 	/**
 	 * Converting Person object to String object
@@ -59,17 +55,17 @@ public class NewUserController extends HttpRequestController{
 	 * @param m - user information from the Person class
 	 * @return resultString - from Person object to String object
 	 */
-	
-	
+
+
 	public static String modelToString(Person m){
 		String resultString = 
 				"Student ID: " + m.getId() + " "
-				+ "*&#$&!@#"   + " " +
-				"First Name: " + m.getfName() + " "
-				+ "*&#$&!@#" + " " +
-				"Last Name: " + m.getlName() + " "
-				+ "*&#$&!@#" + " " +
-				"ISBN:" + m.getIsbn() + " " + "\n";
+						+ "*&#$&!@#"   + " " +
+						"First Name: " + m.getfName() + " "
+						+ "*&#$&!@#" + " " +
+						"Last Name: " + m.getlName() + " "
+						+ "*&#$&!@#" + " " +
+						"ISBN:" + m.getIsbn() + " " + "\n";
 		return resultString;
 	}
 
@@ -78,21 +74,26 @@ public class NewUserController extends HttpRequestController{
 	 * @param userInfo - the user information in String
 	 * @return p - final conversion of String object -> Person object
 	 */
+	/**
+	 * Retrieving the String information from Person info and converting it to Person Object
+	 * @param userInfo - the user information in String
+	 * @return p - final conversion of String object -> Person object
+	 */
 	public static Person stringToModel(String userInfo)
 	{
 		Scanner in = new Scanner(userInfo);
-		
+
 
 		String studentID = "";
 		int id = 0;
 		String fName = "";
 		String lName = "";
 		ArrayList<String> isbn = new ArrayList<String>();
-		
+
 		while(in.hasNextLine())
 		{
 			String userLine = in.nextLine().trim();
-			
+
 			int colon = userLine.indexOf(':');
 			int star = userLine.indexOf('*');
 			if(userLine.contains("Student ID: ")) {
@@ -103,34 +104,34 @@ public class NewUserController extends HttpRequestController{
 				userLine = userLine.replace("Student ID:", "");
 				userLine = userLine.replace("*&#$&!@# Fi", "").trim();
 			}
-			
-			
-			
+
+
+
 			int colon1 = userLine.indexOf(':');
 			int star1 = userLine.indexOf('*');
 			if(userLine.contains("rst Name:")) {
 				//first name
 				fName = userLine.substring(colon1+1, star1).trim();
-				
+
 				userLine = userLine.replace("rst Name: ", "");
 				userLine = userLine.replace(fName, "");
 				userLine = userLine.replace("*&#$&!@# L", "").trim();
-				
+
 			}
-			
-			
+
+
 			int colon2 = userLine.indexOf(':');
 			int star2 = userLine.indexOf('*');
 			if(userLine.contains("ast Name:")) {
 				//last name
 				lName = userLine.substring(colon2+1, star2).trim();
-				
+
 				userLine = userLine.replace("ast Name: ", "");
 				userLine = userLine.replace(lName, "");
 				userLine = userLine.replace("*&#$&!@# ISBN:", "");
-				
+
 			}
-			
+
 			int pt1 = userLine.indexOf('[');
 			int pt2 = userLine.indexOf(']');
 			if(userLine.contains("[")) {
@@ -138,15 +139,15 @@ public class NewUserController extends HttpRequestController{
 				String theISBN = userLine.substring(pt1+1, pt2).trim();
 				isbn.add(theISBN);
 			}
-			
-			
-			 
-		}
-		
+
+
+
+		} in.close();
+
 
 
 		Person p = new Person(fName, lName, id, isbn);
-		
+
 		return p;
 	}
 
@@ -154,5 +155,7 @@ public class NewUserController extends HttpRequestController{
 	public String getResponse(){
 		return this.response;
 	}
+
 }
+
 
