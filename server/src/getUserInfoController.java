@@ -22,8 +22,6 @@ public class getUserInfoController {
 				long id2 = entry2.getKey();
 				if(id1 == id2) {
 					user = dm.getUsers(id1);
-				} else {
-					System.out.println("User doesn't exist");
 				} 
 			}
 		

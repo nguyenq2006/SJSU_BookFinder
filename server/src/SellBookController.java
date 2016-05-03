@@ -13,8 +13,8 @@ public class SellBookController extends HttpRequestController {
 	{
 		DataManager dm = DataManager.sharedInstance();
 		TreeMap<String, Book> isbnTree = dm.getIsbnTreeMap();
-		ArrayList<String> isbnList = new ArrayList<String>();
-		ArrayList<String> storeISBN = new ArrayList<String>();
+		ArrayList<String> isbnList = new ArrayList<String>(); //To get isbn from Person object
+		ArrayList<String> storeISBN = new ArrayList<String>(); //the updated isbn after removal
 
 		/* Remove book based on ISBN */
 		removeBook(params, isbnTree);
@@ -31,7 +31,7 @@ public class SellBookController extends HttpRequestController {
 
 		Collections.sort(isbnList);
 		isbnList = removeFromList(isbnList, storeISBN); //Update Person's ArrayList of ISBN
-		user.getIsbn().removeAll(user.getIsbn()); //Remove all the ISBN 
+		user.getIsbn().removeAll(user.getIsbn()); //Remove all the original ISBN from Person Object 
 		
 		/* Update Person ISBN ArrayList */
 		for(int i = 0; i < isbnList.size(); i++) {
