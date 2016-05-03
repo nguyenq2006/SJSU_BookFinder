@@ -2,6 +2,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
 import java.util.*;
+
+
 //singleton class to manage the database
 public class DataManager{
 	private static DataManager dm = new DataManager();
@@ -68,6 +70,15 @@ public class DataManager{
 	 */
 	public Book getBookISBN(String isbn){
 		return isbnTree.get(isbn);
+	}
+	
+	/**
+	 * Get user by Student ID Number
+	 * @param studentId - Student ID
+	 * @return Person object
+	 */
+	public Person getUsers(Long studentId) {
+		return users.get(studentId);
 	}
 	
 	/**
