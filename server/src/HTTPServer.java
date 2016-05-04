@@ -73,7 +73,11 @@ public class HTTPServer {
 		        		FindBookController findBook = new FindBookController(params);
 		        		response = findBook.getResponse();
 		        		break;
-
+		        		
+		        	case "getuser":
+		        		System.out.println("Request Type is get user");
+		        		GetUserController getUser = new GetUserController(params);
+		        		response = getUser.getResponse();
 		        	default:
 		        		System.out.println("Request Type is undefined");
 		        }
