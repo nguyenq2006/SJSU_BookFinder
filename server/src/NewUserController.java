@@ -136,14 +136,14 @@ public class NewUserController extends HttpRequestController{
 			if(userLine.contains("[")) {
 				//Get ArrayList
 				String theISBN = userLine.substring(pt1+1, pt2).trim();
-				isbn.add(theISBN);
-			}
-			
-			
+				String[] split = theISBN.split(",");
+				for(String str : split){
+					if(!str.equals(""))
+						isbn.add(str.trim());
+				}
+			}	
 			 
 		}
-		
-
 
 		Person p = new Person(fName, lName, id, isbn);
 		
