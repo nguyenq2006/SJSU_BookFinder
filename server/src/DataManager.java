@@ -2,6 +2,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
 import java.util.*;
+
+
+
+
 //singleton class to manage the database
 public class DataManager{
 	private static DataManager dm = new DataManager();
@@ -71,6 +75,15 @@ public class DataManager{
 	}
 	
 	/**
+	 * Get user by Student ID Number
+	 * @param studentId - Student ID
+	 * @return Person object
+	 */
+	public Person getUsers(Long studentId) {
+		return users.get(studentId);
+	}
+	
+	/**
 	 * get book by book title	
 	 * @param book title of the book	
 	 * @return the book
@@ -86,6 +99,14 @@ public class DataManager{
 	 */
 	public TreeMap<String, Book> getIsbnTreeMap() {
 		return isbnTree;
+	}
+	
+	/**
+	 * Returns the Map of users
+	 * @return users
+	 */
+	public TreeMap<Long, Person> getUsersMap() {
+		return users;
 	}
 	
 	public void remove(String isbn){
