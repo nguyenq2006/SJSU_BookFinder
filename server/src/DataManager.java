@@ -137,22 +137,52 @@ public class DataManager{
 	 * load the data from a text file
 	 * @throws FileNotFoundException if the file not found
 	 */
-	public void load() throws FileNotFoundException{
-		Scanner in = new Scanner(new File("users_data.txt"));
+	public void load(){
+		Scanner in = new Scanner(System.in);
+		try {
+			 in = new Scanner(new File("users_data.txt"));
+		} catch (FileNotFoundException e) {
+			// TODO: handle exception
+			try {
+				in = new Scanner(new File("server/users_data.txt"));
+			} catch (Exception e2) {
+				//oh well
+			}
+		}
 		while(in.hasNextLine()){
 			String line = in.nextLine();
 			if(!line. equals("")){
 				Person p = NewUserController.stringToModel(line);
-				addUser(p, true);
+				try {
+					addUser(p, true);
+				} catch (Exception e) {
+					System.err.println("addUser exception occured");
+				}
+				
 			}
 		}
 		in.close();
-		Scanner in2 = new Scanner(new File("books_data.txt"));
+		Scanner in2 = new Scanner(System.in);
+		try {
+			in2 = new Scanner(new File("books_data.txt"));
+		} catch (FileNotFoundException e) {
+			try {
+				in2 = new Scanner(new File("server/books_data.txt"));
+			} catch (Exception e2) {
+				//too bad
+			}
+		}
 		while(in2.hasNextLine()){
 			String line = in2.nextLine();
 			if(!line. equals("")){
 				Book b = AddBookController.stringToModel(line);
-				addBook(b, true);
+				try {
+					addBook(b, true);
+				} catch (Exception e) {
+					// TODO: handle exception
+					System.err.println("addBook exception occured");
+				}
+				
 			}
 		}
 		in2.close();
