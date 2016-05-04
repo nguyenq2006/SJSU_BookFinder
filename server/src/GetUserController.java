@@ -10,7 +10,7 @@ public class GetUserController {
 		DataManager dm = DataManager.sharedInstance();
 		long studentId = Long.parseLong(params.get("id")+"");
 		Person p = dm.getUsers(studentId);
-		response += p.getfName() + "," +  p.getlName();
+		response += p.getfName() + ", " +  p.getlName();
 	}
 
 	public String getResponse() {

@@ -185,7 +185,45 @@
     
     [alertController addAction:alertActionPurchase];
     [alertController addAction:alertActionCancel];
-    [self presentViewController:alertController animated:YES completion:nil];
+    [self presentViewController:alertController animated:YES completion:^{
+        double delayInSeconds = 2.0;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            //code to be executed on the main queue after delay
+            [self showSellerAlert:fbParser.sjsuId];
+        });
+    }];
+    
+    
+}
+
+
+-(void)showSellerAlert:(NSString *)sellerId{
+    NSString *sellerName = @"";
+    //make HTTP Request that displays seller info.
+    NSURLComponents *components = [NSURLComponents componentsWithString:@"http://localhost:9999/a"];
+    NSURLQueryItem *reqType = [NSURLQueryItem queryItemWithName:@"requesttype" value:@"getuser"];
+    
+    NSURLQueryItem *userId = [NSURLQueryItem queryItemWithName:@"id" value:sellerId];
+    
+    components.queryItems = @[reqType,userId];
+    
+    NSURL *url = components.URL;
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSURLResponse *response;
+    NSError *error;
+    
+    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    
+    sellerName = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+    
+    UIAlertController *displaySellerInfoAlertContoller = [UIAlertController alertControllerWithTitle:@"Your book can be found from this user:" message:sellerName preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *displayeSellerInfoAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        
+    }];
+    [displaySellerInfoAlertContoller addAction:displayeSellerInfoAction];
+    [self presentViewController:displaySellerInfoAlertContoller animated:YES completion:nil];
 }
 
 /*
