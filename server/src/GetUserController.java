@@ -3,7 +3,7 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.TreeMap;
 
-public class getUserInfoController {
+public class GetUserController {
 	private Person user;
 	private String response = "";
 	/**
@@ -11,7 +11,7 @@ public class getUserInfoController {
 	 * Object - Person Object
 	 * @param params - the TreeMap 
 	 */
-	public getUserInfoController(Map<Long, Object> params)
+	public GetUserController(Map<Long, Object> params)
 	{
 		DataManager dm = DataManager.sharedInstance();
 		TreeMap<Long, Person> getUsersDM = dm.getUsersMap();
