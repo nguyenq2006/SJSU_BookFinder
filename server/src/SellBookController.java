@@ -1,4 +1,5 @@
 import java.util.*;
+
 public class SellBookController extends HttpRequestController {
 	private Book model;
 	private Person user;
@@ -13,13 +14,14 @@ public class SellBookController extends HttpRequestController {
 	{
 		DataManager dm = DataManager.sharedInstance();
 		TreeMap<String, Book> isbnTree = dm.getIsbnTreeMap();
-		ArrayList<String> isbnList = new ArrayList<String>(); //To get isbn from Person object
-		ArrayList<String> storeISBN = new ArrayList<String>(); //the updated isbn after removal
+		ArrayList<String> isbnList = new ArrayList<String>();
+		ArrayList<String> storeISBN = new ArrayList<String>();
 
 		/* Remove book based on ISBN */
-		removeBook(params, isbnTree);
-
-
+		for(Map.Entry<String, Object> entry : params.entrySet()) {
+			String isbn = entry.getKey();
+			dm.remove(isbn);
+		}
 		/* Any remaining ISBN goes to book model
 		 * Method should only remove one book at a time */
 		for(String isbn : isbnTree.keySet()) {
@@ -31,7 +33,7 @@ public class SellBookController extends HttpRequestController {
 
 		Collections.sort(isbnList);
 		isbnList = removeFromList(isbnList, storeISBN); //Update Person's ArrayList of ISBN
-		user.getIsbn().removeAll(user.getIsbn()); //Remove all the original ISBN from Person Object 
+		user.getIsbn().removeAll(user.getIsbn()); //Remove all the ISBN 
 		
 		/* Update Person ISBN ArrayList */
 		for(int i = 0; i < isbnList.size(); i++) {
@@ -39,6 +41,7 @@ public class SellBookController extends HttpRequestController {
 			user.getIsbn().add(newIsbn);
 		}	
 	}
+
 
 	/**
 	 * Removes book based on ISBN. If params ISBN matches isbnTree ISBN, remove it from DataManager
