@@ -83,69 +83,76 @@ public class AddBookController {
 //			System.out.println(bookLine);
 			int colon = bookLine.indexOf(':');
 			int star = bookLine.indexOf('*');
+			int poundSign = bookLine.indexOf('#', bookLine.indexOf('#')+1);
 			if(bookLine.contains("ISBN: ")) {
 				//Get ISBN
 				ISBN = bookLine.substring(colon+1, star).trim();
 				
-				bookLine = bookLine.replace(ISBN, "");
-				bookLine = bookLine.replace("ISBN:", "");
-				bookLine = bookLine.replace("*&#$&!@# Book ", "").trim();
+//				bookLine = bookLine.replace(ISBN, "");
+//				bookLine = bookLine.replace("ISBN:", "");
+//				bookLine = bookLine.replace("*&#$&!@# Book ", "").trim();
+				bookLine = bookLine.substring(++poundSign).trim();
 			}
 			
-			int colon2 = bookLine.indexOf(':');
-			int star2 = bookLine.indexOf('*');
+			colon = bookLine.indexOf(':');
+			star = bookLine.indexOf('*');
+			poundSign = bookLine.indexOf('#', bookLine.indexOf('#')+1);
 			if(bookLine.contains("Title: ")) {
 				//Get book title
-				bookTitle = bookLine.substring(colon2+1, star2).trim();
+				bookTitle = bookLine.substring(colon+1, star).trim();
 				
-				bookLine = bookLine.replace("Title: ", "");
-				bookLine = bookLine.replace("*&#$&!@# A", "");
-				bookLine = bookLine.replace(bookTitle, "");
-				
+//				bookLine = bookLine.replace("Title: ", "");
+//				bookLine = bookLine.replace("*&#$&!@# A", "");
+//				bookLine = bookLine.replace(bookTitle, "");
+				bookLine = bookLine.substring(++poundSign).trim();
 				
 			}
 			
-			int colon3 = bookLine.indexOf(':');
-			int star3 = bookLine.indexOf('*');
+			colon = bookLine.indexOf(':');
+			star = bookLine.indexOf('*');
+			poundSign = bookLine.indexOf('#', bookLine.indexOf('#')+1);
 			if(bookLine.contains("uthor: ")) {
 				//Get Author
-				author = bookLine.substring(colon3+1, star3).trim();
+				author = bookLine.substring(colon+1, star).trim();
 				
-				bookLine = bookLine.replace("uthor: ", "");
-				bookLine = bookLine.replace(author, "");
-				bookLine = bookLine.replace("*&#$&!@# P", "");
-				
+//				bookLine = bookLine.replace("uthor: ", "");
+//				bookLine = bookLine.replace(author, "");
+//				bookLine = bookLine.replace("*&#$&!@# P", "");
+				bookLine = bookLine.substring(++poundSign).trim();
 				
 			}
 			
-			int colon4 = bookLine.indexOf(':');
-			int star4 = bookLine.indexOf('*');
+			colon = bookLine.indexOf(':');
+			star = bookLine.indexOf('*');
+			poundSign = bookLine.indexOf('#', bookLine.indexOf('#')+1);
 			if(bookLine.contains("rice: ")) {
 				//Get book price
-				String price = bookLine.substring(colon4+1, star4).trim();
+				String price = bookLine.substring(colon+1, star).trim();
 				bookPrice = Double.parseDouble(price);
 				
-				bookLine = bookLine.replace("rice:", "");
-				bookLine = bookLine.replace(price, "");
-				bookLine = bookLine.replace("*&#$&!@# Student ", "");
+//				bookLine = bookLine.replace("rice:", "");
+//				bookLine = bookLine.replace(price, "");
+//				bookLine = bookLine.replace("*&#$&!@# Student ", "");
+				bookLine = bookLine.substring(++poundSign).trim();
 			}
 			
-			int colon5 = bookLine.indexOf(':');
-			int star5 = bookLine.indexOf('*');
+			colon = bookLine.indexOf(':');
+			star = bookLine.indexOf('*');
+			poundSign = bookLine.indexOf('#', bookLine.indexOf('#')+1);
 			if(bookLine.contains("ID: ")) {
 				//Get Student ID
-				String id = bookLine.substring(colon5+1, star5).trim();
+				String id = bookLine.substring(colon+1, star).trim();
 				studentID = Long.parseLong(id);
-				bookLine = bookLine.replace("ID:", "");
-				bookLine = bookLine.replace(id, "");
-				bookLine = bookLine.replace("*&#$&!@# HardCover?", "");
-				
+//				bookLine = bookLine.replace("ID:", "");
+//				bookLine = bookLine.replace(id, "");
+//				bookLine = bookLine.replace("*&#$&!@# HardCover?", "");
+				bookLine = bookLine.substring(++poundSign).trim();
 			}
 			
-			int colon6 = bookLine.indexOf(':');
+			colon = bookLine.indexOf(':');
 			if(bookLine.contains(": ")) {
 				//Get boolean value
-				String booleanValue = bookLine.substring(colon6+1, bookLine.length());
+				String booleanValue = bookLine.substring(colon+1, bookLine.length());
 				isHardCover = Boolean.parseBoolean(booleanValue);
 			}	
 		} in.close();

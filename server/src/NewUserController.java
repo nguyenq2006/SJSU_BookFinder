@@ -95,40 +95,44 @@ public class NewUserController extends HttpRequestController{
 			
 			int colon = userLine.indexOf(':');
 			int star = userLine.indexOf('*');
+			int poundSign = userLine.indexOf('#', userLine.indexOf('#')+1);
 			if(userLine.contains("Student ID: ")) {
 				//student ID
 				studentID = userLine.substring(colon+1, star).trim();
 				id = Integer.parseInt(studentID);
-				userLine = userLine.replace(studentID, "");
-				userLine = userLine.replace("Student ID:", "");
-				userLine = userLine.replace("*&#$&!@# Fi", "").trim();
+//				userLine = userLine.replace(studentID, "");
+//				userLine = userLine.replace("Student ID:", "");
+//				userLine = userLine.replace("*&#$&!@# Fi", "").trim();
+				userLine = userLine.substring(++poundSign).trim();
 			}
 			
 			
 			
-			int colon1 = userLine.indexOf(':');
-			int star1 = userLine.indexOf('*');
-			if(userLine.contains("rst Name:")) {
+			colon = userLine.indexOf(':');
+			star = userLine.indexOf('*');
+			poundSign = userLine.indexOf('#', userLine.indexOf('#')+1);
+			if(userLine.contains("First Name:")) {
 				//first name
-				fName = userLine.substring(colon1+1, star1).trim();
+				fName = userLine.substring(colon+1, star).trim();
 				
-				userLine = userLine.replace("rst Name: ", "");
-				userLine = userLine.replace(fName, "");
-				userLine = userLine.replace("*&#$&!@# L", "").trim();
-				
+//				userLine = userLine.replace("rst Name: ", "");
+//				userLine = userLine.replace(fName, "");
+//				userLine = userLine.replace("*&#$&!@# L", "").trim();
+				userLine = userLine.substring(++poundSign).trim();
 			}
 			
 			
-			int colon2 = userLine.indexOf(':');
-			int star2 = userLine.indexOf('*');
+			colon = userLine.indexOf(':');
+			star = userLine.indexOf('*');
+			poundSign = userLine.indexOf('#', userLine.indexOf('#')+1);
 			if(userLine.contains("ast Name:")) {
 				//last name
-				lName = userLine.substring(colon2+1, star2).trim();
+				lName = userLine.substring(colon+1, star).trim();
 				
-				userLine = userLine.replace("ast Name: ", "");
-				userLine = userLine.replace(lName, "");
-				userLine = userLine.replace("*&#$&!@# ISBN:", "");
-				
+//				userLine = userLine.replace("ast Name: ", "");
+//				userLine = userLine.replace(lName, "");
+//				userLine = userLine.replace("*&#$&!@# ISBN:", "");
+				userLine = userLine.substring(++poundSign).trim();
 			}
 			
 			int pt1 = userLine.indexOf('[');

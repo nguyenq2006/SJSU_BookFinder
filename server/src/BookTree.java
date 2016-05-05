@@ -53,7 +53,7 @@ public class BookTree {
 		
 		String newTitle = b.getBookTitle();
 		DataManager dm = DataManager.sharedInstance();
-		Book currentBook = dm.getBook(root.bookISBN);
+		Book currentBook = dm.getBookISBN(root.bookISBN);
 		String currentTitle = currentBook.getBookTitle();
 		int comparator = newTitle.compareTo(currentTitle);
 		
@@ -106,7 +106,7 @@ public class BookTree {
 		else{
 			String newTitle = b.getBookTitle();
 			DataManager dm = DataManager.sharedInstance();
-			Book currentBook = dm.getBook(tree.bookISBN);
+			Book currentBook = dm.getBookISBN(tree.bookISBN);
 			String currentTitle = currentBook.getBookTitle();
 			int comparator = newTitle.compareTo(currentTitle);
 
