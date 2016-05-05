@@ -143,11 +143,11 @@ public class DataManager{
 			 in = new Scanner(new File("users_data.txt"));
 		} catch (FileNotFoundException e) {
 			// TODO: handle exception
-			try {
-				in = new Scanner(new File("server/users_data.txt"));
-			} catch (Exception e2) {
-				//oh well
-			}
+//			try {
+//				in = new Scanner(new File("server/users_data.txt"));
+//			} catch (Exception e2) {
+//				//oh well
+//			}
 		}
 		while(in.hasNextLine()){
 			String line = in.nextLine();
@@ -166,11 +166,11 @@ public class DataManager{
 		try {
 			in2 = new Scanner(new File("books_data.txt"));
 		} catch (FileNotFoundException e) {
-			try {
-				in2 = new Scanner(new File("server/books_data.txt"));
-			} catch (Exception e2) {
-				//too bad
-			}
+//			try {
+//				in2 = new Scanner(new File("server/books_data.txt"));
+//			} catch (Exception e2) {
+//				//too bad
+//			}
 		}
 		while(in2.hasNextLine()){
 			String line = in2.nextLine();
