@@ -80,4 +80,11 @@ public class Person {
 		if(!isbnList.contains(b.getIsbn()))
 			isbnList.add(b.getIsbn());
 	}
+	
+	/**
+	 * @param isbn book ISBN
+	 */
+	public void removeBook(String isbn){
+		isbnList.remove(isbn);
+	}
 }

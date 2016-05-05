@@ -19,73 +19,11 @@ public class SellBookController extends HttpRequestController {
 
 		/* Remove book based on ISBN */
 		for(Map.Entry<String, Object> entry : params.entrySet()) {
-			String isbn = entry.getKey();
+			String isbn = "" + entry.getValue();
 			dm.remove(isbn);
 		}
-		/* Any remaining ISBN goes to book model
-		 * Method should only remove one book at a time */
-		for(String isbn : isbnTree.keySet()) {
-			model = dm.getBook(isbn); //get book by isbn
-			user = dm.getUsers(model.getID()); //get user by ID
-			isbnList = user.getIsbn();
-			storeISBN.add(isbn);
-		}
-
-		Collections.sort(isbnList);
-		isbnList = removeFromList(isbnList, storeISBN); //Update Person's ArrayList of ISBN
-		user.getIsbn().removeAll(user.getIsbn()); //Remove all the ISBN 
-		
-		/* Update Person ISBN ArrayList */
-		for(int i = 0; i < isbnList.size(); i++) {
-			String newIsbn = isbnList.get(i);
-			user.getIsbn().add(newIsbn);
-		}	
+			
 	}
-
-
-	/**
-	 * Removes book based on ISBN. If params ISBN matches isbnTree ISBN, remove it from DataManager
-	 * @param params - the ISBN from the book the user wants to sell
-	 * @param isbnTree - the isbnTreeMap from DataManager
-	 */
-	private void removeBook(Map<String, Object> params, TreeMap<String, Book> isbnTree) {
-		for(Map.Entry<String, Object> entry : params.entrySet()) {
-			String isbn = entry.getKey();
-
-			for(Map.Entry<String, Book> entry2 : isbnTree.entrySet()) {
-				String isbn2 = entry2.getKey();
-
-				if(isbn.equals(isbn2)) {
-					isbnTree.remove(isbn);
-					break;
-				} else {
-					continue;
-				} 
-			}
-		}
-
-	}
-
-	/**
-	 * Remove the ISBN that does not match the Data Manager isbn list
-	 * @param isbnList - The isbn list from Person object
-	 * @param storeISBN - the isbn list from Data Manager
-	 * @return newIsbn - the new ISBN ArrayList
-	 */
-	private ArrayList<String> removeFromList(ArrayList<String> isbnList, ArrayList<String> storeISBN) 
-	{
-		ArrayList<String> newIsbn = new ArrayList<String>();
-		for(int i = 0; i < isbnList.size(); i++) {
-			for(int j = 0; j < storeISBN.size(); j++) {
-				if(isbnList.get(i).equals(storeISBN.get(j))) {
-					newIsbn.add(isbnList.get(i));
-				} 
-			}
-		}
-		return newIsbn;
-	}
-
-
 
 	/**
 	 * Converting Book object to String object

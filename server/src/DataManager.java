@@ -109,7 +109,14 @@ public class DataManager{
 		return users;
 	}
 	
+	/**
+	 * remove the book that has been sold
+	 * @param isbn book ISBN
+	 */
 	public void remove(String isbn){
+		Book soldBook = isbnTree.get(isbn);
+		Person seller = users.get(soldBook.getID());
+		seller.removeBook(isbn);
 		isbnTree.remove(isbn);
 		titleTree.delete(isbnTree.get(isbn));
 	}
