@@ -1,0 +1,3 @@
+ISBN: 1234567890 *&#$&!@# Book Title: ABC *&#$&!@# Author: Alpha *&#$&!@# Price: 12.0 *&#$&!@# Student ID: 1 *&#$&!@# HardCover?: false 
+ISBN: 9081235674 *&#$&!@# Book Title: OOD *&#$&!@# Author: Kim *&#$&!@# Price: 15.0 *&#$&!@# Student ID: 9463922 *&#$&!@# HardCover?: false 
+ISBN: 9781118422977 *&#$&!@# Book Title: Big Java Early Object *&#$&!@# Author: Cay Horstmann *&#$&!@# Price: 56.9 *&#$&!@# Student ID: 9463922 *&#$&!@# HardCover?: false 

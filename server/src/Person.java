@@ -5,14 +5,14 @@ import java.util.*;
  *
  */
 public class Person {
-	
+
 	private String fName;
 	private String lName;
 	private int id;
-	private ArrayList<String> isbn;
-	
+	private ArrayList<String> isbnList;
 
-	
+
+
 	/**
 	 * @param name - The name of the user
 	 * @param id - the id of the user
@@ -22,7 +22,7 @@ public class Person {
 		fName = firstName;
 		lName = lastName;
 		id = theId;
-		isbn = theISBN;
+		isbnList = theISBN;
 	}
 
 	/** Gets the first name of the user
@@ -31,7 +31,7 @@ public class Person {
 	public String getfName() {
 		return fName;
 	}
-	
+
 	/**
 	 * Gets the last name of the user
 	 * @return lName - last name of the user
@@ -39,7 +39,7 @@ public class Person {
 	public String getlName() {
 		return lName;
 	}
-	
+
 	/**
 	 * Setting the first name of user
 	 * @param fName - First name of user
@@ -55,15 +55,6 @@ public class Person {
 	public void setlName(String lName) {
 		this.lName = lName;
 	}
-	
-	/**
-	 * Set Student ID of the user
-	 * @param ID - the id of user
-	 */
-	 public void setId(int ID)
-	 {
-		 this.id = id;
-	 }
 
 	/**
 	 * Get Student ID from the user
@@ -75,15 +66,25 @@ public class Person {
 
 	/**
 	 * Get list of ISBN from user
-	 * @return - isbn - the list of ISBN from suer
+	 * @return - the list of ISBN from suer
 	 */
 	public ArrayList<String> getIsbn() {
-		return isbn;
+		return isbnList;
+	}
+
+	/**
+	 * add new ISBN to the user
+	 * @param - the object book
+	 */
+	public void addBook(Book b){
+		if(!isbnList.contains(b.getIsbn()))
+			isbnList.add(b.getIsbn());
 	}
 	
-	
-	
-	
-	
-
+	/**
+	 * @param isbn book ISBN
+	 */
+	public void removeBook(String isbn){
+		isbnList.remove(isbn);
+	}
 }

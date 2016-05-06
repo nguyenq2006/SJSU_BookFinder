@@ -23,6 +23,7 @@ public class Book
 		this.bookTitle = title;
 		this.price = price;
 		this.hardCover = hardCover;
+		this.id = studentID;
 	}
 
 	/**
