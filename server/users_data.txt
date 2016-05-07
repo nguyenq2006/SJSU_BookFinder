@@ -1,3 +1,3 @@
 Student ID: 1 *&#$&!@# First Name: Ravin *&#$&!@# Last Name: Sandal *&#$&!@# ISBN:[] 
 Student ID: 8806915 *&#$&!@# First Name: Tipper *&#$&!@# Last Name: Truong *&#$&!@# ISBN:[] 
-Student ID: 9463922 *&#$&!@# First Name: Quoc *&#$&!@# Last Name: Nguyen *&#$&!@# ISBN:[9081235674, 9781118422977] 
+Student ID: 9463922 *&#$&!@# First Name: Quoc *&#$&!@# Last Name: Nguyen *&#$&!@# ISBN:[9781118422977] 
