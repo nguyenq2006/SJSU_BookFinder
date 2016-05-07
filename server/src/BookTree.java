@@ -40,55 +40,34 @@ public class BookTree {
 		root = 	insert(b, root);
 	}
 	
-	public void delete(Book b) {
-		root = delete(root, b);
+	public void delete(String isbn) {
+		root = delete(root, isbn);
 	}
 
-	private AVLNode delete(AVLNode root, Book b) {
+	private AVLNode delete(AVLNode root, String isbn) {
 		// TODO Auto-generated method stub
 		AVLNode current = root;
 		if(current == null) {
 			return current;
 		}
 		
-		String newTitle = b.getBookTitle();
-		DataManager dm = DataManager.sharedInstance();
-		Book currentBook = dm.getBookISBN(root.bookISBN);
-		String currentTitle = currentBook.getBookTitle();
-		int comparator = newTitle.compareTo(currentTitle);
+		int comparator = isbn.compareTo(root.bookISBN);
 		
-		/*if(current.data > data) {
-			current.left = delete(current.left, data); 
-			else if (current.data < data) {
-			current.right = delete(current.right, data);
-		} else {
-			if(current.left == null && current.right == null) {
-				current = null;
-			} else if (current.right == null) {
-				current = current.left;
-			} else if (current.left == null) {
-				current = current.right;
-			} else {
-				Node temp = findMin(current.right);
-				current.data = temp.data;
-				current.right = delete(current.right, temp.data);
-			}
-		}*/
 		if(comparator > 0) {
-			current.left = delete(current.left, b);
+			current.right = delete(current.right, isbn);
 		} else if (comparator < 0) {
-			current.right = delete(current.right, b);
+			current.left = delete(current.left, isbn);
 		} else {
-			if(current.left == null && current.right == null) {
+			if(current.left == null && current.right == null)
 				current = null;
-			} else if (current.right == null) {
+			else if (current.right == null) {
 				current = current.left;
-			} else if (current.left == null) {
+			}else if (current.left == null) {
 				current = current.right;
 			} else { //deleting a node with 2 children
 				AVLNode temp = findMin(current.right);
 				current.bookISBN = temp.bookISBN; //UNSURE
-				current.right = delete(current.right, b); //UNSURE
+				current.right = delete(current.right, temp.bookISBN); //UNSURE
 			}
 		}
 		

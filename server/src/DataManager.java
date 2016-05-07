@@ -98,11 +98,12 @@ public class DataManager{
 	 * @param isbn book ISBN
 	 */
 	public void remove(String isbn){
+		Book b = isbnTree.get(isbn);
 		Book soldBook = isbnTree.get(isbn);
 		Person seller = users.get(soldBook.getID());
 		seller.removeBook(isbn);
 		isbnTree.remove(isbn);
-		titleTree.delete(isbnTree.get(isbn));
+		titleTree.delete(isbn);
 	}
 
 	/**
