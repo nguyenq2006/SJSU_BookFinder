@@ -94,22 +94,6 @@ public class DataManager{
 	}
 	
 	/**
-	 * Returns the IsbnTree TreeMAp
-	 * @return isbnTree
-	 */
-	public TreeMap<String, Book> getIsbnTreeMap() {
-		return isbnTree;
-	}
-	
-	/**
-	 * Returns the Map of users
-	 * @return users
-	 */
-	public TreeMap<Long, Person> getUsersMap() {
-		return users;
-	}
-	
-	/**
 	 * remove the book that has been sold
 	 * @param isbn book ISBN
 	 */
