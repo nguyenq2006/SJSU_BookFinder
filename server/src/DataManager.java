@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintStream;
 import java.util.*;
 
@@ -73,7 +74,7 @@ public class DataManager{
 	public Book getBookISBN(String isbn){
 		return isbnTree.get(isbn);
 	}
-	
+
 	/**
 	 * Get user by Student ID Number
 	 * @param studentId - Student ID
@@ -82,7 +83,7 @@ public class DataManager{
 	public Person getUsers(Long studentId) {
 		return users.get(studentId);
 	}
-	
+
 	/**
 	 * get book by book title	
 	 * @param book title of the book	
@@ -92,19 +93,25 @@ public class DataManager{
 		String isbn = titleTree.getBook(book);
 		return isbnTree.get(isbn);
 	}
-	
+
 	/**
 	 * remove the book that has been sold
 	 * @param isbn book ISBN
 	 */
 	public void remove(String isbn){
-		Book b = isbnTree.get(isbn);
-		Book soldBook = isbnTree.get(isbn);
-		Person seller = users.get(soldBook.getID());
-		seller.removeBook(isbn);
-		isbnTree.remove(isbn);
-		titleTree.delete(isbn);
+		try{
+			Book b = isbnTree.get(isbn);
+			Book soldBook = isbnTree.get(isbn);
+			Person seller = users.get(soldBook.getID());
+			seller.removeBook(isbn);
+			isbnTree.remove(isbn);
+			titleTree.delete(isbn);
+			save();
+		}catch(IOException e){
+			System.out.println("Delete error occured");
+		}
 	}
+
 
 	/**
 	 * save all the data to a text file
@@ -129,52 +136,22 @@ public class DataManager{
 	 * load the data from a text file
 	 * @throws FileNotFoundException if the file not found
 	 */
-	public void load(){
-		Scanner in = new Scanner(System.in);
-		try {
-			 in = new Scanner(new File("users_data.txt"));
-		} catch (FileNotFoundException e) {
-			// TODO: handle exception
-//			try {
-//				in = new Scanner(new File("server/users_data.txt"));
-//			} catch (Exception e2) {
-//				//oh well
-//			}
-		}
+	public void load() throws FileNotFoundException{
+		Scanner in = new Scanner(new File("users_data.txt"));
 		while(in.hasNextLine()){
 			String line = in.nextLine();
 			if(!line. equals("")){
 				Person p = NewUserController.stringToModel(line);
-				try {
-					addUser(p, true);
-				} catch (Exception e) {
-					System.err.println("addUser exception occured");
-				}
-				
+				addUser(p, true);
 			}
 		}
 		in.close();
-		Scanner in2 = new Scanner(System.in);
-		try {
-			in2 = new Scanner(new File("books_data.txt"));
-		} catch (FileNotFoundException e) {
-//			try {
-//				in2 = new Scanner(new File("server/books_data.txt"));
-//			} catch (Exception e2) {
-//				//too bad
-//			}
-		}
+		Scanner in2 = new Scanner(new File("books_data.txt"));
 		while(in2.hasNextLine()){
 			String line = in2.nextLine();
 			if(!line. equals("")){
 				Book b = AddBookController.stringToModel(line);
-				try {
-					addBook(b, true);
-				} catch (Exception e) {
-					// TODO: handle exception
-					System.err.println("addBook exception occured");
-				}
-				
+				addBook(b, true);
 			}
 		}
 		in2.close();

@@ -13,9 +13,6 @@ public class SellBookController extends HttpRequestController {
 	public SellBookController(Map<String, Object> params) 
 	{
 		DataManager dm = DataManager.sharedInstance();
-		TreeMap<String, Book> isbnTree = dm.getIsbnTreeMap();
-		ArrayList<String> isbnList = new ArrayList<String>();
-		ArrayList<String> storeISBN = new ArrayList<String>();
 
 		/* Remove book based on ISBN */
 		for(Map.Entry<String, Object> entry : params.entrySet()) {
