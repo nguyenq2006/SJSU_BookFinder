@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  Class to handle the addition of books to the database
+ */
 @interface PostViewController : UIViewController
 
 @end

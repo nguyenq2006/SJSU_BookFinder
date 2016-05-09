@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+/**
+ *  Controller to manager the login view
+ */
 @interface LoginViewController : UIViewController
 
 @end

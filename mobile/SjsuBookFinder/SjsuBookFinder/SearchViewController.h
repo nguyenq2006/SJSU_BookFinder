@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  Controller to handle the searching of textbooks from the search view
+ */
 @interface SearchViewController : UIViewController
 
 @end

@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  Root View Controller
+ */
 @interface ViewController : UIViewController
 
 

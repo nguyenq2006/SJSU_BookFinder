@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+/// Class to model a student
 @interface Person : NSObject
 @property (nonatomic, strong) NSString *firstName;
 @property (nonatomic, strong) NSString *lastName;

@@ -8,6 +8,9 @@
 
 #import "PostViewController.h"
 
+/**
+ *  Class to handle the addition of books to the database
+ */
 @interface PostViewController ()<UITextFieldDelegate>
 @property (strong, nonatomic) IBOutlet UITextField *isbnTextField;
 
@@ -23,9 +26,11 @@
 
 @implementation PostViewController
 
+/**
+ *  Do any additional setup after loading the view.
+ */
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     self.navigationItem.title = @"Post";
     
     self.authorTextField.delegate = self;
@@ -36,10 +41,18 @@
     _defaults = [NSUserDefaults standardUserDefaults];
 }
 
+/**
+ *  Dispose of any resources that can be recreated.
+ */
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
+
+/**
+ *  Interface Builder handler for post button press
+ *
+ *  @param sender the button pointer
+ */
 - (IBAction)postButtonPressed:(UIButton *)sender {
     
     //http://localhost:9999/a?requesttype=addbook&isbn=91919191911&title=DataStructAndAlgo&author=Horstmann&price=20&id=009558549&hardcover=true
@@ -70,6 +83,13 @@
 
 #pragma mark - UITextFieldDelegate
 
+/**
+ *  Delegate method for responding to the return key press
+ *
+ *  @param textField text field pointer
+ *
+ *  @return the bool indicating whether the text field should return
+ */
 -(BOOL) textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
     return YES;

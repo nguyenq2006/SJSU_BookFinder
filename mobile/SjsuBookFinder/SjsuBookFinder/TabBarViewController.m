@@ -7,21 +7,27 @@
 //
 
 #import "TabBarViewController.h"
-
+/**
+ *  Controller that manages the tab bar
+ */
 @interface TabBarViewController ()
 
 @end
 
 @implementation TabBarViewController
 
+/**
+ *  Do any additional setup after loading the view.
+ */
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
+/**
+ *  Dispose of any resources that can be recreated.
+ */
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /*
