@@ -219,8 +219,10 @@
     
     UIAlertController *displaySellerInfoAlertContoller = [UIAlertController alertControllerWithTitle:@"Your book can be found from this user:" message:sellerName preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *displayeSellerInfoAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
-        
+        [searchResults removeAllObjects];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_tableView reloadData];
+        });
     }];
     [displaySellerInfoAlertContoller addAction:displayeSellerInfoAction];
     [self presentViewController:displaySellerInfoAlertContoller animated:YES completion:nil];
