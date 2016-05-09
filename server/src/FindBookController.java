@@ -7,7 +7,8 @@ public class FindBookController {
 	private String response = "";
 
 	/**
-	 * Retrieving User Information and Book Information from DataManager class
+	 * Constructing a way to retrieve User Information and Book Information from DataManager class
+	 * @param a tree map that sorts data using looking up the Book Title or ISBN Number
 	 */
 	public FindBookController(Map<String, Object> params) {
 
@@ -29,10 +30,6 @@ public class FindBookController {
 				b.getIsbn() + "*&#$&!@# " + 
 				b.getBookTitle() + "*&#$&!@# " +
 				b.getPrice();
-
-
-		//Save book information to database
-		//this.saveToDataBase(modelToString(this.model));
 	}
 
 	/**
@@ -76,8 +73,8 @@ public class FindBookController {
 		return resultString;
 	}
 
-/**
-	 * Converting String object to Book object
+	/**
+ 	 * Converting String object to Book object
 	 * @param bookInfo - the book information in String 
 	 * @return bookObject - final conversion of String object -> Book object
 	 **/
@@ -172,6 +169,10 @@ public class FindBookController {
 		return book;
 	}
 	
+	/**
+	 * Gets the response of the Book object
+	 * @return response of the Book Object
+	 */
 	public String getResponse(){
 		return this.response;
 	}

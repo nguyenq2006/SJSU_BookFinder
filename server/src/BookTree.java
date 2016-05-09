@@ -1,4 +1,5 @@
-/*BookTree sort the ISBN by the book title
+/**
+* BookTree sort the ISBN by the book title
 * it follow the same algorithm as AVLTree
 */
 public class BookTree {

@@ -4,11 +4,17 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.util.*;
 
-
-
-
-//singleton class to manage the database
+/**
+ * A Singleton Database Class that manages data regarding user information and book information
+ * 
+ */
 public class DataManager{
+	/*
+	 * Database Manager contains 
+	 * - TreeMap : Sorts by Key: ISBN, Value: Book Object
+	 * - TreeMap : Sorts by Key: Student ID, Value: Person Object
+	 * - Book Tree: An AVL Tree sorts the Book Title
+	 */
 	private static DataManager dm = new DataManager();
 	private TreeMap<String, Book> isbnTree;
 	private BookTree titleTree;
