@@ -9,6 +9,9 @@
 #import "NewAccountViewController.h"
 #import "Person.h"
 
+/**
+ *  Controller to manage the new account view
+ */
 @interface NewAccountViewController ()
 @property (strong, nonatomic) IBOutlet UITextField *firstNameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *lastNameTextField;
@@ -19,16 +22,25 @@
 
 @implementation NewAccountViewController
 
+/**
+ *  Do any additional setup after loading the view.
+ */
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
+/**
+ *  Dispose of any resources that can be recreated.
+ */
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
+/**
+ *  Interface builder action to handle button press
+ *
+ *  @param sender button pointer
+ */
 - (IBAction)createAccountButtonPressed:(UIButton *)sender {
     Person *p = [self createPersonFromUserInput];
     
@@ -72,6 +84,11 @@
     [self presentViewController:vc animated:YES completion:nil];
 }
 
+/**
+ *  Create a person model object
+ *
+ *  @return return the model object
+ */
 -(Person *)createPersonFromUserInput{
     Person *p = [[Person alloc]initWithFirstName:self.firstNameTextField.text withLastName:self.lastNameTextField.text withSjsuId:self.sjsuIdTextField.text withPassword:self.passwordTextField.text];
     return p;

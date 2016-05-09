@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  Controller that manages the tab bar
+ */
 @interface TabBarViewController : UITabBarController
 
 @end

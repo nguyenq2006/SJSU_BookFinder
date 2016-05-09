@@ -8,21 +8,28 @@
 
 #import "ProfileViewController.h"
 
+/**
+ *  Controller to handle the profile view
+ */
 @interface ProfileViewController ()
 
 @end
 
 @implementation ProfileViewController
 
+/**
+ *  Do any additional setup after loading the view.
+ */
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
      self.navigationItem.title = @"Profile";
 }
 
+/**
+ *  Dispose of any resources that can be recreated.
+ */
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /*

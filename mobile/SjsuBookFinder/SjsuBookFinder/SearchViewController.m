@@ -9,6 +9,9 @@
 #import "SearchViewController.h"
 #import "FindBookParser.h"
 
+/**
+ *  Controller to handle the searching of textbooks from the search view
+ */
 @interface SearchViewController () <UISearchBarDelegate,UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
@@ -21,10 +24,11 @@
     NSMutableArray<NSString *> *searchResults;
     FindBookParser *fbParser;
 }
-
+/**
+ *  Do any additional setup after loading the view.
+ */
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     self.navigationItem.title = @"Search";
     self.searchBar.delegate = self;
     segmentedControlItems = @[@"Title",@"ISBN"];
@@ -39,13 +43,20 @@
     searchResults = [[NSMutableArray alloc]init];
 }
 
+/**
+ *  Dispose of any resources that can be recreated.
+ */
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - UISearchBarDelegate
 
+/**
+ *  Delegat method for the search bar search button
+ *
+ *  @param searchBar the search bar pointer
+ */
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
     //clear the search results array before doing another search
     if (searchResults != nil) {
@@ -69,6 +80,12 @@
 
 #pragma mark - Helper Methods
 
+/**
+ *  Helper method to make an HTTP request to the server
+ *
+ *  @param type  request type, can be Title or ISBN
+ *  @param param the parameters to give the http request
+ */
 - (void)makeHTTPRequestForType:(NSString *)type forParameter:(NSString *)param{
     NSURLComponents *components = [NSURLComponents componentsWithString:@"http://localhost:9999/a"];
     NSURLQueryItem *reqType = [NSURLQueryItem queryItemWithName:@"requesttype" value:@"findbook"];
@@ -117,6 +134,11 @@
     
 }
 
+/**
+ *  Helper method to parse the response obtained from the server and add them to the search results array
+ *
+ *  @param responseStr the reponse to parse
+ */
 - (void)parseServerResponse:(NSString *)responseStr{
     NSArray<NSString *> *responseArray = [responseStr componentsSeparatedByString:@"\n"];
     for (NSUInteger i=0; i<responseArray.count; i++) {
@@ -127,10 +149,26 @@
 
 #pragma mark - UITableViewDataSource
 
+/**
+ *  Datasource delegate for tableview
+ *
+ *  @param tableView tableview pointer
+ *  @param section   the number of rows in a section
+ *
+ *  @return the number of rows to be added to the tableview
+ */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [searchResults count];
 }
 
+/**
+ *  Datasource delegate for tableview
+ *
+ *  @param tableView table view pointer
+ *  @param indexPath index path pointer
+ *
+ *  @return <#return value description#>
+ */
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"result"];
     if (cell == nil) {
@@ -149,6 +187,12 @@
 
 #pragma mark - UITableViewDelegate
 
+/**
+ *  Delegate method for cell selection on a tableview cell
+ *
+ *  @param tableView the tableview pointer
+ *  @param indexPath the index path pointer
+ */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *selectedItem = [searchResults objectAtIndex:indexPath.row];
     fbParser = [[FindBookParser alloc]initWithServerResponse:selectedItem];
@@ -197,7 +241,11 @@
     
 }
 
-
+/**
+ *  Shows a UIAlertView with the seller information
+ *
+ *  @param sellerId the sjsu id of the seller
+ */
 -(void)showSellerAlert:(NSString *)sellerId{
     NSString *sellerName = @"";
     //make HTTP Request that displays seller info.
