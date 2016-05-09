@@ -1,7 +1,7 @@
 import java.util.*;
 /**
  * 
- * Creating a Person class for Students at SJSU
+ * Model class for Student
  *
  */
 public class Person {

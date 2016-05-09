@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ *  Parser class to parse the findbook response from the server
+ */
 @interface FindBookParser : NSObject
 @property (strong, nonatomic) NSString *sjsuId;
 @property (strong, nonatomic) NSString *isbn;

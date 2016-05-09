@@ -10,6 +10,9 @@
 #import "NewAccountViewController.h"
 #import "Person.h"
 
+/**
+ *  Controller to manager the login view
+ */
 @interface LoginViewController ()<UITextFieldDelegate>
 @property (strong, nonatomic) IBOutlet UITextField *sjsuIdTextField;
 @property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
@@ -18,16 +21,26 @@
 
 @implementation LoginViewController
 
+/**
+ *  Do any additional setup after loading the view.
+ */
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     self.passwordTextField.delegate = self;
 }
 
+/**
+ *  Dispose of any resources that can be recreated.
+ */
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
+
+/**
+ *  Interface builder handler to handle login button press
+ *
+ *  @param sender button pointer
+ */
 - (IBAction)loginButtonPressed:(UIButton *)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     Person *p = [Person unstringify:[defaults objectForKey:self.sjsuIdTextField.text]];
@@ -39,6 +52,11 @@
     }
 }
 
+/**
+ *  Interface builder handler to handle signup button press
+ *
+ *  @param sender button pointer
+ */
 - (IBAction)signUpButtonPressed:(UIButton *)sender {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     NewAccountViewController *vc = (NewAccountViewController *)[storyboard instantiateViewControllerWithIdentifier:@"NewAccountViewController"];
@@ -46,6 +64,14 @@
 }
 
 #pragma mark - UITextFieldDelegate
+
+/**
+ *  Delegate method for responding to the return key press
+ *
+ *  @param textField text field pointer
+ *
+ *  @return the bool indicating whether the text field should return
+ */
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     [self loginButtonPressed:nil];
     return YES;

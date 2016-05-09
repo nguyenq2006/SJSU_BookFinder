@@ -17,10 +17,17 @@ import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
 
+/**
+ * Class to manage the HTTP Server
+ */
 public class HTTPServer {
 
 	private static String response = "";
 
+	/**
+	 * Method to start the HTTP Server to listen on port 9999
+	 * @throws IOException
+	 */
 	public static void startServer() throws IOException {
 		HttpServer server = HttpServer.create(new InetSocketAddress(9999), 0);
 		
@@ -31,7 +38,16 @@ public class HTTPServer {
 		server.start();
 	}
 
+	/**
+	 * Inner static class that handles the requests sent to port 9999
+	 *
+	 */
 	static class RequestHandler implements HttpHandler {
+		/**
+		 * Handles the response sent to the server
+		 * @param exchange The URI sent to the port 9999
+		 * @throws IOException
+		 */
 		 @Override
 		    public void handle(HttpExchange exchange) throws IOException {
 		        @SuppressWarnings("unchecked")
@@ -93,13 +109,25 @@ public class HTTPServer {
 		    }
 	}
 	
+	/**
+	 * Inner class to handle the formatting of the parameters
+	 *
+	 */
 	static class ParameterFilter extends Filter {
 
+		/**
+		 * Gets the description of the class
+		 */
 	    @Override
 	    public String description() {
 	        return "Parses the requested URI for parameters";
 	    }
-
+	    
+	    /**
+	     * Handles the exchange object and passes into the Filter
+	     * @param exchange pointer
+	     * @param chain pointer
+	     */
 	    @Override
 	    public void doFilter(HttpExchange exchange, Chain chain)
 	        throws IOException {
@@ -107,7 +135,12 @@ public class HTTPServer {
 	        parsePostParameters(exchange);
 	        chain.doFilter(exchange);
 	    }    
-
+	    
+	    /**
+	     * Parses the exchange object to separate each parameter in a GET request
+	     * @param exchange pointer
+	     * @throws UnsupportedEncodingException
+	     */
 	    private void parseGetParameters(HttpExchange exchange)
 	        throws UnsupportedEncodingException {
 
@@ -118,6 +151,11 @@ public class HTTPServer {
 	        exchange.setAttribute("parameters", parameters);
 	    }
 
+	    /**
+	     * Parses the exchange object to separate each parameter in a POST request
+	     * @param exchange pointer
+	     * @throws IOException
+	     */
 	    private void parsePostParameters(HttpExchange exchange)
 	        throws IOException {
 
@@ -133,6 +171,12 @@ public class HTTPServer {
 	        }
 	    }
 
+	    /**
+	     * Parses the query
+	     * @param query string representing query
+	     * @param parameters Map of the parameters
+	     * @throws UnsupportedEncodingException
+	     */
 	     @SuppressWarnings("unchecked")
 	     private void parseQuery(String query, Map<String, Object> parameters)
 	         throws UnsupportedEncodingException {

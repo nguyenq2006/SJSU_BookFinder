@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  Controller to handle the profile view
+ */
 @interface ProfileViewController : UIViewController
 
 @end

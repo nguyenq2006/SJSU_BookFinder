@@ -1,4 +1,7 @@
-
+/**
+ * Models the Book
+ *
+ */
 public class Book 
 {
 	private String author;

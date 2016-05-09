@@ -1,5 +1,9 @@
 import java.util.*;
 
+/**
+ * Controller that handles the book selling
+ *
+ */
 public class SellBookController extends HttpRequestController {
 	private Book model;
 	private Person user;
@@ -140,7 +144,11 @@ public class SellBookController extends HttpRequestController {
 		Book book = new Book(ISBN, bookTitle, author, bookPrice, studentID, isHardCover);
 		return book;
 	}
-
+	
+	/**
+	 * Gets the response
+	 * @return response of the server
+	 */
 	public String getResponse()
 	{
 		return this.response;

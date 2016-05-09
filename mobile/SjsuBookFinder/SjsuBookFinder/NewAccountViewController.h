@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  Controller to manage the new account view
+ */
 @interface NewAccountViewController : UIViewController
 
 @end

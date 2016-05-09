@@ -2,7 +2,11 @@ import java.util.*;
 import java.io.FileNotFoundException;
 import java.lang.Class;
 
-
+/**
+ * 
+ * Controller that handles the New User request
+ *
+ */
 public class NewUserController extends HttpRequestController{
 	private Person model;
 	private String response = "";
@@ -154,7 +158,10 @@ public class NewUserController extends HttpRequestController{
 		return p;
 	}
 
-
+	/**
+	 * Gets the response
+	 * @return response of the server
+	 */
 	public String getResponse(){
 		return this.response;
 	}

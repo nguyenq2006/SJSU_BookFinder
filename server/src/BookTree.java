@@ -1,15 +1,20 @@
-/*BookTree sort the ISBN by the book title
+/**
+* BookTree sort the ISBN by the book title
 * it follow the same algorithm as AVLTree
 */
 public class BookTree {
-	//node class for the tree
+	/**
+	 * Creating an AVL Node class for AVL Book Tree 
+	 */
 	private class AVLNode{
 		String bookISBN;
 		AVLNode left;
 		AVLNode right;
 		int height;
 
-		//Constructor for the node
+		/**
+		 * Constructing an AVL Node 
+		 */
 		AVLNode(String bookISBN){
 			this(bookISBN, null, null);
 		}
@@ -22,28 +27,47 @@ public class BookTree {
 		}
 	}
 
+	/**
+	 * Gets the height of the AVL Book Tree 
+	 */
 	private int height(AVLNode t){
 		if(t == null) return 0;
 		return Math.max(height(t.left), height(t.right)) + 1;
 	}
-	//BookTree
+	
+	/**
+	 * Creating the AVL Book Tree  
+	 */
 	private AVLNode root;
 
 	/**
-	 * BookTree constructor
+	 * Constructing the Book AVL Tree
 	 */
 	public BookTree(){
 		this.root = null;
 	}
-
+	
+	/**
+	 * Inserting Book Object into AVL Tree 
+	 * @param b The Book to insert on the AVL Tree
+	 */
 	public void insert(Book b){
 		root = 	insert(b, root);
 	}
 	
+	/**
+	 * Delete the node based on isbn data of the Book object
+	 * @param isbn - the isbn of the Book object associated
+	 */
 	public void delete(String isbn) {
 		root = delete(root, isbn);
 	}
 
+	/**
+	 * Deleting the AVLNode off of the Book AVL Tree
+	 * @param root The node to be deleted off the tree
+	 * @param isbn The root associated with the node to be deleted
+	 */
 	private AVLNode delete(AVLNode root, String isbn) {
 		// TODO Auto-generated method stub
 		AVLNode current = root;
@@ -58,16 +82,16 @@ public class BookTree {
 		} else if (comparator < 0) {
 			current.left = delete(current.left, isbn);
 		} else {
-			if(current.left == null && current.right == null)
+			if(current.left == null && current.right == null) //Case 1: Deleting a leaf node
 				current = null;
-			else if (current.right == null) {
+			else if (current.right == null) { //Case 2: Deleting a node with 1 child
 				current = current.left;
-			}else if (current.left == null) {
+			}else if (current.left == null) { //Case 2: Deleting a node with 1 child
 				current = current.right;
-			} else { //deleting a node with 2 children
+			} else { //Case 3: deleting a node with 2 children
 				AVLNode temp = findMin(current.right);
-				current.bookISBN = temp.bookISBN; //UNSURE
-				current.right = delete(current.right, temp.bookISBN); //UNSURE
+				current.bookISBN = temp.bookISBN; 
+				current.right = delete(current.right, temp.bookISBN); 
 			}
 		}
 		
@@ -77,6 +101,11 @@ public class BookTree {
 		
 	}
 
+	/**
+	 * Inserting the new AVL Node to the Book Tree
+	 * @param b The Book object to be inserted
+	 * @param tree The root associated to the new node about to be inserted
+	 */
 	private AVLNode insert(Book b, AVLNode tree){
 		if(tree ==null){
 			String ISBN = b.getIsbn();
@@ -122,6 +151,10 @@ public class BookTree {
        return (current);
    }
 	
+	/**
+	 * Re-balance the tree
+	 * @param t - the AVL Node to be re-balanced.
+	 */
 	private AVLNode balance(AVLNode t )
 	{
 		if( t == null )
@@ -142,7 +175,11 @@ public class BookTree {
 		t.height = Math.max( height(t.left), height(t.right)) + 1;
 		return t;
 	}
-
+	
+	/**
+	 * Rotate the AVL Node to the left
+	 * @param k2 the node to be rotated to the left
+	 */
 	private AVLNode rotateWithLeftChild( AVLNode k2 )
 	{
 		AVLNode k1 = k2.left;
@@ -153,6 +190,10 @@ public class BookTree {
 		return k1;
 	}
 
+	/**
+	 * Rotate the AVL Node to the right
+	 * @param k1 - the node to be rotated to the right
+	 */
 	private AVLNode rotateWithRightChild( AVLNode k1 )
 	{
 		AVLNode k2 = k1.right;
@@ -163,20 +204,37 @@ public class BookTree {
 		return k2;
 	}
 
+	/**
+	 * Rotate the AVL Node left then right (2 Rotations)
+	 * @param n the node to be rotated twice based on position
+	 */
 	private AVLNode rotateLeftThenRight(AVLNode n) {
 		n.left = rotateWithRightChild(n.left);
 		return rotateWithLeftChild(n);
 	}
 
+	/**
+	 * Rotate the AVL Node right then left (2 Rotations)
+	 * @param n the node to be rotated twice based on position
+	 */
 	private AVLNode rotateRightThenLeft(AVLNode n) {
 		n.right = rotateWithLeftChild(n.right);
 		return rotateWithRightChild(n);
 	}
 	
+	/**
+	 * Get the Book based on Book Title
+	 * @param bookTitle the title of the book to retrieve
+	 */
 	public String getBook(String bookTitle){
 		return get(bookTitle, root);
 	}
 	
+	/**
+	 * Retrieve the Book based on book title
+	 * @param bookTitle The title of the book
+	 * @param n the root associated to the new node to retrieve
+	 */
 	private String get(String bookTitle, AVLNode n){
 		DataManager dm = DataManager.sharedInstance();
 		Book b = dm.getBookISBN(n.bookISBN);
